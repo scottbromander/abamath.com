@@ -1,3 +1,7 @@
+img {
+    max-width: 100%;
+}
+
 a:link {
     text-decoration: none;
     color: #1d8ba2;
@@ -52,11 +56,6 @@ a:hover {
 .regular-link:active {
     color: #11505d !important;
     cursor: pointer;
-}
-
-.post img {
-    max-width: 100% !important;
-    height: auto !important;
 }
 
 /* Header */

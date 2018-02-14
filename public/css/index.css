@@ -179,3 +179,7 @@ body .navbar {
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
 }
+
+h2, h3 {
+    padding: 20px;
+}

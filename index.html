@@ -56,9 +56,9 @@
     <section class="post-outer post-body" id="classes">
 
       <h2 class="text-center">UPCOMING CLASSES</h2>
-      <h3 class="text-center">Summer 2018 Classes Coming Soon! Check back here in early March!</td></h3>
+      <!-- <h3 class="text-center">Summer 2018 Classes Coming Soon! Check back here in early March!</td></h3> -->
       
-      <!-- <a href='#classes'>
+      <a href='#classes'>
         <input ng-model="searchText" class="form-control main-search" type="text" placeholder="search" id="search">
       </a>
       <table class="table" id="searchTextResults">
@@ -131,7 +131,7 @@
           <td colspan="7" class="text-center" ng-hide="limitLength &gt; (correctedList | filter:'http' | filter:searchText | orderBy:predicate:reverse).length">
             <a ng-click="growList();" class="text-center normal-link">Click Here To Show More</a>
           </td>
-        </tr> -->
+        </tr>
       </table>
       <!-- Modal -->
       <div ng-repeat="class in correctedList | filter:'http' | filter:searchText | orderBy:predicate:reverse | limitTo:limitLength" class="modal fade" id="modal-{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

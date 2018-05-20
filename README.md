@@ -1,7 +1,7 @@
 abamath.com
 ===========
 
-w<span>ww.</span>Abamath.com is way for children to get fun and engaging experience with technology, robotics, and coding!
+www.Abamath.com is way for children to get fun and engaging experience with technology, robotics, and coding!
 
 Who Are We?
 ===========

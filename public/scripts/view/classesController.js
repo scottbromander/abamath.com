@@ -24,7 +24,9 @@ app.controller('classes.controller', function ($scope, getClasses) {
       correctedClass[newProperty] = newValue;
     }
 
-    $scope.correctedList.push(correctedClass);
+    if (new Date(correctedClass.startdate) >= new Date()) {
+      $scope.correctedList.push(correctedClass);
+    }
   };
 
   var getClassList = getClasses.get({}, function () {

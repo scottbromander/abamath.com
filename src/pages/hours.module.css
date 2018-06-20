@@ -1,12 +1,18 @@
-/* .container {
+.container {
     display: grid;
-} */
+    grid-template-columns: 1fr 6fr;
+}
 
-/* .dayHeader {
+.taskRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.dayHeader {
     width: 500px !important;
     padding-right: 60px;
-} */
+}
 
-/* h4 {
+h4 {
     display: inline-block;
-} */
+}

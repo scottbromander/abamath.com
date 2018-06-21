@@ -226,6 +226,15 @@ class Hours extends Component {
                   </span>
               ))}
               </div>
+              <pre>
+              {JSON.stringify({
+                    totalHours: this.state.days.reduce((weeklySum, day) => (Number(weeklySum) + Number(day.tasks.reduce((dailySum, task) => (Number(dailySum) + Number(task.hours)), 0))), 0),
+                    days: this.state.days
+                  },
+                  null,
+                  2)
+                }
+              </pre>
             </div>
         );
     }

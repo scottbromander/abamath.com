@@ -1,7 +1,7 @@
-.container {
+/* .container {
     display: grid;
     grid-template-columns: 1fr 6fr;
-}
+} */
 
 .taskRow {
     display: grid;
@@ -9,8 +9,8 @@
 }
 
 .dayHeader {
-    width: 500px !important;
-    padding-right: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 h4 {

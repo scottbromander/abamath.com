@@ -24,7 +24,7 @@ export default ({ data }) => {
 
             <g.H3 marginBottom={rhythm(1 / 4)}>
               {node.frontmatter.title}{" "}
-              <g.Span color="#BBB">— {node.frontmatter.location}</g.Span>
+              <g.Span color="#BBB">— {node.frontmatter.date}</g.Span>
             </g.H3>
             <p>
               {node.excerpt}
@@ -66,6 +66,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            location
           }
           fields {
             slug
@@ -82,6 +83,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            location
           }
           fields {
             slug
@@ -98,6 +100,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            location
           }
           fields {
             slug

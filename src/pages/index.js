@@ -51,7 +51,7 @@ export default ({ data }) => {
         </div>
       )}
       <h4>
-        {data.districts.totalCount} Posts
+        Districts
       </h4>
       {data.districts.edges.map(({ node }) =>
         <div key={node.id}>
@@ -62,7 +62,7 @@ export default ({ data }) => {
 
             <g.H3 marginBottom={rhythm(1 / 4)}>
               {node.frontmatter.title}{" "}
-              <g.Span color="#BBB">— {node.frontmatter.date}</g.Span>
+              <g.Span color="#BBB">— {node.frontmatter.location}</g.Span>
             </g.H3>
             <p>
               {node.excerpt}

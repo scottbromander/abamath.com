@@ -66,6 +66,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            location
           }
           fields {
             slug
@@ -82,6 +83,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            location
           }
           fields {
             slug
@@ -98,6 +100,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            location
           }
           fields {
             slug

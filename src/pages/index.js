@@ -42,7 +42,7 @@ export default ({ data }) => {
 
             <g.H3 marginBottom={rhythm(1 / 4)}>
               {node.frontmatter.title}{" "}
-              <g.Span color="#BBB">— {node.frontmatter.date}</g.Span>
+              <g.Span color="#BBB">— {node.frontmatter.location}</g.Span>
             </g.H3>
             <p>
               {node.excerpt}

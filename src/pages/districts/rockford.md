@@ -1,4 +1,4 @@
 ---
 title: Rockford
-location: "Rockford Highschool"
+location: "Rockford High School"
 ---

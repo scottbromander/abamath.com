@@ -22,3 +22,11 @@ After that, we'd love your Pull Requests!
 ## Deployment
 
 Firebase Deploy
+
+## Naming Conventions
+    Always use a hyphen for your file names. We want to appear in google searches, and the google engine treats hyphens as word separators, but not underscores.
+
+    All the code should not be capitalized, expect for exceptions like README.md
+
+    Images should go to the images folder
+    

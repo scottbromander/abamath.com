@@ -2,8 +2,8 @@ import React from "react";
 import g from "glamorous";
 import { css } from "glamor";
 import Link from "gatsby-link";
-
 import { rhythm } from "../utils/typography";
+import logo from "./abamath.png";
 
 const linkStyle = css({ float: `right` });
 
@@ -15,6 +15,16 @@ export default ({ children, data }) => (
     paddingTop={rhythm(1.5)}
   >
     <Link to={`/`}>
+      <img 
+      src={logo} 
+      alt="" 
+      style={{
+            marginRight: rhythm(1 / 2),
+            marginBottom: 0,
+            width: rhythm(2),
+            height: rhythm(2),
+          }}
+      />
       <g.H3
         marginBottom={rhythm(2)}
         display={`inline-block`}
@@ -26,6 +36,9 @@ export default ({ children, data }) => (
     <Link className={linkStyle} to={`/about/`}>
       About
     </Link>
+    <Link className={linkStyle} to={`/contact/`}>
+      Contact
+    </Link>  
     {children()}
   </g.Div>
 );

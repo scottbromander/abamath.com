@@ -8,7 +8,7 @@ export default ({ data }) => {
   return (
     <div>
       <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
-        Amazing Pandas Eating Things
+        abamath
       </g.H1>
       <h4>
         {data.blogs.totalCount} Posts

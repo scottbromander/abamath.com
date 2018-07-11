@@ -10,29 +10,11 @@ export default ({ data }) => {
       <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
         abamath
       </g.H1>
-      <h4>
-        {data.blogs.totalCount} Posts
-      </h4>
-      {data.blogs.edges.map(({ node }) =>
-        <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            css={{ textDecoration: `none`, color: `inherit` }}
-          >
+      
 
-            <g.H3 marginBottom={rhythm(1 / 4)}>
-              {node.frontmatter.title}{" "}
-              <g.Span color="#BBB">— {node.frontmatter.date}</g.Span>
-            </g.H3>
-            <p>
-              {node.excerpt}
-            </p>
-          </Link>
-        </div>
-      )}
-      <h4>
-        {data.classes.totalCount} Posts
-      </h4>
+      <h2>
+        Classes
+      </h2>
       {data.classes.edges.map(({ node }) =>
         <div key={node.id}>
           <Link
@@ -50,9 +32,9 @@ export default ({ data }) => {
           </Link>
         </div>
       )}
-      <h4>
+      <h2>
         Districts
-      </h4>
+      </h2>
       {data.districts.edges.map(({ node }) =>
         <div key={node.id}>
           <Link

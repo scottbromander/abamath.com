@@ -13,7 +13,7 @@ export default ({ data }) => {
       
 
       <h2>
-        Camps
+        Classes
       </h2>
       {data.classes.edges.map(({ node }) =>
         <div key={node.id}>
@@ -22,11 +22,10 @@ export default ({ data }) => {
             css={{ textDecoration: `none`, color: `inherit` }}
           >
 
-            <g.H4 marginBottom={rhythm(1 / 4)}>
+            <g.H3 marginBottom={rhythm(1 / 4)}>
               {node.frontmatter.title}{" "}
-              <g.Span>— {node.frontmatter.title}</g.Span>
-            </g.H4>
-
+              <g.Span color="#BBB">— {node.frontmatter.date}</g.Span>
+            </g.H3>
             <p>
               {node.excerpt}
             </p>

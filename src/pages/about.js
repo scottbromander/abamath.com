@@ -18,10 +18,9 @@ export default ({ data }) =>
       </h3>
       <p>
       We do for coding what little league does for baseball. 
-      We run epic robotics and coding classes through partnerships 
+      We run epic coding, video game, and website design classes through partnerships 
       with community education programs in Minnesota with all of 
-      the excitement of a sport. Here's a  video of one of our 
-      robotics classes.
+      the excitement of a sport. 
     </p>
       <h3>
       I love working with kids and STEM! Can I help you?
@@ -29,7 +28,8 @@ export default ({ data }) =>
       <p>
       Probably! Even when we don't have openings, we're always 
       looking to get in touch with potential future instructors for
-       our coding and robotics classes! Tell us about yourself 
+       our coding and robotics classes! 
+       <em> We currently don't have any openings for Summer 2018, but stay tuned! </em>
       </p>
       <h3>
       Why aren't you in my town yet?

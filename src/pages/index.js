@@ -6,13 +6,7 @@ import { rhythm } from "../utils/typography";
 
 export default ({ data }) => {
   return (
-    <div>
-      <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
-        abamath
-      </g.H1>
-      
-
-     
+    <div>  
       <h2>
         Districts
       </h2>

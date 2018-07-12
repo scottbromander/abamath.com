@@ -52,6 +52,9 @@ export default ({ children, data }) => (
     <Link className={linkStyle} to={`/contact/`}>
       Contact 
     </Link> 
+    <Link className={linkStyle} to={`/parent/`}>
+      Parent 
+    </Link>
     <Link className={linkStyle} to={`/curriculum/`}>
       Curriculum 
     </Link>
@@ -61,9 +64,6 @@ export default ({ children, data }) => (
     <Link className={linkStyle} to={`/about/`}>
       About 
     </Link>
-    <Link className={linkStyle} to={`/home/`}>
-      Home 
-    </Link> 
     {children()}
     <footer>
       <p>Contact information: <a href="mailto:info@abamath.com">

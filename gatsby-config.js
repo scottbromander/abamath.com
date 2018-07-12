@@ -28,5 +28,20 @@ module.exports = {
                 pathToConfigModule: `src/utils/typography`,
             },
         },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                typePrefix: 'community_education__',
+                url: `https://spreadsheets.google.com/feeds/list/1DLAVN3q758sPohCFeZlVSVRZKXzEser1SIsQnH2mvrw/ogwtdyp/public/basic?hl=en_US&alt=json`,
+                method: 'get',
+                name: `classes`,
+                entityLevel: `feed.entry`,
+                schemaType: {},
+                localSave: false,
+                path: `${__dirname}/api/`,
+                verbose: true,
+            }
+        }
+
     ],
 };

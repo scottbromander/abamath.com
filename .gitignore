@@ -61,3 +61,6 @@ typings/
 public
 yarn-error.log
 .DS_Store
+
+# package-lock.json is getting in our way
+package-lock.json

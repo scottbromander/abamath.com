@@ -52,6 +52,23 @@ export default ({ data }) => {
           </Link>
         </div>
       )}
+      {data.allCommunityEducationClasses.edges.map(({ node }) =>
+        node.fields && node.fields.slug ? <div key={node.id}>
+          <Link
+            to={node.fields.slug}
+            css={{ textDecoration: `none`, color: `inherit` }}
+          >
+
+            <g.H3 marginBottom={rhythm(1 / 4)}>
+              {node.fields.className}{" "}
+              {/* <g.Span color="#BBB">— {node.frontmatter.date}</g.Span> */}
+            </g.H3>
+            <p>
+              {node.excerpt}
+            </p>
+          </Link>
+        </div> : ''
+      )}
     </div>
   )
 }
@@ -108,6 +125,19 @@ export const query = graphql`
           excerpt
         }
       }
-    }  
+    }
+    allCommunityEducationClasses {
+      totalCount
+      edges {
+        node {
+          fields {
+            className
+            days
+            grades
+            slug
+          }
+        }
+      }
+    }
   }  
 `

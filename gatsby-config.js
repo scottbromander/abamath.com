@@ -1,7 +1,3 @@
-const classType = {
-    }
-
-
 module.exports = {
     siteMetadata: {
         title: `abamath`,

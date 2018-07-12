@@ -1,0 +1,18 @@
+/* .container {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+} */
+
+.taskRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.dayHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+h4 {
+    display: inline-block;
+}

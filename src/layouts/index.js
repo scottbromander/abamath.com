@@ -26,7 +26,7 @@ export default ({ children, data }) => (
     >
     <link
       rel="icon"
-      href={withPrefix('./favicon.ico')}
+      href={logo}
     /> 
     </Helmet>
     <Link to={`/`}>
@@ -61,7 +61,7 @@ export default ({ children, data }) => (
     <Link className={linkStyle} to={`/about/`}>
       About 
     </Link>
-    <Link className={linkStyle} to={`/home/`}>
+    <Link className={linkStyle} to={`/`}>
       Home 
     </Link> 
     {children()}

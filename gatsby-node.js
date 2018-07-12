@@ -1,27 +1,30 @@
 const path = require(`path`);
-const classCorrector = require('./utils/class-corrector');
+const { correctClass, validateClass } = require('./utils/district-class-corrector');
 const slugify = require('slugify');
 const { createFilePath } = require(`gatsby-source-filesystem`);
-var counter = 0;
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
-  if (node.internal.type === `MarkdownRemark`) {
+  const { createNodeField, deleteNode } = boundActionCreators
+  const isMarkdownRemark = node.internal.type === `MarkdownRemark`;
+  const isDistrictClass = node.internal.type === `community_education__classes` && node.title && node.content && node.title._t && node.content._t;
+  const correctedClass = isDistrictClass ? correctClass(node.content._t) : null;
+  const isValidDistrictClass = correctedClass ? validateClass(correctedClass) : null;
+  if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
     createNodeField({
       node,
       name: `slug`,
       value: slug,
     })
-  } else if(node.internal.type === `community_education__classes` && node.title && node.content && node.title._t && node.content._t) {
-    const correctedClassObject = classCorrector(node.content._t);
-    const className = node.title._t
+  } else if(isDistrictClass && isValidDistrictClass) {
+    const className = node.title._t;
+
     createNodeField({
       node,
       name: `className`,
       value: className,
     });
-    const pageTitle = correctedClassObject.district + " " + className;
+    const pageTitle = correctedClass.district + " " + className;
     createNodeField({
       node,
       name: `pageTitle`,
@@ -32,13 +35,15 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `slug`,
       value: '/' + slugify(pageTitle.toLowerCase()),
     });
-    Object.entries(correctedClassObject).forEach((entry)=> {
+    Object.entries(correctedClass).forEach((entry)=> {
       createNodeField({
         node,
         name: entry[0],
         value: entry[1],
       });
     });
+  } else if(isDistrictClass && !isValidDistrictClass) {
+    deleteNode(node.id, node);
   }
 };
 

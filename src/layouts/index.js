@@ -4,6 +4,7 @@ import { css } from "glamor";
 import Link from "gatsby-link";
 import { rhythm } from "../utils/typography";
 import logo from "./abamath.png";
+import Img from 'gatsby-image'
 
 const linkStyle = css({ float: `right` });
 
@@ -40,6 +41,17 @@ export default ({ children, data }) => (
       Contact
     </Link>  
     {children()}
+    <footer>
+      <p>Contact information: <a href="mailto:info@abamath.com">
+      info@abamath.com</a>.</p>
+      <p>Social media:</p>
+        <a href = "https://www.facebook.com/Abamath/">
+          <Img resolutions={data.facebookIcon.resolutions} />
+        </a>
+        <a href = "https://twitter.com/abamathtutoring">
+          <Img resolutions={data.twitterIcon.resolutions} />
+        </a>
+    </footer>
   </g.Div>
 );
 
@@ -48,6 +60,16 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    facebookIcon: imageSharp(id: { regex: "/facebook.png/" }) {
+      resolutions(width: 42, height: 42) {
+        ...GatsbyImageSharpResolutions
+      }
+    }
+    twitterIcon: imageSharp(id: { regex: "/twitter.png/" }) {
+      resolutions(width: 42, height: 42) {
+        ...GatsbyImageSharpResolutions
       }
     }
   }

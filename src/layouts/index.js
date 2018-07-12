@@ -20,7 +20,7 @@ export default ({ children, data }) => (
         display={`inline-block`}
         fontStyle={`normal`}
       >
-        {data.site.siteMetadata.title}
+        {data && data.site && data.site.siteMetadata && data.site.siteMetadata.title ? data.site.siteMetadata.title : '' }
       </g.H3>
     </Link>
     <Link className={linkStyle} to={`/about/`}>

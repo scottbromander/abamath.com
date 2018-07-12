@@ -31,7 +31,7 @@ module.exports = {
                 name: `classes`,
                 entityLevel: `feed.entry`,
                 schemaType: classType,
-                localSave: true,
+                localSave: false,
                 path: `${__dirname}/api/`,
                 verbose: true,
             }

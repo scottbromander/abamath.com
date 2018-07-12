@@ -52,14 +52,8 @@ export default ({ children, data }) => (
     <Link className={linkStyle} to={`/contact/`}>
       Contact 
     </Link> 
-    <Link className={linkStyle} to={`/parent/`}>
-      Parent 
-    </Link>
     <Link className={linkStyle} to={`/curriculum/`}>
-      Curriculum 
-    </Link>
-    <Link className={linkStyle} to={`/classes/`}>
-      Classes 
+      Camps 
     </Link>
     <Link className={linkStyle} to={`/about/`}>
       About 

@@ -2,8 +2,10 @@ import React from "react";
 import g from "glamorous";
 import { css } from "glamor";
 import Link from "gatsby-link";
+import Helmet from 'react-helmet'
+import { withPrefix } from 'gatsby-link'
 import { rhythm } from "../utils/typography";
-import logo from "./abamath.png";
+import logo from "../images/abamath.png";
 import Img from 'gatsby-image'
 
 const linkStyle = css({ float: `right` });
@@ -15,6 +17,18 @@ export default ({ children, data }) => (
     padding={rhythm(2)}
     paddingTop={rhythm(1.5)}
   >
+  <Helmet
+      title={data.site.siteMetadata.title}
+      meta={[
+        { name: 'description', content: 'Sample' },
+        { name: 'keywords', content: 'sample, something' },
+      ]}
+    >
+    <link
+      rel="icon"
+      href={withPrefix('./favicon.ico')}
+    /> 
+    </Helmet>
     <Link to={`/`}>
       <img 
       src={logo} 

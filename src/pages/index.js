@@ -6,10 +6,7 @@ import { rhythm } from "../utils/typography";
 
 export default ({ data }) => {
   return (
-    <div>
-      <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
-        abamath
-      </g.H1>
+    <div>  
       {data.allCommunityEducationClasses.edges.map(({ node }) =>
         node.fields && node.fields.slug ? <div key={node.id}>
           <Link

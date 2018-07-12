@@ -3,7 +3,6 @@ import g from "glamorous";
 import { css } from "glamor";
 import Link from "gatsby-link";
 import Helmet from 'react-helmet'
-import { withPrefix } from 'gatsby-link'
 import { rhythm } from "../utils/typography";
 import logo from "../images/abamath.png";
 import Img from 'gatsby-image'
@@ -29,35 +28,27 @@ export default ({ children, data }) => (
       href={logo}
     /> 
     </Helmet>
-    <Link to={`/`}>
-      <img 
-      src={logo} 
-      alt="" 
-      style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
-          }}
-      />
-      <g.H3
-        marginBottom={rhythm(2)}
-        display={`inline-block`}
-        fontStyle={`normal`}
-      >
-        {data && data.site && data.site.siteMetadata && data.site.siteMetadata.title ? data.site.siteMetadata.title : '' }
-      </g.H3>
-    </Link>
-    
-    <Link className={linkStyle} to={`/contact/`}>
-      Contact 
-    </Link> 
-    <Link className={linkStyle} to={`/curriculum/`}>
-      Camps 
-    </Link>
-    <Link className={linkStyle} to={`/about/`}>
-      About 
-    </Link>
+
+      <Link to={`/`}>
+          <Img resolutions={data.abamathIcon.resolutions} />
+        <g.H3
+          marginBottom={rhythm(2)}
+          display={`inline-block`}
+          fontStyle={`normal`}
+        >
+          {data && data.site && data.site.siteMetadata && data.site.siteMetadata.title ? data.site.siteMetadata.title : '' }
+        </g.H3>
+      </Link>
+      
+      <Link className={linkStyle} to={`/contact/`}>
+        Contact 
+      </Link> 
+      <Link className={linkStyle} to={`/curriculum/`}>
+        Camps 
+      </Link>
+      <Link className={linkStyle} to={`/about/`}>
+        About 
+      </Link>
     {children()}
     <footer>
       <p>Contact information: <a href="mailto:info@abamath.com">
@@ -78,6 +69,11 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    abamathIcon: imageSharp(id: { regex: "/abamath.png/" }) {
+      resolutions(width: 42, height: 42) {
+        ...GatsbyImageSharpResolutions
       }
     }
     facebookIcon: imageSharp(id: { regex: "/facebook.png/" }) {

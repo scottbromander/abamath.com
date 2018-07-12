@@ -26,7 +26,7 @@ export default ({ children, data }) => (
     >
     <link
       rel="icon"
-      href={withPrefix('./favicon.ico')}
+      href={logo}
     /> 
     </Helmet>
     <Link to={`/`}>

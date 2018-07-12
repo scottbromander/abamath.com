@@ -4,8 +4,8 @@ export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <div>
-      <h1>{post && post.frontmatter && post.frontmatter.title}</h1>
-      {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+      <h3>{post && post.frontmatter && post.frontmatter.title}</h3>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   );
 };

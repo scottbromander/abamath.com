@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import { rhythm } from "../utils/typography";
 import logo from "../images/abamath.png";
 import Img from 'gatsby-image'
+import "./index.css";
 
 const linkStyle = css({ float: `right` });
 
@@ -28,27 +29,32 @@ export default ({ children, data }) => (
       href={logo}
     /> 
     </Helmet>
-
+    <g.Ul>
+      <g.Li>
+      <Img 
+      resolutions={data.abamathIcon.resolutions} />
+      </g.Li>
+      <g.Li>
       <Link to={`/`}>
-          <Img resolutions={data.abamathIcon.resolutions} />
-        <g.H3
-          marginBottom={rhythm(2)}
-          display={`inline-block`}
-          fontStyle={`normal`}
-        >
-          {data && data.site && data.site.siteMetadata && data.site.siteMetadata.title ? data.site.siteMetadata.title : '' }
-        </g.H3>
+        abamath
       </Link>
-      
+      </g.Li>
+      <g.Li>
       <Link className={linkStyle} to={`/contact/`}>
         Contact 
       </Link> 
+      </g.Li>
+      <g.Li>
       <Link className={linkStyle} to={`/curriculum/`}>
         Camps 
       </Link>
+      </g.Li>
+      <g.Li>
       <Link className={linkStyle} to={`/about/`}>
         About 
       </Link>
+      </g.Li>
+    </g.Ul>
     {children()}
     <footer>
       <p>Contact information: <a href="mailto:info@abamath.com">

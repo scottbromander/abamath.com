@@ -33,14 +33,13 @@ export default ({ data }) => {
             to={node.fields.slug}
             css={{ textDecoration: `none`, color: `inherit` }}
           >
-
-            <g.H3 marginBottom={rhythm(1 / 4)}>
-              {node.fields.className}{" "}
-              {/* <g.Span color="#BBB">— {node.frontmatter.date}</g.Span> */}
-            </g.H3>
-            <p>
-              {node.excerpt}
-            </p>
+              <g.H3 marginBottom={rhythm(1 / 4)}>
+                {node.fields.className}{" "}
+                {/* <g.Span color="#BBB">— {node.frontmatter.date}</g.Span> */}
+              </g.H3>
+              <p>
+                {node.excerpt}
+              </p>
           </Link>
         </div> : ''
       )}

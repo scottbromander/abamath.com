@@ -13,27 +13,27 @@ class Search extends React.Component {
 
   updateSearchText = (event) => {
     this.setState({
-        searchText: event.target.value,
+      searchText: event.target.value,
     });
   }
 
   searchFilter = districtClass => {
     const fieldsToCheck = [
-        'className',
-        'days',
-        'district',
-        'time',
-        'startdate',
-        'enddate',
-        'grades',
+      'className',
+      'days',
+      'district',
+      'time',
+      'startdate',
+      'enddate',
+      'grades',
     ];
 
     const doAnyFieldsMatch = fieldsToCheck.reduce((alreadyFound, field) => {
-        if(districtClass.node && districtClass.node.fields && districtClass.node.fields[field]) {
-            return alreadyFound || districtClass.node.fields[field].includes(this.state.searchText);
-        } else {
-            return false;
-        }
+      if (districtClass.node && districtClass.node.fields && districtClass.node.fields[field]) {
+        return alreadyFound || districtClass.node.fields[field].includes(this.state.searchText);
+      } else {
+        return false;
+      }
     }, false);
 
     return doAnyFieldsMatch;
@@ -41,44 +41,63 @@ class Search extends React.Component {
 
   render() {
     return (
-        <div>
+      <div>
+        <input type="text" onChange={this.updateSearchText} value={this.state.searchText} />
         <table>
-        <input type="text" onChange={this.updateSearchText} value={this.state.searchText}/>
-        <h1>{this.state.searchText}{""}</h1>
-        {this.props.data.allCommunityEducationClasses.edges.filter(this.searchFilter).map(({ node }) =>
-            node.fields && node.fields.slug && node.id ? <div key={node.id}>
-            <Link
-                to={node.fields.slug}
-                css={{ textDecoration: `none`, color: `inherit` }}
-            >
+          <thead>
             <tr>
-          <td>
-          {node.fields.className}{" "}
-          </td>
-          <td>
-          {node.fields.district}{" "}
-          </td>
-          <td>
-          {node.fields.days}{" "}
-          </td>
-          <td>
-          {node.fields.startdate}{" "}
-          </td>
-          <td>
-          {node.fields.enddate}{" "}
-          </td>
-          <td>
-          {node.fields.time}{" "}
-          </td>
-          <td>
-          {node.fields.grades}{" "}
-          </td>
-          </tr>
-            </Link>
-            </div> : null
-        )}
+              <th>Name</th>
+              <th>District</th>
+              <th>Days</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Time</th>
+              <th>Grades</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.data.allCommunityEducationClasses.edges.filter(this.searchFilter).map(({ node }) =>
+              node.fields ? <tr key={node.id}>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.className}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.district}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.days}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.startdate}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.enddate}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.time}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.grades}
+                  </Link>
+                </td>
+              </tr> : ''
+            )}
+          </tbody>
         </table>
-        </div>
+      </div>
     )
   }
 }

@@ -6,8 +6,8 @@ import { rhythm } from "../utils/typography";
 
 export default ({ data }) => {
   return (
-    <div>
-      <table>
+    <table>
+      <thead>
         <tr>
           <th>Name</th>
           <th>District</th>
@@ -17,40 +17,49 @@ export default ({ data }) => {
           <th>Time</th>
           <th>Grades</th>
         </tr>
-       {data.allCommunityEducationClasses.edges.map(({ node }) =>
-         node.fields && node.fields.slug ? <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            css={{ textDecoration: `none`, color: `inherit` }}
-          >
-          <tr>
-          <td>
-               {node.fields.className}{" "}
-               </td>
-          <td>
-          {node.fields.district}{" "}
-          </td>
-          <td>
-          {node.fields.days}{" "}
-          </td>
-          <td>
-          {node.fields.startdate}{" "}
-          </td>
-          <td>
-          {node.fields.enddate}{" "}
-          </td>
-          <td>
-          {node.fields.time}{" "}
-          </td>
-          <td>
-          {node.fields.grades}{" "}
-          </td>
-          </tr>
-          </Link>
-        </div> : ''
-      )}
-      </table>
-    </div>
+      </thead>
+      <tbody>
+        {data.allCommunityEducationClasses.edges.map(({ node }) =>
+          node.fields ? <tr key={node.id}>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.className}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.district}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.days}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.startdate}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.enddate}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.time}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.grades}
+              </Link>
+            </td>
+          </tr> : ''
+        )}
+      </tbody>
+    </table>
   )
 }
 

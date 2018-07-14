@@ -6,23 +6,50 @@ import { rhythm } from "../utils/typography";
 
 export default ({ data }) => {
   return (
-    <div>  
-      {data.allCommunityEducationClasses.edges.map(({ node }) =>
-        node.fields && node.fields.slug ? <div key={node.id}>
+    <div>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>District</th>
+          <th>Days</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Time</th>
+          <th>Grades</th>
+        </tr>
+       {data.allCommunityEducationClasses.edges.map(({ node }) =>
+         node.fields && node.fields.slug ? <div key={node.id}>
           <Link
             to={node.fields.slug}
             css={{ textDecoration: `none`, color: `inherit` }}
           >
-
-            <g.H3 marginBottom={rhythm(1 / 4)}>
-              {node.fields.className}{" "} &nbsp;
-              {node.fields.days}{" "}&nbsp;
-              {node.fields.grades}{" "} &nbsp;
-              {/* <g.Span color="#BBB">— {node.frontmatter.date}</g.Span> */}
-            </g.H3>
+          <tr>
+          <td>
+               {node.fields.className}{" "}
+               </td>
+          <td>
+          {node.fields.district}{" "}
+          </td>
+          <td>
+          {node.fields.days}{" "}
+          </td>
+          <td>
+          {node.fields.startdate}{" "}
+          </td>
+          <td>
+          {node.fields.enddate}{" "}
+          </td>
+          <td>
+          {node.fields.time}{" "}
+          </td>
+          <td>
+          {node.fields.grades}{" "}
+          </td>
+          </tr>
           </Link>
         </div> : ''
       )}
+      </table>
     </div>
   )
 }
@@ -37,6 +64,12 @@ export const query = graphql`
             className
             days
             grades
+            startdate
+            enddate
+            district
+            link
+            time
+            description
             slug
           }
         }

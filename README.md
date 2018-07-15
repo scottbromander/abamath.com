@@ -17,7 +17,7 @@ gatsby develop
 
 That would be amazing! We're currently in the middle of a substantial conversion from AngularJS 1.2 to Gatsby/React. If you're interested in contributing, we'd recommend going through this [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/) first.
 
-After that, we'd love your Pull Requests!
+After that, we'd love your Pull Requests! Check out our [branching documentation](/documentation/branching.md) to learn more.
 
 ## Deployment
 

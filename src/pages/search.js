@@ -30,7 +30,7 @@ class Search extends React.Component {
 
     const doAnyFieldsMatch = fieldsToCheck.reduce((alreadyFound, field) => {
       if (districtClass.node && districtClass.node.fields && districtClass.node.fields[field]) {
-        return alreadyFound || districtClass.node.fields[field].includes(this.state.searchText);
+        return alreadyFound || districtClass.node.fields[field].toLowerCase().includes(this.state.searchText.toLowerCase());
       } else {
         return false;
       }

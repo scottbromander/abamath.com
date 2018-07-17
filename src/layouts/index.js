@@ -12,7 +12,7 @@ const linkStyle = css({ float: `right` });
 
 export default ({ children, data }) => (
   <g.Div
-    margin={`0 auto`}
+    margin={`0 auto`} 
     maxWidth={1700}
     padding={rhythm(2)}
     paddingTop={rhythm(1.5)}
@@ -29,32 +29,34 @@ export default ({ children, data }) => (
       href={logo}
     /> 
     </Helmet>
-    <g.Ul>
-      <g.Li>
-      <Img 
-      resolutions={data.abamathIcon.resolutions} />
-      </g.Li>
-      <g.Li>
-      <Link to={`/`}>
-        abamath
-      </Link>
-      </g.Li>
-      <g.Li>
+    <ul>
+      <li>
+        <Img resolutions={data.abamathIcon.resolutions} />
+      </li>
+      <li>
+        <h1>abamath</h1>
+      </li>
+      <li>
       <Link className={linkStyle} to={`/contact/`}>
         Contact 
       </Link> 
-      </g.Li>
-      <g.Li>
+      </li>
+      <li>
       <Link className={linkStyle} to={`/curriculum/`}>
         Camps 
       </Link>
-      </g.Li>
-      <g.Li>
+      </li>
+      <li>
       <Link className={linkStyle} to={`/about/`}>
         About 
       </Link>
-      </g.Li>
-    </g.Ul>
+      </li>
+      <li>
+      <Link className={linkStyle} to={`/`}>
+        Home
+      </Link> 
+      </li>
+    </ul>
     {children()}
     <footer>
       <p>Contact information: <a href="mailto:info@abamath.com">
@@ -78,7 +80,7 @@ export const query = graphql`
       }
     }
     abamathIcon: imageSharp(id: { regex: "/abamath.png/" }) {
-      resolutions(width: 42, height: 42) {
+      resolutions(width: 56, height: 56) {
         ...GatsbyImageSharpResolutions
       }
     }

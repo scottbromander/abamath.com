@@ -21,6 +21,12 @@ export const query = graphql`
             className
             days
             grades
+            startdate
+            enddate
+            district
+            link
+            time
+            description
             slug
           }
         }

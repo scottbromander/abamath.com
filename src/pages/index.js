@@ -6,100 +6,66 @@ import { rhythm } from "../utils/typography";
 
 export default ({ data }) => {
   return (
-    <div>  
-      <h2>
-        Districts
-      </h2>
-      {data.districts.edges.map(({ node }) =>
-        <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            css={{ textDecoration: `none`, color: `inherit` }}
-          >
-
-            <g.H3 marginBottom={rhythm(1 / 4)}>
-              {node.frontmatter.title}{" "}
-              <g.Span color="#BBB">— {node.frontmatter.location}</g.Span>
-            </g.H3>
-            <p>
-              {node.excerpt}
-            </p>
-          </Link>
-        </div>
-      )}
-      {data.allCommunityEducationClasses.edges.map(({ node }) =>
-        node.fields && node.fields.slug ? <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            css={{ textDecoration: `none`, color: `inherit` }}
-          >
-              <g.H3 marginBottom={rhythm(1 / 4)}>
-                {node.fields.className}{" "}
-                {/* <g.Span color="#BBB">— {node.frontmatter.date}</g.Span> */}
-              </g.H3>
-              <p>
-                {node.excerpt}
-              </p>
-          </Link>
-        </div> : ''
-      )}
-    </div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>District</th>
+          <th>Days</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Time</th>
+          <th>Grades</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.allCommunityEducationClasses.edges.map(({ node }) =>
+          node.fields ? <tr key={node.id}>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.className}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.district}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.days}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.startdate}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.enddate}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.time}
+              </Link>
+            </td>
+            <td>
+              <Link to={node.fields.slug} >
+                {node.fields.grades}
+              </Link>
+            </td>
+          </tr> : ''
+        )}
+      </tbody>
+    </table>
   )
 }
 
 export const query = graphql`
   query IndexQuery {
-    blogs: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "*/blog/.*\\.md$/"}}) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            location
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
-      }
-    },
-    classes: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "*/classes/.*\\.md$/"}}) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            location
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
-      }
-    },
-    districts: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "*/districts/.*\\.md$/"}}) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            location
-          }
-          fields {
-            slug
-          }
-          excerpt
-        }
-      }
-    }
     allCommunityEducationClasses {
       totalCount
       edges {
@@ -108,6 +74,12 @@ export const query = graphql`
             className
             days
             grades
+            startdate
+            enddate
+            district
+            link
+            time
+            description
             slug
           }
         }

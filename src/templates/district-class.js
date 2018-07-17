@@ -1,12 +1,11 @@
 import React from "react";
 
 export default ({ data }) => {
-  const post = data.allCommunityEducationClasses;
+  const districtClasses = data.allCommunityEducationClasses;
   return (
     <div>
-      {/* <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
-      {JSON.stringify(post)}
+      <h1>{districtClasses.edges[0].node.fields.className}</h1>
+      <pre>{JSON.stringify(districtClasses, null, 2)}</pre>
     </div>
   );
 };

@@ -1,5 +1,15 @@
 # Frequently Asked Questions
 
+## What should I do when I have a question/get stuck?
+
+Because we're dealing with some tough material at this point, you're going to have harder and harder questions to answer. Here's the process I'd like to try (very much a work in progress)
+
+1. Check google and the FAQ.md in the documentation folder for an answer
+1. Ask the other instructors if they know the answer.
+1. If you figure out the answer, and if it seems like a question others might have in the future, add it to the FAQ.md in the documentation folder
+1. If no instructors know the answer, add a Trello task to the top of the To Do and put my face on it.
+1. If it seems like a one-off thing, I'll answer in Trello, if it seems like a question others might have in the future, I'll add it to the FAQ.md in the documentation folder
+
 ## How do I add a new page?
 
 ## How are we automatically generating pages from a Google spreadsheet?
@@ -21,3 +31,4 @@ If you would like to learn more, following an axios tutorial would help with und
 The more challenging part for this might be the Gatsby setup and filtering. Following the gatsby tutorial could help with that.
 
 If this is still confusing, that's ok, this was a really complicated task.
+

@@ -6,9 +6,13 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField, deleteNode } = boundActionCreators
   const isMarkdownRemark = node.internal.type === `MarkdownRemark`;
-  const isDistrictClass = node.internal.type === `community_education__classes` && node.title && node.content && node.title._t && node.content._t;
-  const correctedClass = isDistrictClass ? correctClass(node.content._t) : null;
+
+  // Checking for specific google sheets districts
+  const isDistrictClass = node.internal.type === `community_education__classes`;
+  const hasDistrictFields = node.title && node.content && node.title._t && node.content._t;
+  const correctedClass = isDistrictClass && hasDistrictFields ? correctClass(node.content._t) : null;
   const isValidDistrictClass = correctedClass ? validateClass(correctedClass) : null;
+
   if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
     createNodeField({
@@ -42,7 +46,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
         value: entry[1],
       });
     });
-  } else if(isDistrictClass && !isValidDistrictClass) {
+  } else if(isDistrictClass) {
     deleteNode(node.id, node);
   }
 };

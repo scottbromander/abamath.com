@@ -18,7 +18,7 @@ export default ({ data }) => {
 
       <a href={districtClasses.edges[0].node.fields.link}><button>Sign up!</button></a>
 
-      <div id="district-classes">
+      {/* <div id="district-classes">
         <h2>Other classes in Minnetonka</h2>
       </div>
 
@@ -28,7 +28,7 @@ export default ({ data }) => {
 
       <div id= "searchOther">
         <h2>Search All Classes</h2>
-      </div>
+      </div> */}
 
     </div>
   );

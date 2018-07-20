@@ -7,9 +7,8 @@ export default ({ data }) => {
   return (
     <div>
       <div>
-        <h1>{districtClasses.edges[0].node.fields.className}</h1>
+        <h1>{districtClasses.edges[0].node.fields.district} {districtClasses.edges[0].node.fields.className}</h1>
         <h2>Time: {districtClasses.edges[0].node.fields.time}{""}</h2>
-        <h2>District: {districtClasses.edges[0].node.fields.district}{""}</h2>
         <h2>Grades: {districtClasses.edges[0].node.fields.grades}{""}</h2>
         <h2>Days: {districtClasses.edges[0].node.fields.days}{""}</h2>
         <h2>Dates: {districtClasses.edges[0].node.fields.startdate}{""} - {districtClasses.edges[0].node.fields.enddate}{""}</h2>

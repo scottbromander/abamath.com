@@ -6,6 +6,7 @@ import { rhythm } from "../utils/typography";
 
 export default ({ data }) => {
   return (
+    
     <table>
       <thead>
         <tr>

@@ -13,7 +13,7 @@ class Search extends React.Component {
 
   updateSearchText = (event) => {
     this.setState({
-        searchText: event.target.value.toLowerCase(),
+      searchText: event.target.value,
     });
   }
 
@@ -21,19 +21,19 @@ class Search extends React.Component {
     const fieldsToCheck = [
       'className',
       'days',
-      'grades',
-      'startdate',
-      'enddate',
       'district',
       'time',
+      'startdate',
+      'enddate',
+      'grades',
     ];
 
     const doAnyFieldsMatch = fieldsToCheck.reduce((alreadyFound, field) => {
-        if(districtClass.node && districtClass.node.fields && districtClass.node.fields[field]) {
-            return alreadyFound || districtClass.node.fields[field].toLowerCase().includes(this.state.searchText);
-        } else {
-            return false;
-        }
+      if (districtClass.node && districtClass.node.fields && districtClass.node.fields[field]) {
+        return alreadyFound || districtClass.node.fields[field].toLowerCase().includes(this.state.searchText.toLowerCase());
+      } else {
+        return false;
+      }
     }, false);
 
     return doAnyFieldsMatch;
@@ -44,69 +44,58 @@ class Search extends React.Component {
       <div>
         <input type="text" onChange={this.updateSearchText} value={this.state.searchText} />
         <table>
-        <input type="text" onChange={this.updateSearchText} value={this.state.searchText}/>
-        {this.props.data.allCommunityEducationClasses.edges.filter(this.searchFilter).map(({ node }) =>
-            node.fields && node.fields.slug && node.id ? <div key={node.id}>
-           <tr>
-              <td>
-                <Link
-                      to={node.fields.slug}
-                      css={{ textDecoration: `none`, color: `inherit` }}
-                    >
-                  {node.fields.className}{" "}
-                </Link>
-              </td>
-              <td>
-                <Link
-                      to={node.fields.slug}
-                      css={{ textDecoration: `none`, color: `inherit` }}
-                    >
-                    {node.fields.district}{" "}
-                </Link>
-              </td>
-              <td>
-                <Link
-                    to={node.fields.slug}
-                    css={{ textDecoration: `none`, color: `inherit` }}
-                  >
-                  {node.fields.days}{" "}
-                </Link>
-              </td>
-              <td>
-                <Link
-                      to={node.fields.slug}
-                      css={{ textDecoration: `none`, color: `inherit` }}
-                  >
-                 {node.fields.startdate}{" "}
-                </Link>
-              </td>
-              <td>
-                <Link
-                      to={node.fields.slug}
-                      css={{ textDecoration: `none`, color: `inherit` }}
-                  >
-                  {node.fields.enddate}{" "}
-                </Link>
-              </td>
-              <td>
-                <Link
-                      to={node.fields.slug}
-                      css={{ textDecoration: `none`, color: `inherit` }}
-                  >
-                  {node.fields.time}{" "}
-                </Link>
-              </td>
-              <td>
-                <Link
-                      to={node.fields.slug}
-                      css={{ textDecoration: `none`, color: `inherit` }}
-                  >
-                  {node.fields.grades}{" "}
-                </Link>
-              </td>
-          </tr>
-        </div> : null
-        )}
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>District</th>
+              <th>Days</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Time</th>
+              <th>Grades</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.data.allCommunityEducationClasses.edges.filter(this.searchFilter).map(({ node }) =>
+              node.fields ? <tr key={node.id}>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.className}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.district}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.days}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.startdate}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.enddate}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.time}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.grades}
+                  </Link>
+                </td>
+              </tr> : ''
+            )}
+          </tbody>
         </table>
       </div>
     )

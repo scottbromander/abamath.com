@@ -319,19 +319,6 @@ class Hours extends Component {
                         </span>
                     ))}
                 </div>
-                <pre>
-                    {JSON.stringify({
-                        totalHours: this.state.totalHours,
-                        totalMiles: this.state.days.reduce((weeklySum, day) => (Number(weeklySum) + Number(day.travel.milesDriven)), 0),
-                        totalMilageReimbursement: this.state.days.reduce((weeklySum, day) => (Number(weeklySum) + Number(day.travel.milesDriven)), 0) * 0.545,
-                        otherReimbursement: this.state.otherReimbursement,
-                        totalReimbursement: this.state.days.reduce((weeklySum, day) => (Number(weeklySum) + Number(day.travel.milesDriven)), 0) * 0.545 + Number(this.state.otherReimbursement || 0),
-                        days: this.state.days
-                    },
-                        null,
-                        2)
-                    }
-                </pre>
                 <hr/>
                 <pre>{JSON.stringify(this.state,null,2)}</pre>
             </div>

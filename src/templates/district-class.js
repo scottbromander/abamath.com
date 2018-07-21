@@ -17,6 +17,7 @@ export const query = graphql`
       totalCount
       edges {
         node {
+          id
           fields {
             className
             days

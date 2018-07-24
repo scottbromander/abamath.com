@@ -28,8 +28,7 @@ export default ({ data }) =>
       <p>
       Probably! Even when we don't have openings, we're always 
       looking to get in touch with potential future instructors for
-       our coding and robotics classes! 
-       <em> We currently don't have any openings for Summer 2018, but stay tuned! </em>
+       our coding classes! Tell us about yourself <a href="https://www.abamath.com/application">here</a>!
       </p>
       <h3>
       Why aren't you in my town yet?

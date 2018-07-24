@@ -1,5 +1,7 @@
 import React from "react";
 
+<meta>About page describing Who Abamath is as a company, What we do, and How to get involved.</meta>
+
 export default ({ data }) =>
   <div>
     <h1>

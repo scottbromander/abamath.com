@@ -4,6 +4,8 @@ import Link from "gatsby-link";
 
 import { rhythm } from "../utils/typography";
 
+<meta>Decription of the different Coding Camps Abamath teaches as well as the websites we use in our curriculum</meta>
+
 export default ({ data }) =>
   <div>
     <h1>

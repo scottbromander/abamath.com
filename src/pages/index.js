@@ -5,6 +5,8 @@ import ClassTable from "../components/ClassTable";
 
 import { rhythm } from "../utils/typography";
 
+<meta>We work with Community Eduaction to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
+
 export default class Index extends React.Component {
   state = {
     searchText: '',

@@ -1,5 +1,6 @@
 import React from "react";
 
+<meta>A survey for parents of Abamath students to share their thoughts on the camp</meta>
 
 export default ({ data }) =>
  <div>

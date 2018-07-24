@@ -1,5 +1,6 @@
 import React from "react";
 
+<meta>Application to join the Abamath team</meta>
 
 export default ({ data }) =>
  <div>

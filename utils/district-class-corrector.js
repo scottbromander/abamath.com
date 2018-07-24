@@ -36,7 +36,8 @@ const validateClass = districtClass => {
     if (!areAllFieldsPresent) return false;
 
     // check if class date is in the future
-    const classIsInFuture = new Date(districtClass.startdate) >= new Date();
+    const yesterday = new Date().setDate(new Date().getDate() - 1);
+    const classIsInFuture = new Date(districtClass.startdate) >= yesterday;
     if (!classIsInFuture) return false;
 
     // check for url registration link

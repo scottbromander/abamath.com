@@ -5,8 +5,6 @@ ul {
     padding: 0;
     overflow: hidden;
     height: 65px;
-    position: fixed;
-    top: 0;
     width: 100%;
 }
 

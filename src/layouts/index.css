@@ -1,13 +1,15 @@
 ul {
     list-style-type: none;
-    margin-bottom: 1rem;
+    background-color: rgb(245, 245, 245);
+    margin: 0rem;
     padding: 0;
     overflow: hidden;
-    background-color: white;
+    height: 65px;
 }
 
 li:first-child {
     float:left;
+    padding-left: 1.5%;
 }
 
 li:nth-child(2) {
@@ -23,10 +25,10 @@ li a {
     display: block;
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 16px;
     text-decoration: none;
 }
 
 li a:hover {
-    background-color:gray;
+    background-color: #888888;
 }

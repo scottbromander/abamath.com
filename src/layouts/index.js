@@ -36,7 +36,7 @@ export default ({ children, data }) => (
       <li>
         <h1>abamath</h1>
       </li>
-      <li>
+      {/* <li>
       <Link className={linkStyle} to={`/contact/`}>
         Contact 
       </Link> 
@@ -55,6 +55,21 @@ export default ({ children, data }) => (
       <Link className={linkStyle} to={`/`}>
         Home
       </Link> 
+      </li> */}
+      <li>
+        <Link className={linkStyle} to={`#contact`}>
+        Contact
+        </Link>
+      </li>
+      <li>
+        <Link className={linkStyle} to={`#about`}>
+        About
+        </Link>
+      </li>
+      <li>
+        <Link className={linkStyle} to={`#classes`}>
+        Classes
+        </Link>
       </li>
     </ul>
     {children()}

@@ -7,6 +7,7 @@ import CollageImg from "../images/abamath-collage.png"
 import "./index.css";
 
 import { rhythm } from "../utils/typography";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 <meta>We work with Community Eduaction to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
@@ -51,7 +52,7 @@ export default class Index extends React.Component {
               <h3>I love working with kids and STEM! Can I help you?</h3>
               <p> Probably! Even when we don't have openings, we're always 
               looking to get in touch with potential future instructors for
-              our coding classes! Tell us about yourself <a href="https://www.abamath.com/application">here</a>!</p>
+              our coding classes! Tell us about yourself <OutboundLink href="https://www.abamath.com/application">here</OutboundLink>!</p>
               <h3>Why aren't you in my town yet?</h3>
               <p>We had to start somewhere. We're from the southwest metro, 
               so we started there. We're currently expanding like crazy 
@@ -62,7 +63,7 @@ export default class Index extends React.Component {
           <div id="contact">
             <h2>CONTACT</h2>
             <p>Want to bring abamath to your school, find out what we're doing next, or just say hi?</p>
-            <p><a href="mailto:info@abamath.com">info@abamath.com</a></p>
+            <p><OutboundLink href="mailto:info@abamath.com">info@abamath.com</OutboundLink></p>
           </div>
           <img src={CollageImg} />
         </div>

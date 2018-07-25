@@ -32,23 +32,21 @@ export default class DistrictClass extends React.Component {
 
         <a href={specificClass.link}><button>Sign up!</button></a>
 
-        {/* <div id="district-classes">
-        <h2>Other classes in Minnetonka</h2>
-      </div>
-
-      <div id="MNclasses">
-        <h2>Other {specificClass.className}{""} Classes in Minnesota</h2>
-      </div>
-
-      <div id= "searchOther">
-        <h2>Search All Classes</h2>
-      </div> */}
-
-        <input type="text" onChange={this.updateSearchText} value={this.state.searchText} />
+        <div id="district-classes">
+        <h2>Other classes in {specificClass.district}{""}</h2>
         <ClassTable
           districtClasses={this.props.data.allDistrictClasses.edges}
           searchText={this.state.searchText}
         />
+        </div>
+
+        <div id="district-classes">
+        <h2>Other {specificClass.className}{""} Camps</h2>
+        <ClassTable
+          districtClasses={this.props.data.allDistrictClasses.edges}
+          searchText={specificClass.className}
+        />
+        </div>
 
       </div>
     );

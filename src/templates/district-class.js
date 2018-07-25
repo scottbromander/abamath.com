@@ -1,60 +1,102 @@
 import React from "react";
 import g from "glamorous";
 import Link from "gatsby-link";
+import ClassTable from "../components/ClassTable";
 
-export default ({ data }) => {
-  const districtClasses = data.allCommunityEducationClasses;
-  return (
-    <div>
+export default class DistrictClass extends React.Component {
+  constructor(props) {
+    super();
+    this.state = {
+      searchText: props.data.specificClass.edges[0].node.fields.district
+    };
+  }
+
+  updateSearchText = (event) => {
+    this.setState({
+      searchText: event.target.value,
+    });
+  }
+
+  render() {
+    const specificClass = this.props.data.specificClass.edges[0].node.fields;
+    return (
       <div>
-        <h1>{districtClasses.edges[0].node.fields.district} {districtClasses.edges[0].node.fields.className}</h1>
-        <h2>Time: {districtClasses.edges[0].node.fields.time}{""}</h2>
-        <h2>Grades: {districtClasses.edges[0].node.fields.grades}{""}</h2>
-        <h2>Days: {districtClasses.edges[0].node.fields.days}{""}</h2>
-        <h2>Dates: {districtClasses.edges[0].node.fields.startdate}{""} - {districtClasses.edges[0].node.fields.enddate}{""}</h2>
-        <p> {districtClasses.edges[0].node.fields.description}{""}</p>
-      </div>
+        <div>
+          <h1>{specificClass.district} {specificClass.className}</h1>
+          <h2>Time: {specificClass.time}</h2>
+          <h2>Grades: {specificClass.grades}</h2>
+          <h2>Days: {specificClass.days}</h2>
+          <h2>Dates: {specificClass.startdate} - {specificClass.enddate}</h2>
+          <p> {specificClass.description}</p>
+        </div>
 
-      <a href={districtClasses.edges[0].node.fields.link}><button>Sign up!</button></a>
+        <a href={specificClass.link}><button>Sign up!</button></a>
 
-      {/* <div id="district-classes">
+        {/* <div id="district-classes">
         <h2>Other classes in Minnetonka</h2>
       </div>
 
       <div id="MNclasses">
-        <h2>Other {districtClasses.edges[0].node.fields.className}{""} Classes in Minnesota</h2>
+        <h2>Other {specificClass.className}{""} Classes in Minnesota</h2>
       </div>
 
       <div id= "searchOther">
         <h2>Search All Classes</h2>
       </div> */}
 
-    </div>
-  );
+        <input type="text" onChange={this.updateSearchText} value={this.state.searchText} />
+        <ClassTable
+          districtClasses={this.props.data.allDistrictClasses.edges}
+          searchText={this.state.searchText}
+        />
+
+      </div>
+    );
+  }
 };
 
 export const query = graphql`
-  query DistrictClassQuery($slug: String!) {
-    allCommunityEducationClasses(filter: {fields: { slug: { eq: $slug } }}) {
-      totalCount
-      edges {
-        node {
-          id
-          fields {
-            className
-            days
-            grades
-            startdate
-            enddate
-            district
-            link
-            time
-            description
-            link
-            slug
-          }
+query DistrictClassQuery($slug: String!) {
+  specificClass: allCommunityEducationClasses(filter: {fields: { slug: { eq: $slug } }}) {
+    totalCount
+    edges {
+      node {
+        id
+        fields {
+          className
+          days
+          grades
+          startdate
+          enddate
+          district
+          link
+          time
+          description
+          link
+          slug
+        }
+      }
+    }
+  },
+  allDistrictClasses: allCommunityEducationClasses {
+    totalCount
+    edges {
+      node {
+        id
+        fields {
+          className
+          days
+          grades
+          startdate
+          enddate
+          district
+          link
+          time
+          description
+          slug
         }
       }
     }
   }
+}
 `;

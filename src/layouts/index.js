@@ -7,6 +7,7 @@ import { rhythm } from "../utils/typography";
 import logo from "../images/abamath.png";
 import Img from 'gatsby-image'
 import "./index.css";
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const linkStyle = css({ float: `right` });
 
@@ -74,15 +75,15 @@ export default ({ children, data }) => (
     </ul>
     {children()}
     <footer>
-      <p>Contact information: <a href="mailto:info@abamath.com">
-      info@abamath.com</a>.</p>
+      <p>Contact information: <OutboundLink href="mailto:info@abamath.com">
+      info@abamath.com</OutboundLink>.</p>
       <p>Social media:</p>
-        <a href = "https://www.facebook.com/Abamath/">
+        <OutboundLink href = "https://www.facebook.com/Abamath/">
           <Img resolutions={data.facebookIcon.resolutions} />
-        </a>
-        <a href = "https://twitter.com/abamathtutoring">
+        </OutboundLink>
+        <OutboundLink href = "https://twitter.com/abamathtutoring">
           <Img resolutions={data.twitterIcon.resolutions} />
-        </a>
+        </OutboundLink>
     </footer>
   </g.Div>
 );

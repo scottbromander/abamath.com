@@ -1,4 +1,5 @@
 import React from "react";
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 <meta>About page describing who Abamath is as a company, what we do, and how to get involved.</meta>
 
@@ -30,7 +31,7 @@ export default ({ data }) =>
       <p>
       Probably! Even when we don't have openings, we're always 
       looking to get in touch with potential future instructors for
-       our coding classes! Tell us about yourself <a href="https://www.abamath.com/application">here</a>!
+       our coding classes! Tell us about yourself <OutboundLink href="https://www.abamath.com/application">here</OutboundLink>!
       </p>
       <h3>
       Why aren't you in my town yet?

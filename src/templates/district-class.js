@@ -2,6 +2,7 @@ import React from "react";
 import g from "glamorous";
 import Link from "gatsby-link";
 import ClassTable from "../components/ClassTable";
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 export default class DistrictClass extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ export default class DistrictClass extends React.Component {
           <p> {specificClass.description}</p>
         </div>
 
-        <a href={specificClass.link}><button>Sign up!</button></a>
+        <OutboundLink href={specificClass.link}><button>Sign up!</button></OutboundLink>
 
         <div id="district-classes">
         <h2>Other classes in {specificClass.district}{""}</h2>

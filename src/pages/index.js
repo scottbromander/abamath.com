@@ -8,9 +8,7 @@ import "./index.css";
 
 import { rhythm } from "../utils/typography";
 
-const imagePage = ({ data }) => {
-  <Img resolutions={data.fileName.childImageSharp.resolutions} />
-}
+<meta>We work with Community Eduaction to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
 export default class Index extends React.Component {
   state = {

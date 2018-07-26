@@ -5,9 +5,10 @@ import GirlsImg from "../images/abamath-girls-coding.jpg"
 import KidsImg from "../images/abamath-robotics-team.png"
 import CollageImg from "../images/abamath-collage.png"
 import "./index.css";
-
+import Link from "gatsby-link";
 import { rhythm } from "../utils/typography";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import GatsbyLink from "gatsby-link";
 
 <meta>We work with Community Eduaction to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
@@ -52,7 +53,7 @@ export default class Index extends React.Component {
               <h3>I love working with kids and STEM! Can I help you?</h3>
               <p> Probably! Even when we don't have openings, we're always 
               looking to get in touch with potential future instructors for
-              our coding classes! Tell us about yourself <OutboundLink href="https://www.abamath.com/application">here</OutboundLink>!</p>
+              our coding classes! Tell us about yourself <Link to="/application/">here</Link>!</p>
               <h3>Why aren't you in my town yet?</h3>
               <p>We had to start somewhere. We're from the southwest metro, 
               so we started there. We're currently expanding like crazy 

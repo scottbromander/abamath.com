@@ -1,7 +1,7 @@
 import React from "react";
 import g from "glamorous";
 import Link from "gatsby-link";
-
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { rhythm } from "../utils/typography";
 
 <meta>Description of the different Coding Camps Abamath teaches as well as the websites we use in our curriculum</meta>
@@ -32,28 +32,28 @@ export default ({ data }) =>
         List of Sites Used: 
         </h2>
       <div>
-      <a href="https://studio.code.org/home" target="_blank">code.org</a> 
+      <OutboundLink href="https://studio.code.org/home" target="_blank">code.org</OutboundLink> 
       </div>
       <div> 
-      <a href="https://www.codecademy.com/learn" target="_blank">codecademy.com</a>
+      <OutboundLink href="https://www.codecademy.com/learn" target="_blank">codecademy.com</OutboundLink>
       </div> 
       <div>
-      <a href="https://codecombat.com/" target="_blank">codecombat.com</a> 
+      <OutboundLink href="https://codecombat.com/" target="_blank">codecombat.com</OutboundLink> 
       </div>
       <div>
-      <a href="https://scratch.mit.edu/" target="_blank">scratch.mit.edu</a> 
+      <OutboundLink href="https://scratch.mit.edu/" target="_blank">scratch.mit.edu</OutboundLink> 
       </div>
       <div>
-      <a href="https://www.playcodemonkey.com/challenges/0" target="_blank">Code Monkey</a> 
+      <OutboundLink href="https://www.playcodemonkey.com/challenges/0" target="_blank">Code Monkey</OutboundLink> 
       </div>
       <div>
-      <a href="https://blockly-games.appspot.com/" target="_blank">Blockly Games</a> 
+      <OutboundLink href="https://blockly-games.appspot.com/" target="_blank">Blockly Games</OutboundLink> 
       </div>
       <div>
-      <a href="https://www.khanacademy.org/computing/computer-programming" target="_blank">Khan Academy</a> 
+      <OutboundLink href="https://www.khanacademy.org/computing/computer-programming" target="_blank">Khan Academy</OutboundLink> 
       </div>
       <div>
-      <a href="https://csfirst.withgoogle.com/c/cs-first/en/curriculum.html" target="_blank">CS First</a> 
+      <OutboundLink href="https://csfirst.withgoogle.com/c/cs-first/en/curriculum.html" target="_blank">CS First</OutboundLink> 
       </div>
       <break> </break>
   </div>

@@ -49,13 +49,3 @@ export default class About extends React.Component {
     )
   }
 }
-
-export const query = graphql`
-  query AboutQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

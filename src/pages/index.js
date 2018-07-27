@@ -1,4 +1,4 @@
-import React from "../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/react";
+import React from "react";
 import Img from "gatsby-image";
 import ClassTable from "../components/ClassTable";
 import About from "../components/about";

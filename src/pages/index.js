@@ -2,6 +2,7 @@ import React from "react";
 import Img from "gatsby-image";
 import ClassTable from "../components/ClassTable";
 import About from "../components/about";
+import Contact from "../components/contact";
 import GirlsImg from "../images/abamath-girls-coding.jpg"
 import KidsImg from "../images/abamath-robotics-team.png"
 import CollageImg from "../images/abamath-collage.png"
@@ -42,11 +43,7 @@ export default class Index extends React.Component {
           <img src={GirlsImg} />
           <About id="about"/>
           <img src={KidsImg} />
-          <div id="contact">
-            <h2>CONTACT</h2>
-            <p>Want to bring abamath to your school, find out what we're doing next, or just say hi?</p>
-            <p><OutboundLink href="mailto:info@abamath.com">info@abamath.com</OutboundLink></p>
-          </div>
+          <Contact />
           <img src={CollageImg} />
         </div>
       </div>

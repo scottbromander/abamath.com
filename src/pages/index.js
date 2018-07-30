@@ -41,7 +41,9 @@ export default class Index extends React.Component {
           </div>
           </div>
           <img src={GirlsImg} />
-          <About id="about"/>
+          <div id="about">
+          <About/>
+          </div>
           <img src={KidsImg} />
           <Contact />
           <img src={CollageImg} />

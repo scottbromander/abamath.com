@@ -31,12 +31,16 @@ export default ({ children, data }) => (
     /> 
     </Helmet>
     <ul>
+      <Link to={`/`}>
       <li>
         <Img resolutions={data.abamathIcon.resolutions} />
       </li>
+      </Link>
+      <Link to={`/`}>
       <li>
         <h1>abamath</h1>
       </li>
+      </Link>
       {/* <li>
       <Link className={linkStyle} to={`/contact/`}>
         Contact 

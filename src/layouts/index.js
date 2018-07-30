@@ -13,29 +13,33 @@ const linkStyle = css({ float: `right` });
 
 export default ({ children, data }) => (
   <g.Div
-    margin={`0 auto`} 
+    margin={`0 auto`}
     maxWidth={1700}
     padding={rhythm(2)}
     paddingTop={rhythm(1.5)}
   >
-  <Helmet
+    <Helmet
       title={data.site.siteMetadata.title}
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
     >
-    <link
-      rel="icon"
-      href={logo}
-    /> 
+      <link
+        rel="icon"
+        href={logo}
+      />
     </Helmet>
     <ul>
       <li>
-        <Img resolutions={data.abamathIcon.resolutions} />
+        <Link to={`/`}>
+          <Img resolutions={data.abamathIcon.resolutions} />
+        </Link>
       </li>
       <li>
-        <h1>abamath</h1>
+        <Link to={`/`}>
+          <h1>abamath</h1>
+        </Link>
       </li>
       {/* <li>
       <Link className={linkStyle} to={`/contact/`}>
@@ -57,33 +61,33 @@ export default ({ children, data }) => (
         Home
       </Link> 
       </li> */}
-      <li>
+      <li class="pages">
         <Link className={linkStyle} to={`#contact`}>
-        Contact
+          Contact
         </Link>
       </li>
-      <li>
+      <li class="pages">
         <Link className={linkStyle} to={`#about`}>
-        About
+          About
         </Link>
       </li>
-      <li>
+      <li class="pages">
         <Link className={linkStyle} to={`#classes`}>
-        Classes
+          Classes
         </Link>
       </li>
     </ul>
     {children()}
     <footer>
       <p>Contact information: <OutboundLink href="mailto:info@abamath.com">
-      info@abamath.com</OutboundLink>.</p>
+        info@abamath.com</OutboundLink>.</p>
       <p>Social media:</p>
-        <OutboundLink href = "https://www.facebook.com/Abamath/">
-          <Img resolutions={data.facebookIcon.resolutions} />
-        </OutboundLink>
-        <OutboundLink href = "https://twitter.com/abamathtutoring">
-          <Img resolutions={data.twitterIcon.resolutions} />
-        </OutboundLink>
+      <OutboundLink href="https://www.facebook.com/Abamath/">
+        <Img resolutions={data.facebookIcon.resolutions} />
+      </OutboundLink>
+      <OutboundLink href="https://twitter.com/abamathtutoring">
+        <Img resolutions={data.twitterIcon.resolutions} />
+      </OutboundLink>
     </footer>
   </g.Div>
 );

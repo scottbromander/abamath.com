@@ -7,7 +7,7 @@ import Link from "gatsby-link";
 export default class About extends React.Component {
   render(){
     return(
-      <div>
+      <div id="about">
         <h1>
           About 
         </h1>

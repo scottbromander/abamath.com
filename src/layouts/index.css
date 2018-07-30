@@ -29,7 +29,15 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+li:first-child a {
+    padding: 0;
+}
+
+li:nth-child(2) a {
+    padding: 0
+}
+
+.pages a:hover {
     background-color: #888888;
 }
 

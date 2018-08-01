@@ -11,9 +11,9 @@ export default class OfferedClass extends React.Component {
       <div>
           {JSON.stringify(this.props)}
         <div>
-          <h1>{allClasses.className}{""}</h1>
-          <h2>Grades: {allClasses.grades}{""}</h2>
-          <p>{allClasses.description}{""}</p>
+          <h1>{specificClass.className}{""}</h1>
+          <p>Grades: {specificClass.grades}{""}</p>
+          <p>{specificClass.description}{""}</p>
         </div>
       </div>
     );
@@ -30,20 +30,8 @@ query OfferedClassQuery($slug: String!) {
         fields {
           slug,
           classgrades,
-          classdescription
-        }
-      }
-    }
-  },
-  allClasses: allCommunityEducationOfferedClasses {
-    totalCount
-    edges {
-      node {
-        id
-        fields {
-          slug,
-          classgrades,
-          classdescription
+          classdescription,
+          className
         }
       }
     }

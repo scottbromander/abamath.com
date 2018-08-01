@@ -7,6 +7,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 export default class OfferedClass extends React.Component {
 
   render() {
+    const specificClass = this.props.data.specificClass.edges[0].node.fields;
     return (
       <div>
           {JSON.stringify(this.props)}

@@ -35,7 +35,7 @@ export default class Index extends React.Component {
           <input type="text" placeholder="Search..." onChange={this.updateSearchText} value={this.state.searchText} />
           <div id="table">
           <ClassTable
-            districtClasses={this.props.data.allCommunityEducationClasses.edges}
+            districtClasses={this.props.data.allCommunityEducationDistrictClasses.edges}
             searchText={this.state.searchText}
           />
           </div>
@@ -53,7 +53,7 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
-    allCommunityEducationClasses {
+    allCommunityEducationDistrictClasses {
       totalCount
       edges {
         node {

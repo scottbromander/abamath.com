@@ -17,12 +17,46 @@ import GatsbyLink from "gatsby-link";
 export default class Index extends React.Component {
   state = {
     searchText: '',
+    showRows: 20,
+  }
+
+  componentDidMount() {
+    this.hideTable()
   }
 
   updateSearchText = (event) => {
     this.setState({
       searchText: event.target.value,
     });
+  }
+
+
+  hideTable = (event) => {
+    var classList = document.getElementsByTagName("TR");
+    for (let i = 10; i<classList.length; i++) {
+      classList[i].style.visibility = "collapse";
+    }
+
+  }
+  appendTable = (event) => {
+    var classList = document.getElementsByTagName("TR");
+    var rows = document.getElementsByTagName("TR").length;
+    if (this.state.showRows + 10 > rows) {
+      this.setState({showRows: rows})
+      for (let i = 0; i<this.state.showRows; i++) {
+        classList[i].style.visibility = "visible";
+      }
+    }
+    else {
+      this.setState({showRows: this.state.showRows + 10})
+      console.log('oh'+this.state.showRows)
+      for (let i = 0; i<this.state.showRows; i++) {
+        classList[i].style.visibility = "visible";
+      }
+    }
+    if (this.state.showRows === rows) {
+      document.getElementsByTagName("button")[0].style.visibility = "collapse";
+    }
   }
 
   render() {
@@ -38,6 +72,7 @@ export default class Index extends React.Component {
             districtClasses={this.props.data.allCommunityEducationClasses.edges}
             searchText={this.state.searchText}
           />
+          <button onClick={this.appendTable}>click me</button>
           </div>
           </div>
           <img src={GirlsImg} />

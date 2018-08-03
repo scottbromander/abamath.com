@@ -7,11 +7,6 @@ import GirlsImg from "../images/abamath-girls-coding.jpg"
 import KidsImg from "../images/abamath-robotics-team.png"
 import CollageImg from "../images/abamath-collage.png"
 import "./index.css";
-import Link from "gatsby-link";
-import { rhythm } from "../utils/typography";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
-import GatsbyLink from "gatsby-link";
-import { throws } from "assert";
 
 <meta>We work with Community Eduaction to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 

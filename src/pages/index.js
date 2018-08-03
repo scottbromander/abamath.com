@@ -8,7 +8,7 @@ import KidsImg from "../images/abamath-robotics-team.png"
 import CollageImg from "../images/abamath-collage.png"
 import "./index.css";
 
-<meta>We work with Community Eduaction to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
+<meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
 export default class Index extends React.Component {
     state = {

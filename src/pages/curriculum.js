@@ -1,8 +1,6 @@
 import React from "react";
-import g from "glamorous";
 import Link from "gatsby-link";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import { rhythm } from "../utils/typography";
 
 <meta>Description of the different Coding Camps Abamath teaches as well as the websites we use in our curriculum</meta>
 
@@ -11,23 +9,23 @@ export default ({ data }) =>
     <h1>
       Camps 
     </h1>
-    {data.classes.edges.map(({ node }) =>
-        <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            css={{ textDecoration: `none`, color: `inherit` }}
-          >
-
-            <g.H3 marginBottom={rhythm(1 / 4)}>
-              {node.frontmatter.title}{" "}
-              <g.Span color="#BBB">— {node.frontmatter.date}</g.Span>
-            </g.H3>
-            <p>
-              {node.excerpt}
-            </p>
-          </Link>
-        </div>
-      )}
+    <div>
+      {data.allOfferedClasses.edges.map(({ node }) =>
+          <div>
+            <Link to = {node.fields.slug}>
+              <h2>
+                  {node.fields.className}
+                </h2>
+              <p>
+                {node.fields.classgrades}
+                </p>
+              <p>
+                  {node.fields.classdescription}
+                </p>
+              </Link>
+          </div>
+        )}
+      </div>
       <h2>
         List of Sites Used: 
         </h2>
@@ -61,20 +59,19 @@ export default ({ data }) =>
 
 export const query = graphql`
   query CampsQuery {
-    classes: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {fileAbsolutePath: {regex: "*/classes/.*\\.md$/"}}) {
+    allOfferedClasses: allCommunityEducationOfferedClasses {
       totalCount
       edges {
         node {
           id
-          frontmatter {
-            title
-          }
           fields {
-            slug
+            slug,
+            classgrades,
+            classdescription,
+            className
           }
-          excerpt
         }
       }
-    },
+    }
   }  
 `

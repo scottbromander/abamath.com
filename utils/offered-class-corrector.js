@@ -1,6 +1,6 @@
 var validUrl = require('valid-url');
 
-const correctDistrictClass = original => {
+const correctOfferedClass = original => {
     // Converts string of all columns from single row in google sheets
     // into an array of objects with column title and content
     var currentEdit = original;
@@ -18,31 +18,16 @@ const correctDistrictClass = original => {
     return correctedClass;
 }
 
-const validateDistrictClass = districtClass => {
+const validateOfferedClass = districtClass => {
     // all required fields exist and are not 'N/A' in google sheet
     const fieldsToCheck = [
-        'days',
-        'description',
-        'district',
-        'enddate',
-        'grades',
-        'link',
-        'startdate',
-        'time'
+        'classgrades',
+        'classdescription'
     ];
     const areAllFieldsPresent = fieldsToCheck.reduce((validSoFar, field) => {
         return validSoFar && districtClass[field] && districtClass[field] !== '#N/A';
     }, true);
     if (!areAllFieldsPresent) return false;
-
-    // check if class date is in the future
-    const yesterday = new Date().setDate(new Date().getDate() - 1);
-    const classIsInFuture = new Date(districtClass.startdate) >= yesterday;
-    if (!classIsInFuture) return false;
-
-    // check for url registration link
-    const validUrlLink = validUrl.isUri(districtClass.link);
-    if (!validUrlLink) return false;
 
     // if everything is valid, return true
     return true;
@@ -50,6 +35,6 @@ const validateDistrictClass = districtClass => {
 }
 
 module.exports = {
-    correctDistrictClass,
-    validateDistrictClass,
+    correctOfferedClass,
+    validateOfferedClass,
 }

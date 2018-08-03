@@ -56,7 +56,7 @@ export default class DistrictClass extends React.Component {
 
 export const query = graphql`
 query DistrictClassQuery($slug: String!) {
-  specificClass: allCommunityEducationClasses(filter: {fields: { slug: { eq: $slug } }}) {
+  specificClass: allCommunityEducationDistrictClasses(filter: {fields: { slug: { eq: $slug } }}) {
     totalCount
     edges {
       node {
@@ -77,7 +77,7 @@ query DistrictClassQuery($slug: String!) {
       }
     }
   },
-  allDistrictClasses: allCommunityEducationClasses {
+  allDistrictClasses: allCommunityEducationDistrictClasses {
     totalCount
     edges {
       node {

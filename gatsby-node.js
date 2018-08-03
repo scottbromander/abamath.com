@@ -84,7 +84,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         if(node.fields && node.fields.slug) {
           createPage({
             path: node.fields.slug,
-            component: path.resolve(`./src/templates/blog-post.js`),
+            component: path.resolve(`./src/templates/markdown-display.js`),
             context: {
               // Data passed to context is available in page queries as GraphQL variables.
               slug: node.fields.slug,

@@ -1,6 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 import ClassTable from "../components/ClassTable";
+import ClassDescriptions from "../components/class-descriptions";
 import About from "../components/about";
 import Contact from "../components/contact";
 import GirlsImg from "../images/abamath-girls-coding.jpg"
@@ -31,12 +32,15 @@ export default class Index extends React.Component {
           <input type="text" placeholder="Search..." onChange={this.updateSearchText} value={this.state.searchText} />
           <div id="table">
           <ClassTable
-            districtClasses={this.props.data.allCommunityEducationClasses.edges}
+            districtClasses={this.props.data.allCommunityEducationDistrictClasses.edges}
             searchText={this.state.searchText}
           />
           </div>
           </div>
           <img src={GirlsImg} />
+          <ClassDescriptions 
+            allOfferedClasses = {this.props.data.allOfferedClasses.edges}
+          />
           <About/>
           <img src={KidsImg} />
           <Contact />
@@ -49,7 +53,7 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
-    allCommunityEducationClasses {
+    allCommunityEducationDistrictClasses {
       totalCount
       edges {
         node {
@@ -68,6 +72,21 @@ export const query = graphql`
           }
         }
       }
+    },
+
+    allOfferedClasses: allCommunityEducationOfferedClasses {
+      totalCount
+      edges {
+        node {
+          id
+          fields {
+            slug,
+            classgrades,
+            classdescription,
+            className
+          }
+        }
+      }
     }
-  }  
+}  
 `

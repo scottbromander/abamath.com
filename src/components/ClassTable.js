@@ -2,6 +2,15 @@ import React from "react";
 import Link from "gatsby-link";
 
 export default class ClassTable extends React.Component {
+    state = {
+      numberOfClassesToShow: 10,
+  }
+
+  updateClasses = (event) => {
+    this.setState({
+      numberOfClassesToShow: this.state.numberOfClassesToShow + 10
+  })
+  }
 
   searchFilter = districtClass => {
     const fieldsToCheck = [
@@ -40,7 +49,7 @@ export default class ClassTable extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.districtClasses.filter(this.searchFilter).map(({ node }) =>
+          {this.props.districtClasses.filter(this.searchFilter).splice(0, this.state.numberOfClassesToShow).map(({ node }) =>
             <tr key={node.id}>
               <td>
                 <Link to={node.fields.slug} >
@@ -79,6 +88,9 @@ export default class ClassTable extends React.Component {
               </td>
             </tr>
           )}
+          {this.state.numberOfClassesToShow < this.props.districtClasses.filter(this.searchFilter).length &&
+          <button onClick={this.updateClasses}>whoops</button>
+          }
         </tbody>
       </table>
     )

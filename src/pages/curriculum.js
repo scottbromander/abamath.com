@@ -10,7 +10,7 @@ export default ({ data }) =>
       Camps 
     </h1>
     <div>
-      {data.allClasses.edges.map(({ node }) =>
+      {data.allOfferedClasses.edges.map(({ node }) =>
           <div>
             <Link to = {node.fields.slug}>
               <h2>
@@ -59,7 +59,7 @@ export default ({ data }) =>
 
 export const query = graphql`
   query CampsQuery {
-    allClasses: allCommunityEducationOfferedClasses {
+    allOfferedClasses: allCommunityEducationOfferedClasses {
       totalCount
       edges {
         node {

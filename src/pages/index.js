@@ -39,7 +39,7 @@ export default class Index extends React.Component {
           </div>
           <img src={GirlsImg} />
           <ClassDescriptions 
-            allClasses = {this.props.data.allClasses.edges}
+            allOfferedClasses = {this.props.data.allOfferedClasses.edges}
           />
           <About/>
           <img src={KidsImg} />
@@ -74,7 +74,7 @@ export const query = graphql`
       }
     },
 
-    allClasses: allCommunityEducationOfferedClasses {
+    allOfferedClasses: allCommunityEducationOfferedClasses {
       totalCount
       edges {
         node {

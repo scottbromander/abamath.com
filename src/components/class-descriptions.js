@@ -5,7 +5,7 @@ export default class ClassDescriptions extends React.Component {
     render(){
       return(
         <div>
-            {this.props.allClasses.map(({ node }) =>
+            {this.props.allOfferedClasses.map(({ node }) =>
                 <div>
                     <Link to = {node.fields.slug}>
                     <h2>

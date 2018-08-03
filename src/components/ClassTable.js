@@ -2,6 +2,15 @@ import React from "react";
 import Link from "gatsby-link";
 
 export default class ClassTable extends React.Component {
+  state = {
+    numberOfClassesToShow: 10,
+  }
+
+  updateClasses = (event) => {
+    this.setState({
+      numberOfClassesToShow: this.state.numberOfClassesToShow + 10
+    })
+  }
 
   searchFilter = districtClass => {
     const fieldsToCheck = [
@@ -27,61 +36,66 @@ export default class ClassTable extends React.Component {
 
   render() {
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>District</th>
-            <th>Days</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Time</th>
-            <th>Grades</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.props.districtClasses.filter(this.searchFilter).map(({ node }) =>
-            <tr key={node.id}>
-              <td>
-                <Link to={node.fields.slug} >
-                  {node.fields.className}
-                </Link>
-              </td>
-              <td>
-                <Link to={node.fields.slug} >
-                  {node.fields.district}
-                </Link>
-              </td>
-              <td>
-                <Link to={node.fields.slug} >
-                  {node.fields.days}
-                </Link>
-              </td>
-              <td>
-                <Link to={node.fields.slug} >
-                  {node.fields.startdate}
-                </Link>
-              </td>
-              <td>
-                <Link to={node.fields.slug} >
-                  {node.fields.enddate}
-                </Link>
-              </td>
-              <td>
-                <Link to={node.fields.slug} >
-                  {node.fields.time}
-                </Link>
-              </td>
-              <td>
-                <Link to={node.fields.slug} >
-                  {node.fields.grades}
-                </Link>
-              </td>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>District</th>
+              <th>Days</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Time</th>
+              <th>Grades</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {this.props.districtClasses.filter(this.searchFilter).splice(0, this.state.numberOfClassesToShow).map(({ node }) =>
+              <tr key={node.id}>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.className}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.district}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.days}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.startdate}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.enddate}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.time}
+                  </Link>
+                </td>
+                <td>
+                  <Link to={node.fields.slug} >
+                    {node.fields.grades}
+                  </Link>
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        {this.state.numberOfClassesToShow < this.props.districtClasses.filter(this.searchFilter).length &&
+          <p id="expand"><a onClick={this.updateClasses}>Click Here To Show More</a></p>
+        }
+      </div>
     )
   }
-  
+
 }

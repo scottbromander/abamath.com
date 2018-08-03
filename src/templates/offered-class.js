@@ -10,11 +10,18 @@ export default class OfferedClass extends React.Component {
     const specificClass = this.props.data.specificClass.edges[0].node.fields;
     return (
       <div>
-          {JSON.stringify(this.props)}
         <div>
           <h1>{specificClass.className}{""}</h1>
-          <p>Grades: {specificClass.grades}{""}</p>
-          <p>{specificClass.description}{""}</p>
+          <p>Grades: {specificClass.classgrades}{""}</p>
+          <p>{specificClass.classdescription}{""}</p>
+        </div>
+
+        <div id="offerred-classes">
+        <h2>Current {specificClass.className}{""} Camps</h2>
+        <ClassTable
+          districtClasses={this.props.data.allDistrictClasses.edges}
+          searchText={specificClass.className}
+        />
         </div>
       </div>
     );
@@ -33,6 +40,49 @@ query OfferedClassQuery($slug: String!) {
           classgrades,
           classdescription,
           className
+        }
+      }
+    }
+  },
+
+  tableClass: allCommunityEducationDistrictClasses(filter: {fields: { slug: { eq: $slug } }}) {
+    totalCount
+    edges {
+      node {
+        id
+        fields {
+          className
+          days
+          grades
+          startdate
+          enddate
+          district
+          link
+          time
+          description
+          link
+          slug
+        }
+      }
+    }
+  },
+
+  allDistrictClasses: allCommunityEducationDistrictClasses {
+    totalCount
+    edges {
+      node {
+        id
+        fields {
+          className
+          days
+          grades
+          startdate
+          enddate
+          district
+          link
+          time
+          description
+          slug
         }
       }
     }

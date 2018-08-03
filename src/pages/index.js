@@ -1,6 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 import ClassTable from "../components/ClassTable";
+import ClassDescriptions from "../components/class-descriptions";
 import About from "../components/about";
 import Contact from "../components/contact";
 import GirlsImg from "../images/abamath-girls-coding.jpg"
@@ -37,6 +38,9 @@ export default class Index extends React.Component {
           </div>
           </div>
           <img src={GirlsImg} />
+          <ClassDescriptions 
+            allClasses = {this.props.data.allClasses.edges}
+          />
           <About/>
           <img src={KidsImg} />
           <Contact />
@@ -68,6 +72,21 @@ export const query = graphql`
           }
         }
       }
+    },
+
+    allClasses: allCommunityEducationOfferedClasses {
+      totalCount
+      edges {
+        node {
+          id
+          fields {
+            slug,
+            classgrades,
+            classdescription,
+            className
+          }
+        }
+      }
     }
-  }  
+}  
 `

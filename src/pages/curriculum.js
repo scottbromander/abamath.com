@@ -1,8 +1,6 @@
 import React from "react";
-import g from "glamorous";
 import Link from "gatsby-link";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import { rhythm } from "../utils/typography";
 
 <meta>Description of the different Coding Camps Abamath teaches as well as the websites we use in our curriculum</meta>
 
@@ -11,19 +9,23 @@ export default ({ data }) =>
     <h1>
       Camps 
     </h1>
-    {data.allClasses.edges.map(({ node }) =>
-        <div>
-          <h2>
-              {node.fields.className}
-            </h2>
-          <p>
-            {node.fields.classgrades}
-            </p>
-          <p>
-              {node.fields.classdescription}
-            </p>
-        </div>
-      )}
+    <div>
+      {data.allClasses.edges.map(({ node }) =>
+          <div>
+            <Link to = {node.fields.slug}>
+              <h2>
+                  {node.fields.className}
+                </h2>
+              <p>
+                {node.fields.classgrades}
+                </p>
+              <p>
+                  {node.fields.classdescription}
+                </p>
+              </Link>
+          </div>
+        )}
+      </div>
       <h2>
         List of Sites Used: 
         </h2>

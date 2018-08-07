@@ -3,6 +3,7 @@ import Img from "gatsby-image";
 import ClassTable from "../components/ClassTable";
 import ClassDescriptions from "../components/class-descriptions";
 import About from "../components/about";
+import DistrictsList from "../components/district-list";
 import Contact from "../components/contact";
 import GirlsImg from "../images/abamath-girls-coding.jpg"
 import KidsImg from "../images/abamath-robotics-team.png"
@@ -43,6 +44,9 @@ export default class Index extends React.Component {
           />
           <About/>
           <img src={KidsImg} />
+          <DistrictsList 
+            allCommunityEducationDistricts = {this.props.data.allCommunityEducationDistricts.edges}
+          />
           <Contact />
           <img src={CollageImg} />
         </div>
@@ -72,8 +76,7 @@ export const query = graphql`
           }
         }
       }
-    },
-
+    }
     allOfferedClasses: allCommunityEducationOfferedClasses {
       totalCount
       edges {

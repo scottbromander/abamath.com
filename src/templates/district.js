@@ -6,20 +6,18 @@ import ClassTable from "../components/ClassTable";
 export default class OfferedClass extends React.Component {
 
   render() {
-    const specificClass = this.props.data.specificClass.edges[0].node.fields;
+    const specificDistrict = this.props.data.allCommunityEducationDistricts.edges[0].node.fields;
     return (
       <div>
         <div>
-          <h1>{specificClass.className}{""}</h1>
-          <p>Grades: {specificClass.classgrades}{""}</p>
-          <p>{specificClass.classdescription}{""}</p>
+          <h1>{specificDistrict.districtName}{""}</h1>
         </div>
 
         <div id="offerred-classes">
-        <h2>Current {specificClass.className}{""} Camps</h2>
+        <h2>Current {specificDistrict.districtName}{""} Camps</h2>
         <ClassTable
           districtClasses={this.props.data.allDistrictClasses.edges}
-          searchText={specificClass.className}
+          searchText={specificDistrict.districtName}
         />
         </div>
       </div>
@@ -28,17 +26,15 @@ export default class OfferedClass extends React.Component {
 };
 
 export const query = graphql`
-query OfferedClassQuery($slug: String!) {
-  specificClass: allCommunityEducationOfferedClasses(filter: {fields: { slug: { eq: $slug } }}) {
+query DistrictsQuery($slug: String!) {
+  allCommunityEducationDistricts(filter: {fields: { slug: { eq: $slug } }}) {
     totalCount
     edges {
       node {
         id
         fields {
           slug,
-          classgrades,
-          classdescription,
-          className
+          districtName
         }
       }
     }

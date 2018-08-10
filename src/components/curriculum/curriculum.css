@@ -1,0 +1,42 @@
+ul {
+    list-style-type: disc outside none; 
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+    height: 65px;
+}
+
+
+li:first-child {
+    float:left;
+    padding-left: 1.5%;
+}
+
+li:nth-child(2) {
+    float:left;
+    margin: 0.5rem;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+li:first-child a {
+    padding: 0;
+}
+
+li:nth-child(2) a {
+    padding: 0
+}
+
+
+h1:first-child {
+    line-height: inherit;
+}

@@ -41,17 +41,17 @@ export default class Navigation extends React.Component {
       </Link> 
       </li> */}
       <li className="pages">
-        <Link to={`#contact`}>
+        <Link to={`/#contact`}>
           Contact
         </Link>
       </li>
       <li className="pages">
-        <Link to={`#about`}>
+        <Link to={`/#about`}>
           About
         </Link>
       </li>
       <li className="pages">
-        <Link to={`#classes`}>
+        <Link to={`/#classes`}>
           Classes
         </Link>
       </li>

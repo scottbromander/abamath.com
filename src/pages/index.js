@@ -45,7 +45,7 @@ export default class Index extends React.Component {
           <About/>
           <img src={KidsImg} />
           <DistrictsList 
-            allCommunityEducationDistrict = {this.props.data.allCommunityEducationDistrict.edges}
+            allDistricts = {this.props.data.allCommunityEducationDistrict.edges}
           />
           <Contact />
           <img src={CollageImg} />
@@ -57,6 +57,18 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
+    allCommunityEducationDistrict  {
+      totalCount
+      edges {
+        node {
+          id
+          fields {
+            districtName
+            slug
+          }
+        }
+      }
+    }
     allCommunityEducationDistrictClasses {
       totalCount
       edges {

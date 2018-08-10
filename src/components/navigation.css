@@ -46,6 +46,6 @@
     background-color: #888888;
 }
 
-h1:first-child {
+#navigation h1:first-child {
     line-height: inherit;
 }

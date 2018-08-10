@@ -144,7 +144,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             }
           }
         }
-        allCommunityEducationDistricts {
+        allCommunityEducationDistrict {
           totalCount
           edges {
             node {
@@ -190,7 +190,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             });
           }
         })
-        result.data.allCommunityEducationDistricts.edges.forEach(({ node }) => {
+        result.data.allCommunityEducationDistrict.edges.forEach(({ node }) => {
           if (node.fields && node.fields.slug) {
             createPage({
               path: node.fields.slug,

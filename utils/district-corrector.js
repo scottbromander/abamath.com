@@ -27,6 +27,9 @@ const validateDistrict = district => {
         return validSoFar && district[field] && district[field] !== '#N/A';
     }, true);
     if (!areAllFieldsPresent) return false;
+
+    // if everything is valid, return true
+    return true;
 }
 
 module.exports = {

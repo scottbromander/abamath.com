@@ -6,7 +6,7 @@ import ClassTable from "../components/ClassTable";
 export default class OfferedClass extends React.Component {
 
   render() {
-    const specificDistrict = this.props.data.allCommunityEducationDistricts.edges[0].node.fields;
+    const specificDistrict = this.props.data.allCommunityEducationDistrict.edges[0].node.fields;
     return (
       <div>
         <div>
@@ -27,7 +27,7 @@ export default class OfferedClass extends React.Component {
 
 export const query = graphql`
 query DistrictsQuery($slug: String!) {
-  allCommunityEducationDistricts(filter: {fields: { slug: { eq: $slug } }}) {
+  allCommunityEducationDistrict(filter: {fields: { slug: { eq: $slug } }}) {
     totalCount
     edges {
       node {

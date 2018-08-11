@@ -12,7 +12,7 @@ export default class OfferedClass extends React.Component {
         </div>
 
         <div id="offerred-classes">
-        <h2>Current {specificDistrict.districtName}{""} Camps</h2>
+        <h2>UPCOMING {specificDistrict.districtName.toUpperCase()}{""} CAMPS</h2>
         <ClassTable
           districtClasses={this.props.data.allDistrictClasses.edges}
           searchText={specificDistrict.districtName}

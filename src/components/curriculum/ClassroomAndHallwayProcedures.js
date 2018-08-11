@@ -25,6 +25,7 @@ export default class ClassroomAndHallwayProcedures extends React.Component {
                     Hands-on Activities</li>
             </ul>
         <h2>Hallway Procedures:</h2>
+        <ul>
 	            <li>Important! Be sure to set expectations BEFORE you leave the room. </li>
             	<li>Expectations:</li>
 	                <li>We use indoor voices in the hall</li>
@@ -32,6 +33,8 @@ export default class ClassroomAndHallwayProcedures extends React.Component {
                     <li>We walk together. No one runs ahead in front of the teacher. The teacher is the 
                         first one in the line.</li>
 	                <li>We will take bathroom breaks</li>
+
+        </ul>
     </div>
     )
   }

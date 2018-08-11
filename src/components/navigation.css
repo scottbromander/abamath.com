@@ -1,4 +1,4 @@
-ul {
+#navigation ul {
     list-style-type: none;
     background-color: rgb(245, 245, 245);
     margin: 0rem;
@@ -12,21 +12,21 @@ ul {
     width: auto;
 }
 
-li:first-child {
+#navigation li:first-child {
     float:left;
     padding-left: 1.5%;
 }
 
-li:nth-child(2) {
+#navigation li:nth-child(2) {
     float:left;
     margin: 0.5rem;
 }
 
-li {
+#navigation li {
     float: right;
 }
 
-li a {
+#navigation li a {
     display: block;
     color: black;
     text-align: center;
@@ -34,11 +34,11 @@ li a {
     text-decoration: none;
 }
 
-li:first-child a {
+#navigation li:first-child a {
     padding: 0;
 }
 
-li:nth-child(2) a {
+#navigation li:nth-child(2) a {
     padding: 0
 }
 

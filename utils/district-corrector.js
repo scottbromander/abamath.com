@@ -1,10 +1,10 @@
 var validUrl = require('valid-url');
 
-const correctDistrictClass = original => {
+const correctDistrict = original => {
     // Converts string of all columns from single row in google sheets
     // into an array of objects with column title and content
     var currentEdit = original;
-    var correctedClass = {};
+    var correctedDistrict = {};
 
     while (currentEdit.length > 0 && currentEdit.indexOf(": ") > -1) {
         var propertyEnd = currentEdit.lastIndexOf(": ");
@@ -13,43 +13,26 @@ const correctDistrictClass = original => {
         var valueEnd = currentEdit.lastIndexOf(", ");
         var newProperty = currentEdit.substring(valueEnd, currentEdit.length).replace(", ", "");
         currentEdit = currentEdit.substring(0, valueEnd);
-        correctedClass[newProperty] = newValue;
+        correctedDistrict[newProperty] = newValue;
     }
-    return correctedClass;
+    return correctedDistrict;
 }
 
-const validateDistrictClass = districtClass => {
+const validateDistrict = district => {
     // all required fields exist and are not 'N/A' in google sheet
     const fieldsToCheck = [
-        'days',
-        'description',
-        'district',
-        'enddate',
-        'grades',
-        'link',
-        'startdate',
-        'time'
+        'website',
     ];
     const areAllFieldsPresent = fieldsToCheck.reduce((validSoFar, field) => {
-        return validSoFar && districtClass[field] && districtClass[field] !== '#N/A';
+        return validSoFar && district[field] && district[field] !== '#N/A';
     }, true);
     if (!areAllFieldsPresent) return false;
 
-    // check if class date is in the future
-    const yesterday = new Date().setDate(new Date().getDate() - 1);
-    const classIsInFuture = new Date(districtClass.startdate) >= yesterday;
-    if (!classIsInFuture) return false;
-
-    // check for url registration link
-    const validUrlLink = validUrl.isUri(districtClass.link);
-    if (!validUrlLink) return false;
-
     // if everything is valid, return true
     return true;
-
 }
 
 module.exports = {
-    correctDistrictClass,
-    validateDistrictClass,
+    correctDistrict,
+    validateDistrict,
 }

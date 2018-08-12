@@ -48,7 +48,36 @@ module.exports = {
                 typePrefix: 'community_education__',
                 url: `https://spreadsheets.google.com/feeds/list/1DLAVN3q758sPohCFeZlVSVRZKXzEser1SIsQnH2mvrw/ogwtdyp/public/basic?hl=en_US&alt=json`,
                 method: 'get',
-                name: `classes`,
+                name: `district_classes`,
+                entityLevel: `feed.entry`,
+                schemaType: {},
+                localSave: false,
+                path: `${__dirname}/api/`,
+                verbose: true,
+            }
+        },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                typePrefix: 'community_education__',
+                url: `https://spreadsheets.google.com/feeds/list/1DLAVN3q758sPohCFeZlVSVRZKXzEser1SIsQnH2mvrw/oy3lbcl/public/basic?hl=en_US&alt=json`,
+                method: 'get',
+                name: `offered_classes`,
+                entityLevel: `feed.entry`,
+                schemaType: {},
+                localSave: false,
+                path: `${__dirname}/api/`,
+                verbose: true,
+            }
+        },
+
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                typePrefix: 'community_education__',
+                url: `https://spreadsheets.google.com/feeds/list/1DLAVN3q758sPohCFeZlVSVRZKXzEser1SIsQnH2mvrw/o6w2e81/public/basic?hl=en_US&alt=json`,
+                method: 'get',
+                name: `district`,
                 entityLevel: `feed.entry`,
                 schemaType: {},
                 localSave: false,
@@ -56,6 +85,5 @@ module.exports = {
                 verbose: true,
             }
         }
-
     ],
 };

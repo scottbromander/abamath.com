@@ -1,20 +1,37 @@
 import React from "react";
-import Img from "gatsby-image";
 import ClassTable from "../components/ClassTable";
+import ClassDescriptions from "../components/class-descriptions";
 import About from "../components/about";
+import DistrictsList from "../components/district-list";
 import Contact from "../components/contact";
 import GirlsImg from "../images/abamath-girls-coding.jpg"
 import KidsImg from "../images/abamath-robotics-team.png"
 import CollageImg from "../images/abamath-collage.png"
+import InputHints from "react-input-hints"
 import "./index.css";
 
-<meta>We work with Community Eduaction to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
+<meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
 export default class Index extends React.Component {
-    state = {
+  state = {
     searchText: '',
+    humanize: Math.round(Math.random() * (200 - 30)) + 30,
   }
 
+  componentDidMount() {
+    this.interval = setInterval(this.setHumanize, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
+  setHumanize = () => {
+    setTimeout(() => {
+      this.setState({humanize: Math.round(Math.random() * (200 - 30)) + 30})
+    }, this.state.humanize * 2 + 1200)
+  }
+  
   updateSearchText = (event) => {
     this.setState({
       searchText: event.target.value,
@@ -28,17 +45,30 @@ export default class Index extends React.Component {
         <div id="body">
           <div id="classes">
           <h2>UPCOMING CLASSES</h2>
-          <input type="text" placeholder="Search..." onChange={this.updateSearchText} value={this.state.searchText} />
+          <InputHints
+              onChange={this.updateSearchText} 
+              value={this.state.searchText}
+              waitBeforeDeleteMs={1200}
+              writeSpeedMs={this.state.humanize}
+              deleteSpeedMs={this.state.humanize}
+              placeholders={["Search Here", "Hopkins", "Search Here", "Coding", "Search Here", "Minnetonka", "Search Here", "Edina"]}
+           />
           <div id="table">
           <ClassTable
-            districtClasses={this.props.data.allCommunityEducationClasses.edges}
+            districtClasses={this.props.data.allCommunityEducationDistrictClasses.edges}
             searchText={this.state.searchText}
           />
           </div>
           </div>
           <img src={GirlsImg} />
+          <ClassDescriptions 
+            allOfferedClasses = {this.props.data.allOfferedClasses.edges}
+          />
           <About/>
           <img src={KidsImg} />
+          {/* <DistrictsList 
+            allDistricts = {this.props.data.allCommunityEducationDistrict.edges}
+          /> */}
           <Contact />
           <img src={CollageImg} />
         </div>
@@ -49,7 +79,19 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
-    allCommunityEducationClasses {
+    allCommunityEducationDistrict  {
+      totalCount
+      edges {
+        node {
+          id
+          fields {
+            districtName
+            slug
+          }
+        }
+      }
+    }
+    allCommunityEducationDistrictClasses {
       totalCount
       edges {
         node {
@@ -69,5 +111,19 @@ export const query = graphql`
         }
       }
     }
-  }  
+    allOfferedClasses: allCommunityEducationOfferedClasses {
+      totalCount
+      edges {
+        node {
+          id
+          fields {
+            slug,
+            classgrades,
+            classdescription,
+            className
+          }
+        }
+      }
+    }
+}  
 `

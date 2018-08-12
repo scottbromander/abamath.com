@@ -2,6 +2,7 @@ import React from "react";
 import ClassTable from "../components/ClassTable";
 import ClassDescriptions from "../components/class-descriptions";
 import About from "../components/about";
+import DistrictsList from "../components/district-list";
 import Contact from "../components/contact";
 import GirlsImg from "../images/abamath-girls-coding.jpg"
 import KidsImg from "../images/abamath-robotics-team.png"
@@ -65,6 +66,9 @@ export default class Index extends React.Component {
           />
           <About/>
           <img src={KidsImg} />
+          {/* <DistrictsList 
+            allDistricts = {this.props.data.allCommunityEducationDistrict.edges}
+          /> */}
           <Contact />
           <img src={CollageImg} />
         </div>
@@ -75,6 +79,18 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
+    allCommunityEducationDistrict  {
+      totalCount
+      edges {
+        node {
+          id
+          fields {
+            districtName
+            slug
+          }
+        }
+      }
+    }
     allCommunityEducationDistrictClasses {
       totalCount
       edges {
@@ -94,8 +110,7 @@ export const query = graphql`
           }
         }
       }
-    },
-
+    }
     allOfferedClasses: allCommunityEducationOfferedClasses {
       totalCount
       edges {

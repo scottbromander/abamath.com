@@ -1,6 +1,7 @@
 const path = require(`path`);
 const { correctDistrictClass, validateDistrictClass } = require('./utils/district-class-corrector');
 const { correctOfferedClass, validateOfferedClass } = require('./utils/offered-class-corrector');
+const { correctDistrict, validateDistrict } = require('./utils/district-corrector');
 const slugify = require('slugify');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
@@ -20,6 +21,11 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const isOfferedClass = node.internal.type === `community_education__offered_classes`;
   const correctedOfferedClass = isOfferedClass && hasGoogleSheetFields ? correctOfferedClass(node.content._t) : null;
   const isValidOfferedClass = correctedOfferedClass ? validateOfferedClass(correctedOfferedClass) : null;
+
+    // checking for valid district
+    const isDistrict = node.internal.type === `community_education__district`;
+    const correctedDistrict = isDistrict && hasGoogleSheetFields ? correctDistrict(node.content._t) : null;
+    const isValidDistrict = correctedDistrict ? validateDistrict(correctedDistrict) : null;
 
   if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
@@ -80,7 +86,33 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
         value: entry[1],
       });
     });
-  } else if (isDistrictClass || isOfferedClass) {
+  } else if (isDistrict && isValidDistrict) {
+    const districtName = node.title._t;
+
+    createNodeField({
+      node,
+      name: `districtName`,
+      value: districtName,
+    });
+    const pageTitle = districtName;
+    createNodeField({
+      node,
+      name: `pageTitle`,
+      value: pageTitle,
+    });
+    createNodeField({
+      node,
+      name: `slug`,
+      value: '/' + slugify(pageTitle.toLowerCase()),
+    });
+    Object.entries(correctedDistrict).forEach((entry) => {
+      createNodeField({
+        node,
+        name: entry[0],
+        value: entry[1],
+      });
+    });
+  } else if (isDistrictClass || isOfferedClass || isDistrict) {
     deleteNode(node.id, node);
   }
 };
@@ -103,6 +135,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
         allCommunityEducationOfferedClasses {
+          totalCount
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+        allCommunityEducationDistrict {
           totalCount
           edges {
             node {
@@ -141,6 +183,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             createPage({
               path: node.fields.slug,
               component: path.resolve(`./src/templates/district-class.js`),
+              context: {
+                // Data passed to context is available in page queries as GraphQL variables.
+                slug: node.fields.slug,
+              },
+            });
+          }
+        })
+        result.data.allCommunityEducationDistrict.edges.forEach(({ node }) => {
+          if (node.fields && node.fields.slug) {
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve(`./src/templates/district.js`),
               context: {
                 // Data passed to context is available in page queries as GraphQL variables.
                 slug: node.fields.slug,

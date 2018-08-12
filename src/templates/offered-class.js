@@ -1,8 +1,5 @@
 import React from "react";
-import g from "glamorous";
-import Link from "gatsby-link";
 import ClassTable from "../components/ClassTable";
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 export default class OfferedClass extends React.Component {
 

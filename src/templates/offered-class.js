@@ -1,6 +1,4 @@
 import React from "react";
-import g from "glamorous";
-import Link from "gatsby-link";
 import ClassTable from "../components/ClassTable";
 
 export default class OfferedClass extends React.Component {

@@ -19,34 +19,29 @@ export default class DistrictClass extends React.Component {
   render() {
     const specificClass = this.props.data.specificClass.edges[0].node.fields;
     return (
-      <div>
-        <div>
+      <div id="district-classes">
+          <div id="classinfo" >
           <h1>{specificClass.district} {specificClass.className}</h1>
           <h2>Time: {specificClass.time}</h2>
           <h2>Grades: {specificClass.grades}</h2>
           <h2>Days: {specificClass.days}</h2>
           <h2>Dates: {specificClass.startdate} - {specificClass.enddate}</h2>
           <p> {specificClass.description}</p>
-        </div>
 
-        <OutboundLink href={specificClass.link}><button>Sign up!</button></OutboundLink>
+          <OutboundLink href={specificClass.link}><button >Sign up!</button></OutboundLink>
+          </div>
 
-        <div id="district-classes">
-        <h2>Other classes in {specificClass.district}{""}</h2>
+        <h3>Other Camps in {specificClass.district}{""}</h3>
         <ClassTable
           districtClasses={this.props.data.allDistrictClasses.edges}
           searchText={this.state.searchText}
         />
-        </div>
 
-        <div id="district-classes">
-        <h2>Other {specificClass.className}{""} Camps</h2>
+        <h3>Other {specificClass.className}{""} Camps</h3>
         <ClassTable
           districtClasses={this.props.data.allDistrictClasses.edges}
           searchText={specificClass.className}
         />
-        </div>
-
       </div>
     );
   }

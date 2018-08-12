@@ -105,9 +105,9 @@ export default class Index extends React.Component {
           />
           <About/>
           <img src={KidsImg} />
-          <DistrictsList 
+          {/* <DistrictsList 
             allDistricts = {this.props.data.allCommunityEducationDistrict.edges}
-          />
+          /> */}
           <Contact />
           <img src={CollageImg} />
         </div>

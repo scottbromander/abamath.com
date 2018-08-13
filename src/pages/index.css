@@ -75,3 +75,8 @@ img:last-child {
     color: #fac638;
     text-decoration-line: underline;
 }
+
+#contact img, #classes img{
+    width: 5%;
+    margin: 0px 47.5%;
+}

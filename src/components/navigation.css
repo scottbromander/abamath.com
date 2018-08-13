@@ -24,6 +24,7 @@
 
 #navigation li {
     float: right;
+    font-family: Jura;
 }
 
 #navigation li a {
@@ -48,4 +49,5 @@
 
 #navigation h1:first-child {
     line-height: inherit;
+    font-family: "New Century Schoolbook";
 }

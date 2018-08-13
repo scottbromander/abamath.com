@@ -1,7 +1,7 @@
 import React from "react";
 import ClassTable from "../components/ClassTable";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import "./district-class.js"
+import "./district-class.css"
 
 export default class DistrictClass extends React.Component {
   constructor(props) {

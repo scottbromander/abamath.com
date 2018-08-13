@@ -52,7 +52,7 @@ export default class Navigation extends React.Component {
       </li>
       <li className="pages">
         <Link to={`/#classes`}>
-          Classes
+          Camps
         </Link>
       </li>
       </ul>

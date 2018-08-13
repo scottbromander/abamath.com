@@ -172,15 +172,179 @@ export default class ComputerCodersCurriculum extends React.Component {
             <li>Instruction - Go through the <a href="https://docs.google.com/presentation/d/1VVYjCRXij0arYBTe7OopCSE5Nxn5v1m73jS7i4aZA5A/edit#slide=id.g3cb95d1046_1_0">
             Variables Presentation</a> </li>
 
-
-
-
           </ul>
         <h2>Day 3</h2>
+          <ul>
+            <li>Nametags</li>
+            <li>Daily Vocab:</li>
+              <ul>
+                <li>Debugging: identify and remove errors from (computer hardware or software)</li>
+                <li>Function: a named section of a program that performs a specific task</li>
+              </ul>
+            <li>Instruction - Go through the <a href="https://docs.google.com/presentation/d/10Ky7SXyWbpe1XTUL9tkdU9xrmbXEtlb1s6p_1hMu2Rk/edit"
+            >data types presentation</a>. This will cover the difference between ints, floats, Boolean, 
+            and strings </li>
+            <li>Break</li>
+            <li>Stretches</li>
+            <li>Computer science fun fact of the day: </li>
+              <ul><li>How come it's so easy and enjoyable to simply browse around and get lost for hours 
+                on Facebook and other sites? (user interface) </li></ul>
+            <li>Instruction - Go through <a href="https://docs.google.com/presentation/d/19C-Yu9ak95A8qvH5eWjEGGoKNQ67HDanp9CJps5Ghfc/edit#slide=id.p">
+            Presentation for Boolean Logic</a></li>
+            <li>Make a Picture - Each student is given a sheet of graph paper and instructions on how to 
+              create an image on their graph paper. Give students 10 minutes to complete their drawing </li>
+              <ul>
+                <li>Instructions found <a href="https://docs.google.com/document/d/1sQYyZFS5KG1P3HJNo_uBwo-sNMxA0FBYESbKSN-8j18/edit">
+                here </a>(Algorithm results in order: monkey, camel, elephant, cat)</li>
+                <li>When students are done, have them compare the image and the original side by side 
+                  and discuss unclear program terms.</li>
+                <li>If they would like, students may try with another set of instructions</li>
+              </ul>
+            <li>Codecombat - For the last 30 minutes of class, give students the option to use 
+              codecombat.com instead of lesson if they have completed Functions. Last 20 minutes of 
+              use are regardless of lesson completion </li>
+            <li><a href="https://create.kahoot.it/login?next=%2Fdetails%2Fcomputer-coding-day-3%2F2b17b222-75b7-4968-b072-e1b5777bc751">
+            Kahoot Closer </a></li>
+            <li>Python Lesson Goal for Day: Students should complete Functions. Fast students may 
+              finish at A Day at the Supermarket </li>
+            <li>JavaScript Lesson Goal for the Day: Functions and Scope. Fast students can begin 
+              Modules or Objects. (Modules are in the kahoot for this day, so encourage them to work 
+              through that) </li>
 
-
-
+              </ul>
         <h2>Day 4</h2>
+          <ul>
+            <li>Nametags</li>
+            <li>Daily Vocabulary:</li>
+            <ul>
+              <li>List: represents a countable number of ordered values, where the same value may 
+                occur more than once </li>
+                <ul><li>examples: 1234, sally may bob</li>
+                <li>Ask students for examples of when they may use lists</li></ul>
+              <li>Dictionary: has a set of keys and each key has a single associated value. 
+                When presented with a key, the dictionary will return the associated value</li>
+              <li>Tree: simulates a hierarchical tree structure, with a root value and subtrees of 
+                children with a parent node</li>
+              <li>Sorting: Ordering sequences</li>
+                <ul><li>will touch on more with activity after break</li></ul>
+            </ul>
+            <li>Instruction - Teach Lists and Dictionaries. Be sure to ask students to give examples 
+              of when they could be useful and show how we can manipulate them </li>
+            <li>Project Check: Check that students have created a project. The projects include 
+              Tip Calculator, Python Mad Libs, Area Calculator, Number Guess and Rock, Paper, Scissors. 
+              If they have not, help them navigate them to the project corresponding to the lastest 
+              lesson they completed </li>
+            <li>Boolean Game - Split students into teams. Teams should form a line facing the whiteboard. 
+              Display the Boolean Game presentation on the board. The person in front of each line gets 
+              a fly swatter. When the question is displayed on the board, the first player to hit the 
+              correct answer, scores a point for their team </li>
+                <ul><li><a href="">Boolean Game Presentation</a></li></ul>
+            <li>Break</li>
+            <li>Stretches</li>
+            <li>Computer science fun fact of the day: </li>
+              <ul><li>How can you be reasonably confident that nobody will steal your credit card number 
+                while you are shopping online? (network security, cryptography) </li></ul>
+            <li>Sorting Algorithms - Give the coders eight cards (Ace through 8, out of order). 
+              The coders take turns asking about two cards. They can ask, “Which card is larger?” or 
+              “Are these cards in order?” and then the next coder can ask. Here are two methods for
+               comparison: </li>
+               <ul>
+                 <li>Best if done in group of 4/5 in a circle fashion. Give students an incentive 
+                   (ie break) if they get it in less than 15 turns </li>
+                  <li><a href="https://www.youtube.com/watch?v=cVMKXKoGu_Y">https://www.youtube.com/watch?v=cVMKXKoGu_Y</a></li>
+                  <li><a href="https://en.wikipedia.org/wiki/Merge_sort">Merge sort: </a>First divide the 
+                    list into the smallest unit (1 element), then compare 
+                    each element with the adjacent list to sort and merge the two adjacent lists. 
+                    Finally all the elements are sorted and merged. </li>
+                  <li>Bubble sort: repeatedly steps through the list to be sorted, compares each pair 
+                    of adjacent items and swaps them if they are in the wrong order </li>
+                  <li>Quick sort:</li>
+                    <ul>
+                      <li> Pick an element, called a pivot, from the array. </li>
+                      <li>Partitioning: reorder the array so that all elements with values less than 
+                        the pivot come before the pivot, while all elements with values greater than 
+                        the pivot come after it (equal values can go either way). After this 
+                        partitioning, the pivot is in its final position. This is called the partition 
+                        operation.</li>
+                      <li>Recursively apply the above steps to the sub-array of elements with smaller 
+                        values and separately to the sub-array of elements with greater values.</li>
+                    </ul>
+                  </ul>
+              <li>Codecombat - For the last 30 minutes of class, give students the option to use 
+                codecombat.com instead of lesson if they have completed A Day at the Supermarket. 
+                Last 20 minutes of use are regardless of lesson completion </li>
+              <li><a href="https://www.abamath.com/survey">Abamath.com/survey</a></li>
+              <li><a href="https://create.kahoot.it/login?next=%2Fdetails%2Fcomputer-coding-day-4%2Fd7bff191-37ce-42e4-a085-51c5df2fa917">
+              Kahoot Closer</a></li>
+              <li>Python Lesson Goal for the Day: Students should complete A Day at the Supermarket. 
+                Fast students may finish in Loops</li>
+              <li>JavaScript Lesson Goal for the Day: Arrays and Modules </li>
+            </ul>
+
+            <h5>Order of Python Lessons</h5>
+            <ol>
+              <li>Python Syntax</li>
+              <li><em>Tip Calculator</em></li>
+              <li>Strings and Console Output</li>
+              <li>Date and Time</li>
+              <li><em>Python Mad Libs</em></li>
+              <li>Conditionals and Control Flow</li>
+              <li>PygLatin</li>
+              <li><em>Area Calculator</em></li>
+              <li>Functions</li>
+              <li>Taking a Vacation</li>
+              <li><em>Number Guess</em></li>
+              <li>Python Lists and Dictionaries</li>
+              <li>A Day at the Supermarket</li>
+              <li><em>Rock, Paper, Scissors</em></li>
+              <li>Lists and Functions</li>
+              <li>Battleship</li>
+              <li>Loops</li>
+              <li>Practice Makes Perfect</li>
+              <li><em>Command Line Calendar</em></li>
+              <li>Advanced Topics in Python</li>
+              <li>Introduction to Bitwise Operators</li>
+              <li><em>RGB-HEX Converter</em></li>
+              <li>Introduction to Classes</li>
+              <li>Classes</li>
+              <li><em>Bank Account</em></li>
+              <li>File Input/Output</li>
+              <li><em>DNA Analysis</em></li>
+              <li><em>Final Project</em></li>
+              </ol>
+
+              <p><em>*Italics are pro-level lessons</em></p>
+
+              <h5>Additional Websites:</h5>
+      <p>If students are done with codecademy, now is the time to introduce them to other websites. 
+        Introduce them to other sites in this order:</p>
+
+        <ul>
+          <li><a href="https://www.playcodemonkey.com/challenges/0">Code monkey</a></li>
+          <li><a href="https://lightbot.com/hocflash.html">Lightbot</a></li>
+          <li><a href="https://codecombat.com/play">Code combat</a></li>
+          <li><a href="https://blockly-games.appspot.com/">Blockly Games</a></li>
+          <li><a href="https://studio.code.org/s/playlab/stage/1/puzzle/10">For students who want something a little more freefrom, code playlab</a></li>
+          <li><a href="https://www.codecademy.com/">Codecademy</a></li>
+          <li><a href="https://www.freecodecamp.com">Free Code Camp </a></li>
+          <li><a href="https://www.codeavengers.com">Codeavengers</a></li>
+          <li><a href="https://www.khanacademy.org/computing/computer-programming ">Khan Academy</a></li>
+          <li><a href="https://www.techrocket.com/">Tech Rocket </a></li>
+          <li><a href="https://www.tynker.com/home/dashboard">Tynker</a></li>
+        </ul>
+      <p>Answers:</p>
+      <ul>
+        <li><a href="https://lightbot.com/LightbotSolns.pdf">Lightbot</a></li>
+        <li><a href="https://gist.github.com/a1ip/2ea627a4bf6067a63634">Code Combat</a></li>
+          <ul>
+            <li>Don’t click the blue circles.</li>    
+            <li>Click the red dots to keep going.</li>
+          </ul>
+        <li>Blockly Games is very challenging, so introduce it as “A very challenging site for high 
+          schoolers, but if you’re up for it, go for it!” I have put the blockly games answers 
+          <a href="https://drive.google.com/drive/folders/0B-pA773bPjoLODAzUFkxaDYyNnc"> here</a></li>
+        <li><a href="https://github.com/ummahusla/Codecademy-Exercise-Answers">Code Academy</a></li>
+      </ul>
       </div>
     )
   }

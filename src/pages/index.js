@@ -44,7 +44,7 @@ export default class Index extends React.Component {
         <div id="background"></div>
         <div id="body">
           <div id="classes">
-          <h2>UPCOMING CLASSES</h2>
+          <h2>Upcoming Camps</h2>
           <InputHints
               onChange={this.updateSearchText} 
               value={this.state.searchText}

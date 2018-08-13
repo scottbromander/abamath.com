@@ -14,7 +14,7 @@ export default class About extends React.Component {
       <div id="about">
         <img src={aboutIcon}/>
         <h1>
-          About 
+          FAQ
         </h1>
             <img src={qIcon}/>
             <h2>

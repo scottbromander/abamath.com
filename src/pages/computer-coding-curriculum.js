@@ -12,7 +12,7 @@ export default class ComputerCodersCurriculum extends React.Component {
     return(
       <div>
         <h1>
-          Coding For Kids 
+          Computer Coders 
         </h1>
         <p>Ever wanted to learn to code? Here's your chance! Computer Coders will teach you your
              very first programming language. Take your pick of languages that have helped build 
@@ -69,7 +69,7 @@ export default class ComputerCodersCurriculum extends React.Component {
         <p>Use Pomodoro Technique in class. A good online timer is found
              <a href="https://www.marinaratimer.com/"> here.</a></p>
 
-        <h2>Day 1</h2>
+        <h2>Day 1 - Intro to Coding</h2>
           <ul>
             <li>Introduction</li>
             <ul>
@@ -112,14 +112,70 @@ export default class ComputerCodersCurriculum extends React.Component {
                         </ul>
                 </ul>
 
-
+            <li>Break </li>
+            <li>Stretches</li>
+            <li>Computer science fun fact of the day: </li>
+              <ul><li>Computer science is NOT just programming! Programming is an engineering tool 
+                while computer science is a broad academic field such as math or physics. </li></ul>
+            <li>Instruction - Go through the <a href="https://docs.google.com/presentation/d/1KP3piUel8mFKzNNyCJa_NgwQ0iX_Pk91Mpb2ReZqrUw/edit#slide=id.p"
+            >Common Syntax Mistakes presentation</a></li>
+            <li>Codecombat - For the last 30 minutes of class, give students the option to use codecombat.com 
+              instead of lesson if they have completed Python Syntax. For the last 20 minutes, students can 
+              switch to codecombat regardless of if they completed the lesson. </li>
+            <li><a href="https://create.kahoot.it/login?next=%2Fdetails%2Fcomputer-coding-day-1%2F04758971-575f-4a8d-a413-4cff13b79f0f"
+            >Kahoot Closer</a></li>
+            <li>Lesson Goal for Day: Students should complete Python Syntax lesson. Fast students may 
+              complete through Conditionals</li>
+            <li>JavaScript Lesson Goal for the Day: Introduction and Variables </li>
         </ul>
 
 
-        <h2>Day 2</h2>
+        <h2>Day 2 - Binary, Strings, and Conditionals</h2>
+
+        <ul>
+          <li>Nametags</li>
+          <li>Daily Vocabulary: </li>
+            <ul>
+              <li>Conditionals (“If-else statement”) </li>
+              <li>Binary: the most simple language of computers </li>
+                <ul><li>all 1’s and 0’s</li>
+                  <li>Explain in more detail later during game </li></ul>
+              <li>String: content in quotation marks</li>
+                <ul><li>How we communicate text in coding</li>
+                  <li>Useful for output control</li></ul>
+            </ul>
+          <li>Instruction - Go through examples of binary numbers on the board. Explain what the 
+            0s and 1s mean and how the bits are weighted.If students are interested, you can also 
+            explain adding/subtracting in binary</li>
+          <li><a href="">Binary Presentation</a></li>
+          <li>Binary Numbers - Make 2 sets of 15 note cards numbered 1-15. Split the team up into 
+            two lines behind the notecards placed upside-down on two chairs. The first person in 
+            line writes the number in binary on the board, on another sheet, or with the cards. 
+            If they get it right, the instructor takes the card. If they get it wrong, they have 
+            to put the note card back for another student to try. After each guess, the player 
+            moves to the back of the line. First team to finish all 15 cards wins. (works best 
+            with 2 instructors, one for each team) </li>
+              <ul><li>Pro tip: have all the binary conversions written down for a quick way to check </li></ul>
+          <li>Break</li>
+          <li>Stretches</li>
+          <li>Computer science fun fact of the day: </li>
+              <ul>
+                <li>Learning computer programming is similar to learning a new language </li>
+                <li>Just like there are many languages spoken and written in the world, there are 
+                  many different computer languages. </li>
+                <li>Different programming languages do different things. For example, to build a 
+                  website you might use the languages Python, HTML, CSS or JavaScript. For a 
+                  mobile app, you might use Java or Objective C. For video games, you might use 
+                  C++. The language that is selected depends on what you are trying to create 
+                  and what you are trying to get the computer to do. </li>
+              </ul>
+            <li>Instruction - Go through the <a href="https://docs.google.com/presentation/d/1VVYjCRXij0arYBTe7OopCSE5Nxn5v1m73jS7i4aZA5A/edit#slide=id.g3cb95d1046_1_0">
+            Variables Presentation</a> </li>
 
 
 
+
+          </ul>
         <h2>Day 3</h2>
 
 

@@ -2,6 +2,7 @@ import React from "react";
 import ClassTable from "../components/ClassTable";
 import ClassDescriptions from "../components/class-descriptions";
 import About from "../components/about";
+import CodeChampionship from "../components/code-championship";
 import DistrictsList from "../components/district-list";
 import Contact from "../components/contact";
 import GirlsImg from "../images/abamath-girls-coding.jpg"
@@ -64,6 +65,7 @@ export default class Index extends React.Component {
           <ClassDescriptions 
             allOfferedClasses = {this.props.data.allOfferedClasses.edges}
           />
+          <CodeChampionship/>
           <About/>
           <img src={KidsImg} />
           {/* <DistrictsList 

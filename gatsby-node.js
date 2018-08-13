@@ -166,18 +166,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }    
     `).then(result => {
-        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-          if (node.fields && node.fields.slug) {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/blog-post.js`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          }
-        })
+      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        if(node.fields && node.fields.slug) {
+          createPage({
+            path: node.fields.slug,
+            component: path.resolve(`./src/templates/markdown-display.js`),
+            context: {
+              // Data passed to context is available in page queries as GraphQL variables.
+              slug: node.fields.slug,
+            },
+          });
+        }
+      })
         result.data.allCommunityEducationDistrictClasses.edges.forEach(({ node }) => {
           if (node.fields && node.fields.slug) {
             createPage({

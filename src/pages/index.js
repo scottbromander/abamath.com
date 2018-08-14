@@ -8,6 +8,7 @@ import Contact from "../components/contact";
 import GirlsImg from "../images/abamath-girls-coding.jpg"
 import KidsImg from "../images/abamath-robotics-team.png"
 import CollageImg from "../images/abamath-collage.png"
+import upcomingCampsIcon from "../images/upcoming-camps-icon.png"
 import InputHints from "react-input-hints"
 import "./index.css";
 
@@ -45,6 +46,7 @@ export default class Index extends React.Component {
         <div id="background"></div>
         <div id="body">
           <div id="classes">
+          <img src={upcomingCampsIcon}/>
           <h2>Upcoming Camps</h2>
           <InputHints
               onChange={this.updateSearchText} 

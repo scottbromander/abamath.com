@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
   // checking for valid district classes
   const correctedGoogleSheetRow = isGoogleSheetRow && hasGoogleSheetFields ? correctGoogleSheetRow(node.content._t) : null;
-  const isValidDistrictClass = correctedGoogleSheetRow ? validateGoogleSheetRowObject(correctedGoogleSheetRow, [
+  const isValidDistrictClass = correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, [
     'days',
     'description',
     'district',
@@ -24,16 +24,16 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     'link',
     'startdate',
     'time'
-  ]) : null;
+  ]);
 
   // checking for valid offered classes
-  const isValidOfferedClass = correctedGoogleSheetRow ? validateGoogleSheetRowObject(correctedGoogleSheetRow, [
+  const isValidOfferedClass = correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, [
     'classgrades',
     'classdescription'
-  ]) : null;
+  ]);
 
   // checking for valid district
-  const isValidDistrict = correctedGoogleSheetRow ? validateGoogleSheetRowObject(correctedGoogleSheetRow, ['website']) : null;
+  const isValidDistrict = correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, ['website']);
 
   if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })

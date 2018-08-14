@@ -1,7 +1,5 @@
 const path = require(`path`);
-const { correctDistrictClass, validateDistrictClass } = require('./utils/district-class-corrector');
-const { correctOfferedClass, validateOfferedClass } = require('./utils/offered-class-corrector');
-const { correctDistrict, validateDistrict } = require('./utils/district-corrector');
+const { correctGoogleSheetRow, validateGoogleSheetRowObject } = require('./utils/google-sheet-corrector');
 const slugify = require('slugify');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
@@ -14,18 +12,30 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
   // checking for valid district classes
   const isDistrictClass = node.internal.type === `community_education__district_classes`;
-  const correctedDistrictClass = isDistrictClass && hasGoogleSheetFields ? correctDistrictClass(node.content._t) : null;
-  const isValidDistrictClass = correctedDistrictClass ? validateDistrictClass(correctedDistrictClass) : null;
+  const correctedDistrictClass = isDistrictClass && hasGoogleSheetFields ? correctGoogleSheetRow(node.content._t) : null;
+  const isValidDistrictClass = correctedDistrictClass ? validateGoogleSheetRowObject(correctedDistrictClass, [
+    'days',
+    'description',
+    'district',
+    'enddate',
+    'grades',
+    'link',
+    'startdate',
+    'time'
+  ]) : null;
 
   // checking for valid offered classes
   const isOfferedClass = node.internal.type === `community_education__offered_classes`;
-  const correctedOfferedClass = isOfferedClass && hasGoogleSheetFields ? correctOfferedClass(node.content._t) : null;
-  const isValidOfferedClass = correctedOfferedClass ? validateOfferedClass(correctedOfferedClass) : null;
+  const correctedOfferedClass = isOfferedClass && hasGoogleSheetFields ? correctGoogleSheetRow(node.content._t) : null;
+  const isValidOfferedClass = correctedOfferedClass ? validateGoogleSheetRowObject(correctedOfferedClass, [
+    'classgrades',
+    'classdescription'
+  ]) : null;
 
   // checking for valid district
   const isDistrict = node.internal.type === `community_education__district`;
-  const correctedDistrict = isDistrict && hasGoogleSheetFields ? correctDistrict(node.content._t) : null;
-  const isValidDistrict = correctedDistrict ? validateDistrict(correctedDistrict) : null;
+  const correctedDistrict = isDistrict && hasGoogleSheetFields ? correctGoogleSheetRow(node.content._t) : null;
+  const isValidDistrict = correctedDistrict ? validateGoogleSheetRowObject(correctedDistrict, ['website']) : null;
 
   if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })

@@ -9,11 +9,13 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
   // Checking for specific google sheets
   const hasGoogleSheetFields = node.title && node.content && node.title._t && node.content._t;
+  const isGoogleSheetRow = node.internal.type === `community_education__district_classes` ||
+  node.internal.type === `community_education__offered_classes` ||
+  node.internal.type === `community_education__district`;
 
   // checking for valid district classes
-  const isDistrictClass = node.internal.type === `community_education__district_classes`;
-  const correctedDistrictClass = isDistrictClass && hasGoogleSheetFields ? correctGoogleSheetRow(node.content._t) : null;
-  const isValidDistrictClass = correctedDistrictClass ? validateGoogleSheetRowObject(correctedDistrictClass, [
+  const correctedGoogleSheetRow = isGoogleSheetRow && hasGoogleSheetFields ? correctGoogleSheetRow(node.content._t) : null;
+  const isValidDistrictClass = correctedGoogleSheetRow ? validateGoogleSheetRowObject(correctedGoogleSheetRow, [
     'days',
     'description',
     'district',
@@ -25,17 +27,13 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   ]) : null;
 
   // checking for valid offered classes
-  const isOfferedClass = node.internal.type === `community_education__offered_classes`;
-  const correctedOfferedClass = isOfferedClass && hasGoogleSheetFields ? correctGoogleSheetRow(node.content._t) : null;
-  const isValidOfferedClass = correctedOfferedClass ? validateGoogleSheetRowObject(correctedOfferedClass, [
+  const isValidOfferedClass = correctedGoogleSheetRow ? validateGoogleSheetRowObject(correctedGoogleSheetRow, [
     'classgrades',
     'classdescription'
   ]) : null;
 
   // checking for valid district
-  const isDistrict = node.internal.type === `community_education__district`;
-  const correctedDistrict = isDistrict && hasGoogleSheetFields ? correctGoogleSheetRow(node.content._t) : null;
-  const isValidDistrict = correctedDistrict ? validateGoogleSheetRowObject(correctedDistrict, ['website']) : null;
+  const isValidDistrict = correctedGoogleSheetRow ? validateGoogleSheetRowObject(correctedGoogleSheetRow, ['website']) : null;
 
   if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
@@ -44,7 +42,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `slug`,
       value: slug,
     })
-  } else if (isDistrictClass && isValidDistrictClass) {
+  } else if (node.internal.type === `community_education__district_classes` && isValidDistrictClass) {
     const className = node.title._t;
 
     createNodeField({
@@ -52,7 +50,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `className`,
       value: className,
     });
-    const pageTitle = correctedDistrictClass.district + " " + className;
+    const pageTitle = correctedGoogleSheetRow.district + " " + className;
     createNodeField({
       node,
       name: `pageTitle`,
@@ -63,14 +61,14 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `slug`,
       value: '/' + slugify(pageTitle.toLowerCase()),
     });
-    Object.entries(correctedDistrictClass).forEach((entry) => {
+    Object.entries(correctedGoogleSheetRow).forEach((entry) => {
       createNodeField({
         node,
         name: entry[0],
         value: entry[1],
       });
     });
-  } else if (isOfferedClass && isValidOfferedClass) {
+  } else if (node.internal.type === `community_education__offered_classes` && isValidOfferedClass) {
     const className = node.title._t;
 
     createNodeField({
@@ -89,14 +87,14 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `slug`,
       value: '/' + slugify(pageTitle.toLowerCase()),
     });
-    Object.entries(correctedOfferedClass).forEach((entry) => {
+    Object.entries(correctedGoogleSheetRow).forEach((entry) => {
       createNodeField({
         node,
         name: entry[0],
         value: entry[1],
       });
     });
-  } else if (isDistrict && isValidDistrict) {
+  } else if (node.internal.type === `community_education__district` && isValidDistrict) {
     const districtName = node.title._t;
 
     createNodeField({
@@ -115,14 +113,14 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `slug`,
       value: '/' + slugify(pageTitle.toLowerCase()),
     });
-    Object.entries(correctedDistrict).forEach((entry) => {
+    Object.entries(correctedGoogleSheetRow).forEach((entry) => {
       createNodeField({
         node,
         name: entry[0],
         value: entry[1],
       });
     });
-  } else if (isDistrictClass || isOfferedClass || isDistrict) {
+  } else if (isGoogleSheetRow) {
     deleteNode(node.id, node);
   }
 };

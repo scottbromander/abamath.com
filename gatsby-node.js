@@ -22,10 +22,10 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const correctedOfferedClass = isOfferedClass && hasGoogleSheetFields ? correctOfferedClass(node.content._t) : null;
   const isValidOfferedClass = correctedOfferedClass ? validateOfferedClass(correctedOfferedClass) : null;
 
-    // checking for valid district
-    const isDistrict = node.internal.type === `community_education__district`;
-    const correctedDistrict = isDistrict && hasGoogleSheetFields ? correctDistrict(node.content._t) : null;
-    const isValidDistrict = correctedDistrict ? validateDistrict(correctedDistrict) : null;
+  // checking for valid district
+  const isDistrict = node.internal.type === `community_education__district`;
+  const correctedDistrict = isDistrict && hasGoogleSheetFields ? correctDistrict(node.content._t) : null;
+  const isValidDistrict = correctedDistrict ? validateDistrict(correctedDistrict) : null;
 
   if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
@@ -118,8 +118,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
-  return new Promise((resolve, reject) => {
+  const { createPage } = boundActionCreators;
+  const allCommunityEducationDistrictClassesPromise = new Promise((resolve, reject) => {
     graphql(`
       {
         allCommunityEducationDistrictClasses {
@@ -134,51 +134,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             }
           }
         }
-        allCommunityEducationOfferedClasses {
-          totalCount
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-        allCommunityEducationDistrict {
-          totalCount
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-        allMarkdownRemark {
-          totalCount
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
       }    
     `).then(result => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        if(node.fields && node.fields.slug) {
-          createPage({
-            path: node.fields.slug,
-            component: path.resolve(`./src/templates/markdown-display.js`),
-            context: {
-              // Data passed to context is available in page queries as GraphQL variables.
-              slug: node.fields.slug,
-            },
-          });
-        }
-      })
-        result.data.allCommunityEducationDistrictClasses.edges.forEach(({ node }) => {
+        result.data && result.data.allCommunityEducationDistrictClasses && result.data.allCommunityEducationDistrictClasses.edges.forEach(({ node }) => {
           if (node.fields && node.fields.slug) {
             createPage({
               path: node.fields.slug,
@@ -189,21 +147,28 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               },
             });
           }
-        })
-        result.data.allCommunityEducationDistrict.edges.forEach(({ node }) => {
+        });
+        resolve();
+      });
+  });
+
+  const allCommunityEducationOfferedClassesPromise = new Promise((resolve, reject) => {
+    graphql(`
+          {
+            allCommunityEducationOfferedClasses {
+              totalCount
+              edges {
+                node {
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
+          }    
+        `).then(result => {
+        result.data && result.data.allCommunityEducationOfferedClasses && result.data.allCommunityEducationOfferedClasses.edges.forEach(({ node }) => {
           if (node.fields && node.fields.slug) {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/district.js`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          }
-        })
-        result.data.allCommunityEducationOfferedClasses.edges.forEach(({ node }) => {
-          if(node.fields && node.fields.slug) {
             createPage({
               path: node.fields.slug,
               component: path.resolve(`./src/templates/offered-class.js`),
@@ -215,6 +180,75 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         })
         resolve();
+      });
+  });
+
+  const allCommunityEducationDistrictPromise = new Promise((resolve, reject) => {
+    graphql(`
+          {
+            allCommunityEducationDistrict {
+              totalCount
+              edges {
+                node {
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
+          }    
+        `).then(result => {
+        result.data && result.data.allCommunityEducationDistrict && result.data.allCommunityEducationDistrict.edges.forEach(({ node }) => {
+          if (node.fields && node.fields.slug) {
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve(`./src/templates/district.js`),
+              context: {
+                // Data passed to context is available in page queries as GraphQL variables.
+                slug: node.fields.slug,
+              },
+            });
+          }
+        })
+        resolve();
+      });
+  });
+
+  const allMarkdownRemarkPromise = new Promise((resolve, reject) => {
+    graphql(`
+          {
+            allMarkdownRemark {
+              totalCount
+              edges {
+                node {
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
+          }    
+        `).then(result => {
+        result.data && result.data.allMarkdownRemark && result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+          if (node.fields && node.fields.slug) {
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve(`./src/templates/markdown-display.js`),
+              context: {
+                // Data passed to context is available in page queries as GraphQL variables.
+                slug: node.fields.slug,
+              },
+            });
+          }
+        });
+        resolve();
       })
-  })
+  });
+
+  return Promise.all([
+    allCommunityEducationDistrictClassesPromise,
+    allCommunityEducationOfferedClassesPromise,
+    allCommunityEducationDistrictPromise,
+    allMarkdownRemarkPromise
+  ]);
 };

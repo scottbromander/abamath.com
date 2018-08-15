@@ -1,6 +1,6 @@
 import React from "react";
 import ClassTable from "../components/ClassTable";
-import "./district-class.css";
+import "./district.css";
 
 export default class OfferedClass extends React.Component {
 
@@ -8,10 +8,10 @@ export default class OfferedClass extends React.Component {
     const specificDistrict = this.props.data.allCommunityEducationDistrict.edges[0].node.fields;
     return (
       <div>
-        <div id="description">
+        <div id="info">
           <h1>{specificDistrict.districtName}{""}</h1>
         </div>
-
+        <div id="section"></div>
         <div id="offerred-classes">
         <h2>Upcoming {specificDistrict.districtName}{""} Camps</h2>
         <ClassTable

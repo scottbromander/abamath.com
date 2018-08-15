@@ -1,25 +1,25 @@
-#description {
+#info {
     text-align: left;
 }
 
-#color {
+#section {
     border-image: linear-gradient(#ff85cb, #ff1911) 30;
     border-left: 6px solid;
-    height: 45%;
+    height: 10%;
     position: absolute;
-    left: 20%;
+    left: 15%;
     margin-left: -3px;
     top: 15%;
 }
 
-#description h1 {
+#info h1 {
     padding: 1%;
-    margin: 1% 20%;
+    margin: 1% 15%;
     margin-top: 2%;
     font-family: Jura;
 }
 
-#description h2 {
+#info h2 {
     padding: 1%;
     margin: 1% 20%;
     font-size: 150%;
@@ -27,26 +27,26 @@
     text-align: left;
 }
 
-#description p {
+#info p {
     padding: 1%;
     margin: 1% 20%;
     font-family: Arial;
 }
 
-#description h3 {
+#info h3 {
     padding: 1%;
     margin: 1% 20%;
     margin-top: 2%;
     margin-bottom: 4%;
 }
 
-#description table {
+#info table {
     margin-left: auto;
     margin-right: auto;
     width: 99%;
 }
 
-#description th, #description td {
+#info th, #info td {
     text-align: center;
 }
 

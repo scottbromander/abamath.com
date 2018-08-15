@@ -29,9 +29,9 @@
 }
 
 #district-classes button {
-    background-color: #ff85cb;
+    background-color: #53bbf4;
     border: none;
-    color: white;
+    color: black;
     padding: 1%;
     text-align: center;
     text-decoration: none;
@@ -59,6 +59,15 @@
 }
 
 #classInfo {
-    background: linear-gradient(to bottom right, #53bbf4, #c0ff00);
     padding-bottom: .5%;
+}
+
+#line {
+    border-left: 6px solid;
+    border-image: linear-gradient( #53bbf4,  #c0ff00) 30;
+    height: 500px;
+    position: absolute;
+    left: 20%;
+    margin-left: -3px;
+    top: 15%;
 }

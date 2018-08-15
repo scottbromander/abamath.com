@@ -13,8 +13,8 @@ export default class OfferedClass extends React.Component {
           <h2>Grades: {specificClass.classgrades}{""}</h2>
           <p>{specificClass.classdescription}{""}</p>
         </div>
-
-        <div id="offerred-classes">
+        <div id="color"></div>
+        <div id="offered-classes">
         <h2>Upcoming {specificClass.className}{""} Camps</h2>
         <ClassTable
           districtClasses={this.props.data.allDistrictClasses.edges}

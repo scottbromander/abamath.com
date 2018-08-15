@@ -31,7 +31,7 @@ export default class DistrictClass extends React.Component {
 
           <OutboundLink href={specificClass.link}><button >Sign up!</button></OutboundLink>
           </div>
-
+          <div id="line"></div>
         <h3>Other Camps in {specificClass.district}{""}</h3>
         <ClassTable
           districtClasses={this.props.data.allDistrictClasses.edges}

@@ -5,7 +5,11 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField, deleteNode } = boundActionCreators
+  const googleSheetNodeFieldCreator = googleSheetRowFilter(node, createNodeField, deleteNode);
   const isMarkdownRemark = node.internal.type === `MarkdownRemark`;
+  const isDistrictClass = node.internal.type === `community_education__district_classes`;
+  const isOfferedClass = node.internal.type === `community_education__offered_classes`;
+  const isDistrict = node.internal.type === `community_education__district`;
 
   if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
@@ -14,27 +18,27 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `slug`,
       value: slug,
     })
+  } else if (isDistrictClass) {
+    googleSheetNodeFieldCreator(`className`, [
+      'days',
+      'description',
+      'district',
+      'enddate',
+      'grades',
+      'link',
+      'startdate',
+      'time'
+    ]);
+  } else if (isOfferedClass) {
+    googleSheetNodeFieldCreator(`className`, [
+      'classgrades',
+      'classdescription'
+    ]);
+  } else if (isDistrict) {
+    googleSheetNodeFieldCreator(`districtName`, [
+      'website'
+    ]);
   }
-
-  googleSheetRowFilter(createNodeField, deleteNode)(node, `community_education__district_classes`, `className`, [
-    'days',
-    'description',
-    'district',
-    'enddate',
-    'grades',
-    'link',
-    'startdate',
-    'time'
-  ]);
-
-  googleSheetRowFilter(createNodeField, deleteNode)(node, `community_education__offered_classes`, `className`, [
-    'classgrades',
-    'classdescription'
-  ]);
-
-  googleSheetRowFilter(createNodeField, deleteNode)(node, `community_education__district`, `districtName`, [
-    'website'
-  ]);
 };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
@@ -173,33 +177,31 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   ]);
 };
 
-const googleSheetRowFilter = (createNodeField, deleteNode) => (node, nodeTypeToCheck, titleName, requiredFields) => {
-  if (node.internal.type === nodeTypeToCheck) {
-    const correctedGoogleSheetRow = node.content && correctGoogleSheetRow(node.content._t);
-    const isValidGoogleSheetRow = correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, requiredFields);
-    if (isValidGoogleSheetRow) {
-      const rowTitle = node.title._t;
-      const pageTitle = correctedGoogleSheetRow.district ? correctedGoogleSheetRow.district + " " + rowTitle : rowTitle;
+const googleSheetRowFilter = (node, createNodeField, deleteNode) => (titleName, requiredFields) => {
+  const correctedGoogleSheetRow = node.content && correctGoogleSheetRow(node.content._t);
+  const isValidGoogleSheetRow = correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, requiredFields);
+  if (isValidGoogleSheetRow) {
+    const rowTitle = node.title._t;
+    const pageTitle = correctedGoogleSheetRow.district ? correctedGoogleSheetRow.district + " " + rowTitle : rowTitle;
 
+    createNodeField({
+      node,
+      name: titleName,
+      value: rowTitle,
+    });
+    createNodeField({
+      node,
+      name: `slug`,
+      value: '/' + slugify(pageTitle.toLowerCase()),
+    });
+    Object.entries(correctedGoogleSheetRow).forEach((entry) => {
       createNodeField({
         node,
-        name: titleName,
-        value: rowTitle,
+        name: entry[0],
+        value: entry[1],
       });
-      createNodeField({
-        node,
-        name: `slug`,
-        value: '/' + slugify(pageTitle.toLowerCase()),
-      });
-      Object.entries(correctedGoogleSheetRow).forEach((entry) => {
-        createNodeField({
-          node,
-          name: entry[0],
-          value: entry[1],
-        });
-      });
-    } else {
-      deleteNode(node.id, node);
-    }
+    });
+  } else {
+    deleteNode(node.id, node);
   }
 }

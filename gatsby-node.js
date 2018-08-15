@@ -7,16 +7,16 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField, deleteNode } = boundActionCreators
   const isMarkdownRemark = node.internal.type === `MarkdownRemark`;
 
-  // Checking for specific google sheets
-  const hasGoogleSheetFields = node.title && node.content && node.title._t && node.content._t;
-  const isDistrictClass = node.internal.type === `community_education__district_classes`;
-  const isOfferedClass = node.internal.type === `community_education__offered_classes`;
-  const isDistrict = node.internal.type === `community_education__district`;
-  const isGoogleSheetRow = isDistrictClass || isOfferedClass || isDistrict;
+  if (isMarkdownRemark) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
 
-  // checking for valid district classes
-  const correctedGoogleSheetRow = isGoogleSheetRow && hasGoogleSheetFields && correctGoogleSheetRow(node.content._t);
-  const isValidDistrictClass = isDistrictClass && correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, [
+  googleSheetRowFilter(createNodeField, deleteNode)(node, `community_education__district_classes`, `className`, [
     'days',
     'description',
     'district',
@@ -27,57 +27,14 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     'time'
   ]);
 
-  // checking for valid offered classes
-  const isValidOfferedClass = isOfferedClass && correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, [
+  googleSheetRowFilter(createNodeField, deleteNode)(node, `community_education__offered_classes`, `className`, [
     'classgrades',
     'classdescription'
   ]);
 
-  // checking for valid district
-  const isValidDistrict = isDistrict && correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, ['website']);
-
-  const isValidGoogleSheetRow = isValidDistrictClass || isValidOfferedClass || isValidDistrict;
-
-  if (isMarkdownRemark) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
-  } else if (isValidGoogleSheetRow) {
-    const rowTitle = node.title._t;
-    const pageTitle = correctedGoogleSheetRow.district ? correctedGoogleSheetRow.district + " " + rowTitle : rowTitle;
-    if(isOfferedClass || isDistrictClass) {
-      createNodeField({
-        node,
-        name: `className`,
-        value: rowTitle,
-      });
-    } else {
-      createNodeField({
-        node,
-        name: `districtName`,
-        value: rowTitle,
-
-      });
-    }
-
-    createNodeField({
-      node,
-      name: `slug`,
-      value: '/' + slugify(pageTitle.toLowerCase()),
-    });
-    Object.entries(correctedGoogleSheetRow).forEach((entry) => {
-      createNodeField({
-        node,
-        name: entry[0],
-        value: entry[1],
-      });
-    });    
-  } else if (isGoogleSheetRow) {
-    deleteNode(node.id, node);
-  }
+  googleSheetRowFilter(createNodeField, deleteNode)(node, `community_education__district`, `districtName`, [
+    'website'
+  ]);
 };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
@@ -215,3 +172,34 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     allMarkdownRemarkPromise
   ]);
 };
+
+const googleSheetRowFilter = (createNodeField, deleteNode) => (node, nodeTypeToCheck, titleName, requiredFields) => {
+  if (node.internal.type === nodeTypeToCheck) {
+    const correctedGoogleSheetRow = node.content && correctGoogleSheetRow(node.content._t);
+    const isValidGoogleSheetRow = correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, requiredFields);
+    if (isValidGoogleSheetRow) {
+      const rowTitle = node.title._t;
+      const pageTitle = correctedGoogleSheetRow.district ? correctedGoogleSheetRow.district + " " + rowTitle : rowTitle;
+
+      createNodeField({
+        node,
+        name: titleName,
+        value: rowTitle,
+      });
+      createNodeField({
+        node,
+        name: `slug`,
+        value: '/' + slugify(pageTitle.toLowerCase()),
+      });
+      Object.entries(correctedGoogleSheetRow).forEach((entry) => {
+        createNodeField({
+          node,
+          name: entry[0],
+          value: entry[1],
+        });
+      });
+    } else {
+      deleteNode(node.id, node);
+    }
+  }
+}

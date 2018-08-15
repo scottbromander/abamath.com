@@ -9,13 +9,14 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
   // Checking for specific google sheets
   const hasGoogleSheetFields = node.title && node.content && node.title._t && node.content._t;
-  const isGoogleSheetRow = node.internal.type === `community_education__district_classes` ||
-  node.internal.type === `community_education__offered_classes` ||
-  node.internal.type === `community_education__district`;
+  const isDistrictClass = node.internal.type === `community_education__district_classes`;
+  const isOfferedClass = node.internal.type === `community_education__offered_classes`;
+  const isDistrict = node.internal.type === `community_education__district`;
+  const isGoogleSheetRow = isDistrictClass || isOfferedClass || isDistrict;
 
   // checking for valid district classes
-  const correctedGoogleSheetRow = isGoogleSheetRow && hasGoogleSheetFields ? correctGoogleSheetRow(node.content._t) : null;
-  const isValidDistrictClass = correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, [
+  const correctedGoogleSheetRow = isGoogleSheetRow && hasGoogleSheetFields && correctGoogleSheetRow(node.content._t);
+  const isValidDistrictClass = isDistrictClass && correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, [
     'days',
     'description',
     'district',
@@ -27,13 +28,13 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   ]);
 
   // checking for valid offered classes
-  const isValidOfferedClass = correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, [
+  const isValidOfferedClass = isOfferedClass && correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, [
     'classgrades',
     'classdescription'
   ]);
 
   // checking for valid district
-  const isValidDistrict = correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, ['website']);
+  const isValidDistrict = isDistrict && correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, ['website']);
 
   if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })

@@ -14,7 +14,7 @@ export default class Footer extends React.Component {
                 <footer>
                     <div className="grid-container">
                     <div id="pages">
-                    <h4>PAGES</h4>
+                    <h4>Pages</h4>
                     <Link to={`/curriculum/`}>
                         Camps
                     </Link>
@@ -26,7 +26,7 @@ export default class Footer extends React.Component {
                     </Link>
                     </div>
                     <div id="camps">
-                    <h4>CAMPS</h4>
+                    <h4>Camps</h4>
                     <Link to={`/classes/code-championship/`}>
                         Code Championship
                     </Link>
@@ -50,7 +50,7 @@ export default class Footer extends React.Component {
                     </Link>
                     </div>
                     <div id="surveys">
-                    <h4>SURVEYS</h4>
+                    <h4>Surveys</h4>
                     <Link to={`/survey/`}>
                         Student Survey
                     </Link>
@@ -62,7 +62,7 @@ export default class Footer extends React.Component {
                     </Link>
                     </div>
                     <div id="connect">
-                    <h4>CONNECT WITH US</h4>
+                    <h4>Connect With Us</h4>
                     <p>
                     <OutboundLink href="mailto:info@abamath.com">
                         <img src={Email} />

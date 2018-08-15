@@ -1,5 +1,6 @@
 import React from "react";
 import ClassTable from "../components/ClassTable";
+import "./offered-class.css";
 
 export default class OfferedClass extends React.Component {
 
@@ -7,14 +8,14 @@ export default class OfferedClass extends React.Component {
     const specificClass = this.props.data.specificClass.edges[0].node.fields;
     return (
       <div>
-        <div>
+        <div id="description">
           <h1>{specificClass.className}{""}</h1>
-          <p>Grades: {specificClass.classgrades}{""}</p>
+          <h2>Grades: {specificClass.classgrades}{""}</h2>
           <p>{specificClass.classdescription}{""}</p>
         </div>
-
-        <div id="offerred-classes">
-        <h2>Current {specificClass.className}{""} Camps</h2>
+        <div id="color"></div>
+        <div id="offered-classes">
+        <h2>Upcoming {specificClass.className}{""} Camps</h2>
         <ClassTable
           districtClasses={this.props.data.allDistrictClasses.edges}
           searchText={specificClass.className}

@@ -1,4 +1,25 @@
-td{
-    display: flex;
-    flex-wrap: wrap;
+#districtList h1 {
+    font-family: Jura;
+    text-align: center;
+}
+
+#districtList h3{
+    font-family: Jura;
+    margin: 1.5% 1.666667%;
+    margin-bottom: 0%;
+    vertical-align: top;
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+#splitLine hr{
+    background: linear-gradient(to right, #ff85cb, #ff1911);
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+#newLine {
+    clear: both;
 }

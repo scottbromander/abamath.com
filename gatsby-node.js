@@ -1,220 +1,52 @@
-const path = require(`path`);
-const { correctDistrictClass, validateDistrictClass } = require('./utils/district-class-corrector');
-const { correctOfferedClass, validateOfferedClass } = require('./utils/offered-class-corrector');
-const { correctDistrict, validateDistrict } = require('./utils/district-corrector');
-const slugify = require('slugify');
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const { pagePromiseGenerator } = require('./utils/page-promise-generator');
+const { googleSheetNodeFilter } = require('./utils/google-sheet-node-filter');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField, deleteNode } = boundActionCreators
-  const isMarkdownRemark = node.internal.type === `MarkdownRemark`;
-
-  // Checking for specific google sheets
-  const hasGoogleSheetFields = node.title && node.content && node.title._t && node.content._t;
-
-  // checking for valid district classes
-  const isDistrictClass = node.internal.type === `community_education__district_classes`;
-  const correctedDistrictClass = isDistrictClass && hasGoogleSheetFields ? correctDistrictClass(node.content._t) : null;
-  const isValidDistrictClass = correctedDistrictClass ? validateDistrictClass(correctedDistrictClass) : null;
-
-  // checking for valid offered classes
-  const isOfferedClass = node.internal.type === `community_education__offered_classes`;
-  const correctedOfferedClass = isOfferedClass && hasGoogleSheetFields ? correctOfferedClass(node.content._t) : null;
-  const isValidOfferedClass = correctedOfferedClass ? validateOfferedClass(correctedOfferedClass) : null;
-
-    // checking for valid district
-    const isDistrict = node.internal.type === `community_education__district`;
-    const correctedDistrict = isDistrict && hasGoogleSheetFields ? correctDistrict(node.content._t) : null;
-    const isValidDistrict = correctedDistrict ? validateDistrict(correctedDistrict) : null;
+  const googleSheetNodeFieldCreator = googleSheetNodeFilter(node, createNodeField, deleteNode);
+  const isMarkdownRemark = node.internal.type === 'MarkdownRemark';
+  const isDistrictClass = node.internal.type === 'community_education__district_classes';
+  const isOfferedClass = node.internal.type === 'community_education__offered_classes';
+  const isDistrict = node.internal.type === 'community_education__district';
 
   if (isMarkdownRemark) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({ node, getNode, basePath: 'pages' })
     createNodeField({
       node,
-      name: `slug`,
+      name: 'slug',
       value: slug,
     })
-  } else if (isDistrictClass && isValidDistrictClass) {
-    const className = node.title._t;
-
-    createNodeField({
-      node,
-      name: `className`,
-      value: className,
-    });
-    const pageTitle = correctedDistrictClass.district + " " + className;
-    createNodeField({
-      node,
-      name: `pageTitle`,
-      value: pageTitle,
-    });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: '/' + slugify(pageTitle.toLowerCase()),
-    });
-    Object.entries(correctedDistrictClass).forEach((entry) => {
-      createNodeField({
-        node,
-        name: entry[0],
-        value: entry[1],
-      });
-    });
-  } else if (isOfferedClass && isValidOfferedClass) {
-    const className = node.title._t;
-
-    createNodeField({
-      node,
-      name: `className`,
-      value: className,
-    });
-    const pageTitle = className;
-    createNodeField({
-      node,
-      name: `pageTitle`,
-      value: pageTitle,
-    });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: '/' + slugify(pageTitle.toLowerCase()),
-    });
-    Object.entries(correctedOfferedClass).forEach((entry) => {
-      createNodeField({
-        node,
-        name: entry[0],
-        value: entry[1],
-      });
-    });
-  } else if (isDistrict && isValidDistrict) {
-    const districtName = node.title._t;
-
-    createNodeField({
-      node,
-      name: `districtName`,
-      value: districtName,
-    });
-    const pageTitle = districtName;
-    createNodeField({
-      node,
-      name: `pageTitle`,
-      value: pageTitle,
-    });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: '/' + slugify(pageTitle.toLowerCase()),
-    });
-    Object.entries(correctedDistrict).forEach((entry) => {
-      createNodeField({
-        node,
-        name: entry[0],
-        value: entry[1],
-      });
-    });
-  } else if (isDistrictClass || isOfferedClass || isDistrict) {
-    deleteNode(node.id, node);
+  } else if (isDistrictClass) {
+    googleSheetNodeFieldCreator('className', [
+      'days',
+      'description',
+      'district',
+      'enddate',
+      'grades',
+      'link',
+      'startdate',
+      'time'
+    ]);
+  } else if (isOfferedClass) {
+    googleSheetNodeFieldCreator('className', [
+      'classgrades',
+      'classdescription'
+    ]);
+  } else if (isDistrict) {
+    googleSheetNodeFieldCreator('districtName', [
+      'website'
+    ]);
   }
 };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
-  return new Promise((resolve, reject) => {
-    graphql(`
-      {
-        allCommunityEducationDistrictClasses {
-          totalCount
-          edges {
-            node {
-              fields {
-                days
-                grades
-                slug
-              }
-            }
-          }
-        }
-        allCommunityEducationOfferedClasses {
-          totalCount
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-        allCommunityEducationDistrict {
-          totalCount
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-        allMarkdownRemark {
-          totalCount
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }    
-    `).then(result => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        if(node.fields && node.fields.slug) {
-          createPage({
-            path: node.fields.slug,
-            component: path.resolve(`./src/templates/markdown-display.js`),
-            context: {
-              // Data passed to context is available in page queries as GraphQL variables.
-              slug: node.fields.slug,
-            },
-          });
-        }
-      })
-        result.data.allCommunityEducationDistrictClasses.edges.forEach(({ node }) => {
-          if (node.fields && node.fields.slug) {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/district-class.js`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          }
-        })
-        result.data.allCommunityEducationDistrict.edges.forEach(({ node }) => {
-          if (node.fields && node.fields.slug) {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/district.js`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          }
-        })
-        result.data.allCommunityEducationOfferedClasses.edges.forEach(({ node }) => {
-          if(node.fields && node.fields.slug) {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/offered-class.js`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          }
-        })
-        resolve();
-      })
-  })
+  const { createPage } = boundActionCreators;
+  const slugRoutePageCreator = pagePromiseGenerator(graphql, createPage);
+  return Promise.all([
+    slugRoutePageCreator('allMarkdownRemark', './src/templates/markdown-display.js'),
+    slugRoutePageCreator('allCommunityEducationDistrictClasses', './src/templates/district-class.js'),
+    slugRoutePageCreator('allCommunityEducationOfferedClasses', './src/templates/offered-class.js'),
+    slugRoutePageCreator('allCommunityEducationDistrict', './src/templates/district.js'),
+  ]);
 };

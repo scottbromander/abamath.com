@@ -14,9 +14,8 @@ export default class ClassDescriptions extends React.Component {
             <img src={codingIcon}/>
             <img src={websiteIcon}/>
             <img src={videoGameIcon}/>
-            <img src={videoGameIcon}/>
+            <div id="newLine"></div>
           </div>
-          <div id="newLine"></div>
             <div>
                 {this.props.allOfferedClasses.map(({ node }) =>
                     <div id="class">

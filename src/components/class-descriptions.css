@@ -31,7 +31,7 @@
 #class {
     border: 5px solid;
     border-image: linear-gradient(to bottom right, #53bbf4, #c0ff00) 30;
-    margin: 1.5% 0.5%;
+    margin: 0.5%;
     margin-bottom: 0%;
     vertical-align: top;
     width: 32%;
@@ -43,10 +43,10 @@
     width: 5%;
     Height: 5%;
     display: inline-block;
-    margin: 0% 14.16667%;
-    margin-top: 1.5%;
+    margin: 0px 14.16667%;
 }
 
 #newLine {
     clear:both;
+    margin: 0px;
 }

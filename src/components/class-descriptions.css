@@ -42,7 +42,8 @@
 #icons img{
     width: 5%;
     display: inline-block;
-    margin: 0px 14.16667%;
+    margin: 0 14.16667%;
+    margin-bottom: -5%;
 }
 
 #newLine {

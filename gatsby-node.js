@@ -1,25 +1,25 @@
 const path = require(`path`);
 const { correctGoogleSheetRow, validateGoogleSheetRowObject } = require('./utils/google-sheet-corrector');
 const slugify = require('slugify');
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField, deleteNode } = boundActionCreators
   const googleSheetNodeFieldCreator = googleSheetRowFilter(node, createNodeField, deleteNode);
-  const isMarkdownRemark = node.internal.type === `MarkdownRemark`;
-  const isDistrictClass = node.internal.type === `community_education__district_classes`;
-  const isOfferedClass = node.internal.type === `community_education__offered_classes`;
-  const isDistrict = node.internal.type === `community_education__district`;
+  const isMarkdownRemark = node.internal.type === 'MarkdownRemark';
+  const isDistrictClass = node.internal.type === 'community_education__district_classes';
+  const isOfferedClass = node.internal.type === 'community_education__offered_classes';
+  const isDistrict = node.internal.type === 'community_education__district';
 
   if (isMarkdownRemark) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({ node, getNode, basePath: 'pages' })
     createNodeField({
       node,
-      name: `slug`,
+      name: 'slug',
       value: slug,
     })
   } else if (isDistrictClass) {
-    googleSheetNodeFieldCreator(`className`, [
+    googleSheetNodeFieldCreator('className', [
       'days',
       'description',
       'district',
@@ -30,12 +30,12 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       'time'
     ]);
   } else if (isOfferedClass) {
-    googleSheetNodeFieldCreator(`className`, [
+    googleSheetNodeFieldCreator('className', [
       'classgrades',
       'classdescription'
     ]);
   } else if (isDistrict) {
-    googleSheetNodeFieldCreator(`districtName`, [
+    googleSheetNodeFieldCreator('districtName', [
       'website'
     ]);
   }
@@ -43,135 +43,12 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
-  const allCommunityEducationDistrictClassesPromise = new Promise((resolve, reject) => {
-    graphql(`
-      {
-        allCommunityEducationDistrictClasses {
-          totalCount
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }    
-    `).then(result => {
-        result.data && result.data.allCommunityEducationDistrictClasses && result.data.allCommunityEducationDistrictClasses.edges.forEach(({ node }) => {
-          if (node.fields && node.fields.slug) {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/district-class.js`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          }
-        });
-        resolve();
-      });
-  });
-
-  const allCommunityEducationOfferedClassesPromise = new Promise((resolve, reject) => {
-    graphql(`
-          {
-            allCommunityEducationOfferedClasses {
-              totalCount
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                }
-              }
-            }
-          }    
-        `).then(result => {
-        result.data && result.data.allCommunityEducationOfferedClasses && result.data.allCommunityEducationOfferedClasses.edges.forEach(({ node }) => {
-          if (node.fields && node.fields.slug) {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/offered-class.js`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          }
-        })
-        resolve();
-      });
-  });
-
-  const allCommunityEducationDistrictPromise = new Promise((resolve, reject) => {
-    graphql(`
-          {
-            allCommunityEducationDistrict {
-              totalCount
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                }
-              }
-            }
-          }    
-        `).then(result => {
-        result.data && result.data.allCommunityEducationDistrict && result.data.allCommunityEducationDistrict.edges.forEach(({ node }) => {
-          if (node.fields && node.fields.slug) {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/district.js`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          }
-        })
-        resolve();
-      });
-  });
-
-  const allMarkdownRemarkPromise = new Promise((resolve, reject) => {
-    graphql(`
-          {
-            allMarkdownRemark {
-              totalCount
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                }
-              }
-            }
-          }    
-        `).then(result => {
-        result.data && result.data.allMarkdownRemark && result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-          if (node.fields && node.fields.slug) {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve(`./src/templates/markdown-display.js`),
-              context: {
-                // Data passed to context is available in page queries as GraphQL variables.
-                slug: node.fields.slug,
-              },
-            });
-          }
-        });
-        resolve();
-      })
-  });
-
+  const slugRoutePageCreator = slugRoutePagePromiseGenerator(graphql, createPage);
   return Promise.all([
-    allCommunityEducationDistrictClassesPromise,
-    allCommunityEducationOfferedClassesPromise,
-    allCommunityEducationDistrictPromise,
-    allMarkdownRemarkPromise
+    slugRoutePageCreator('allMarkdownRemark', './src/templates/markdown-display.js'),
+    slugRoutePageCreator('allCommunityEducationDistrictClasses', './src/templates/district-class.js'),
+    slugRoutePageCreator('allCommunityEducationOfferedClasses', './src/templates/offered-class.js'),
+    slugRoutePageCreator('allCommunityEducationDistrict', './src/templates/district.js'),
   ]);
 };
 
@@ -189,7 +66,7 @@ const googleSheetRowFilter = (node, createNodeField, deleteNode) => (titleName, 
     });
     createNodeField({
       node,
-      name: `slug`,
+      name: 'slug',
       value: '/' + slugify(pageTitle.toLowerCase()),
     });
     Object.entries(correctedGoogleSheetRow).forEach((entry) => {
@@ -203,3 +80,34 @@ const googleSheetRowFilter = (node, createNodeField, deleteNode) => (titleName, 
     deleteNode(node.id, node);
   }
 }
+
+const slugRoutePagePromiseGenerator = (graphql, createPage) => (gqlNodeName, pageComponent) => new Promise((resolve, reject) => {
+  graphql(`
+  {
+    ${gqlNodeName} {
+      totalCount
+      edges {
+        node {
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }    
+`).then(result => {
+      result.data && result.data[gqlNodeName] && result.data[gqlNodeName].edges.forEach(({ node }) => {
+        if (node.fields && node.fields.slug) {
+          createPage({
+            path: node.fields.slug,
+            component: path.resolve(pageComponent),
+            context: {
+              // Data passed to context is available in page queries as GraphQL variables.
+              slug: node.fields.slug,
+            },
+          });
+        }
+      });
+      resolve();
+    });
+});

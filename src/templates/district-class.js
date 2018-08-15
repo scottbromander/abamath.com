@@ -21,7 +21,7 @@ export default class DistrictClass extends React.Component {
     const specificClass = this.props.data.specificClass.edges[0].node.fields;
     return (
       <div id="district-classes">
-          <div id="classinfo" >
+          <div id="classInfo" >
           <h1>{specificClass.district} {specificClass.className}</h1>
           <h2>Time: {specificClass.time}</h2>
           <h2>Grades: {specificClass.grades}</h2>

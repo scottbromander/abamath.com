@@ -1,0 +1,47 @@
+#class h2, #class h3{
+    font-family: Jura;
+    text-align: center;
+    padding: 1%;
+}
+
+#classList h1 {
+    font-family: Jura;
+    text-align: center;
+}
+
+#class p{
+    color: black;
+    padding: 2%;
+}
+
+#class button{
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 120%;
+    border-radius: 10%;
+    margin: 1% auto;
+    font-family: Jura;
+}
+
+#class {
+    background: linear-gradient(to bottom right, #53bcf4a2, #bfff00ab);
+    margin: 1.5% 1.666667%;
+    margin-bottom: 0%;
+    vertical-align: top;
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+#icons img{
+    width: 5%;
+    Height: 5%;
+    display: inline-block;
+    margin: 0% 14.16667%;
+    margin-top: 1.5%;
+}

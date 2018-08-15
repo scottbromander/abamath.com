@@ -51,8 +51,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           edges {
             node {
               fields {
-                days
-                grades
                 slug
               }
             }

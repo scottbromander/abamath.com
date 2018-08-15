@@ -36,6 +36,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   // checking for valid district
   const isValidDistrict = isDistrict && correctedGoogleSheetRow && validateGoogleSheetRowObject(correctedGoogleSheetRow, ['website']);
 
+  const isValidGoogleSheetRow = isValidDistrictClass || isValidOfferedClass || isValidDistrict;
+
   if (isMarkdownRemark) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
     createNodeField({
@@ -43,20 +45,24 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `slug`,
       value: slug,
     })
-  } else if (node.internal.type === `community_education__district_classes` && isValidDistrictClass) {
-    const className = node.title._t;
+  } else if (isValidGoogleSheetRow) {
+    const rowTitle = node.title._t;
+    const pageTitle = correctedGoogleSheetRow.district ? correctedGoogleSheetRow.district + " " + rowTitle : rowTitle;
+    if(isOfferedClass || isDistrictClass) {
+      createNodeField({
+        node,
+        name: `className`,
+        value: rowTitle,
+      });
+    } else {
+      createNodeField({
+        node,
+        name: `districtName`,
+        value: rowTitle,
 
-    createNodeField({
-      node,
-      name: `className`,
-      value: className,
-    });
-    const pageTitle = correctedGoogleSheetRow.district + " " + className;
-    createNodeField({
-      node,
-      name: `pageTitle`,
-      value: pageTitle,
-    });
+      });
+    }
+
     createNodeField({
       node,
       name: `slug`,
@@ -68,59 +74,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
         name: entry[0],
         value: entry[1],
       });
-    });
-  } else if (node.internal.type === `community_education__offered_classes` && isValidOfferedClass) {
-    const className = node.title._t;
-
-    createNodeField({
-      node,
-      name: `className`,
-      value: className,
-    });
-    const pageTitle = className;
-    createNodeField({
-      node,
-      name: `pageTitle`,
-      value: pageTitle,
-    });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: '/' + slugify(pageTitle.toLowerCase()),
-    });
-    Object.entries(correctedGoogleSheetRow).forEach((entry) => {
-      createNodeField({
-        node,
-        name: entry[0],
-        value: entry[1],
-      });
-    });
-  } else if (node.internal.type === `community_education__district` && isValidDistrict) {
-    const districtName = node.title._t;
-
-    createNodeField({
-      node,
-      name: `districtName`,
-      value: districtName,
-    });
-    const pageTitle = districtName;
-    createNodeField({
-      node,
-      name: `pageTitle`,
-      value: pageTitle,
-    });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: '/' + slugify(pageTitle.toLowerCase()),
-    });
-    Object.entries(correctedGoogleSheetRow).forEach((entry) => {
-      createNodeField({
-        node,
-        name: entry[0],
-        value: entry[1],
-      });
-    });
+    });    
   } else if (isGoogleSheetRow) {
     deleteNode(node.id, node);
   }

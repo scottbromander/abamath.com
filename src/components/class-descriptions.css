@@ -4,7 +4,7 @@
     padding: 1%;
 }
 
-#classList h1 {
+#camps h1 {
     font-family: Jura;
     text-align: center;
 }
@@ -31,22 +31,46 @@
 #class {
     border: 5px solid;
     border-image: linear-gradient(to bottom right, #53bbf4, #c0ff00) 30;
-    margin: 0.5%;
-    margin-bottom: 0%;
-    vertical-align: top;
-    width: 32%;
-    height: 100%;
-    float: left;
+    align-self: center;
+    justify-self: center;
 }
 
-#icons img{
-    width: 5%;
-    display: inline-block;
-    margin: 0 14.16667%;
-    margin-bottom: -5%;
+#classList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin: -5% 1.5%;
+}
+
+#icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: -1.5% 1.5%;
+}
+
+#icons img {
+    width: 15%;
+}
+
+#coding {
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+#website {
+    grid-column: 2;
+    align-self: center;
+    justify-self: center;
+}
+
+#videoGame {
+    grid-column: 3;
+    align-self: center;
+    justify-self: center;
 }
 
 #newLine {
     clear:both;
-    margin: 0px;
 }

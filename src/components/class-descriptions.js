@@ -8,15 +8,15 @@ import "./class-descriptions.css";
 export default class ClassDescriptions extends React.Component {
     render(){
       return(
-          <div id="classList">
+          <div id="camps">
           <h1>Camps</h1>
           <div id="icons">
-            <img src={codingIcon}/>
-            <img src={websiteIcon}/>
-            <img src={videoGameIcon}/>
+            <img src={codingIcon} id="coding"/>
+            <img src={websiteIcon} id="website"/>
+            <img src={videoGameIcon} id="videoGame"/>
             <div id="newLine"></div>
           </div>
-            <div>
+            <div id="classList">
                 {this.props.allOfferedClasses.map(({ node }) =>
                     <div id="class">
                         <h2>
@@ -32,7 +32,6 @@ export default class ClassDescriptions extends React.Component {
                     </div>
                     )}
                 </div>
-                <div id="newLine"></div>
             </div>
       )
     }

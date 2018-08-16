@@ -185,7 +185,7 @@ export default class GirlScoutCurriculum extends React.Component {
                         discuss unclear program terms.</li>
                     <li>If they would like, students may try with another set of instructions</li>
                 </ul>
-            <li>Have students fill out the survey: abamath.com/survey </li>
+            <li>Have students fill out the survey: <a href="https://www.abamath.com/survey">abamath.com/survey</a></li>
 
         </ul>
     

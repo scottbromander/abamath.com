@@ -39,6 +39,8 @@
     border-image: linear-gradient(to bottom right, #53bbf4, #c0ff00) 30;
     align-self: center;
     justify-self: center;
+    overflow: auto;
+    height: 100%;
 }
 
 #classList {

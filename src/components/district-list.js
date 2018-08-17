@@ -6,7 +6,7 @@ export default class DistrictsList extends React.Component {
     render(){
       return(
         <div id="districtList">
-            <h1>Where We Are</h1>
+            <h2>Where We Are</h2>
             <div id="splitLine"><hr></hr></div>
             <div id="grid">
             {this.props.allDistricts.map(({ node }) =>

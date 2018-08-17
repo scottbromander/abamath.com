@@ -10,7 +10,7 @@ export default class CodeChampionship extends React.Component {
         return(
             <div id="codeChampionship">
                 <img src={codeChampionshipIcon}/>
-                <h1>Code Championship</h1>
+                <h2>Code Championship</h2>
                 <p>
                 Attention girls and boys, the March Madness of coding has arrived; all the excitement of a 
                 tournament packed into one day!Spend the day building out an artificial intelligence computer 

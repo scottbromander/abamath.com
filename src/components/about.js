@@ -13,13 +13,13 @@ export default class About extends React.Component {
     return(
       <div id="about">
         <img src={aboutIcon}/>
-        <h1>
+        <h2>
           FAQ
-        </h1>
+        </h2>
             <img src={qIcon}/>
-            <h2>
+            <h3>
               Who are you?
-              </h2>
+              </h3>
             <img src={aIcon}/>
             <p>
             We are a group of highly energetic software developers, college 
@@ -27,9 +27,9 @@ export default class About extends React.Component {
             generation of problem solvers to be the super heroes of tomorrow.
             </p>
           <img src={qIcon}/>
-          <h2>
+          <h3>
             What do you do?
-            </h2>
+            </h3>
           <img src={aIcon}/>
             <p>
             We do for coding what little league does for baseball. 
@@ -38,9 +38,9 @@ export default class About extends React.Component {
             the excitement of a sport. 
           </p>
           <img src={qIcon}/>
-            <h2>
+            <h3>
             I love working with kids and STEM! Can I help you?
-            </h2>
+            </h3>
           <img src={aIcon}/>
             <p>
             Probably! Even when we don't have openings, we're always 
@@ -48,9 +48,9 @@ export default class About extends React.Component {
             our coding classes! Tell us about yourself <Link to="./application/">here</Link>!
             </p>
           <img src={qIcon}/>
-            <h2>
+            <h3>
             Why aren't you in my town yet?
-            </h2>
+            </h3>
           <img src={aIcon}/>
             <p>
             We had to start somewhere. We're from the southwest metro, 

@@ -1,74 +1,13 @@
-#district-classes {
-    text-align: left;
-}
-
-#classinfo {
-    padding: 1%;
-    margin: 1% 20%;
-}
-
-#district-classes h1 {
-    padding: 1%;
-    margin: 1% 20%;
-    margin-top: 2%;
-    font-family: Jura;
-}
-
-#district-classes h2 {
-    padding: 0 1%;
-    margin: 1% 20%;
-    font-size: 150%;
-    font-family: Jura;
-    text-align: left;
-}
-
-#district-classes p {
-    padding: 1%;
-    margin: 1% 20%;
-    font-family: Arial;
-}
-
-#district-classes button {
-    background-color: #53bbf4;
-    border: none;
-    color: black;
-    padding: 1%;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 120%;
-    border-radius: 10%;
-    font-family: Jura;
-    margin: 2% auto;
-}
-
-#district-classes h3 {
-    margin-top: 3%;
-    text-align: center;
-    font-family: Jura;
-}
-
-#district-classes table {
-    margin-left: auto;
-    margin-right: auto;
-    width: 99%;
-}
-
-#district-classes th, #district-classes td {
-    text-align: center;
-}
-
-
 #classInfo {
-    padding-bottom: .5%;
-}
-
-#line {
     border-left: 6px solid;
     border-image: linear-gradient( #53bbf4,  #c0ff00) 30;
-    height: 500px;
-    position: absolute;
-    left: 20%;
-    margin-left: -3px;
-    top: 15%;
+    margin: 1% 20%;
+}
+
+#classInfo h2 {
+    text-align: left;
+}
+
+#district-classes {
+    text-align: left;
 }

@@ -8,6 +8,7 @@ export default class DistrictsList extends React.Component {
         <div id="districtList">
             <h1>Where We Are</h1>
             <div id="splitLine"><hr></hr></div>
+            <div id="grid">
             {this.props.allDistricts.map(({ node }) =>
                 <div>
                     <Link to = {node.fields.slug}>
@@ -17,7 +18,7 @@ export default class DistrictsList extends React.Component {
                     </Link>
                 </div>
                 )}
-
+                </div>
             <div id="newLine"></div>
             </div>
       )

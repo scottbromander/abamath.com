@@ -14,16 +14,17 @@
     padding: 2%;
 }
 
-#class Link {
+#class a {
     color:white;
     margin: 1% auto;
+    display: initial;
 }
 
 #class button{
     background-color: #53bbf4;
     border: none;
     color: white;
-    padding: 1%;
+    padding: 2%;
     text-align: center;
     text-decoration: none;
     display: block;

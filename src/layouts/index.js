@@ -28,7 +28,9 @@ export default ({ children, data }) => (
     </Helmet>
     <Navigation />
     {children()}
-    <Footer />
+    <Footer 
+      allOfferedClasses = {data.allOfferedClasses.edges}
+      />
   </g.Div>
 );
 
@@ -37,6 +39,19 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    },
+
+    allOfferedClasses: allCommunityEducationOfferedClasses {
+      totalCount
+      edges {
+        node {
+          id
+          fields {
+            slug,
+            className
+          }
+        }
       }
     }
   }

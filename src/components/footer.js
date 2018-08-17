@@ -27,24 +27,9 @@ export default class Footer extends React.Component {
                     </div>
                     <div id="camps">
                     <h4>Camps</h4>
-                    <Link to={`/computer-coding/`}>
-                        Computer Coding
-                    </Link>
-                    <Link to={`/computer-coding-for-kids/`}>
-                        Computer Coding for Kids
-                    </Link>
-                    <Link to={`/video-game-creation/`}>
-                        Video Game Creation
-                    </Link>
-                    <Link to={`/video-game-creation-for-kids/`}>
-                        Video Game Creation for Kids
-                    </Link>
-                    <Link to={`/website-creation/`}>
-                       Website Creation
-                    </Link>
-                    <Link to={`/website-creation-for-kids/`}>
-                        Website Creation for Kids
-                    </Link>
+                    {this.props.allOfferedClasses.map(({ node }) =>
+                        <Link to = {node.fields.slug}>{node.fields.className}</Link>
+                        )}
                     </div>
                     <div id="surveys">
                     <h4>Surveys</h4>

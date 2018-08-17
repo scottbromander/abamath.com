@@ -28,7 +28,7 @@ export default class ClassDescriptions extends React.Component {
                         <p>
                             {node.fields.classshortdescription}
                             </p>
-                            <Link to = {node.fields.slug}><button type="button">Find A Camp!</button></Link>
+                           <button type="button"> <Link to = {node.fields.slug}>Find A Camp!</Link></button>
                     </div>
                     )}
                 </div>

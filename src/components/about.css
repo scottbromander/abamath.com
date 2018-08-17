@@ -1,21 +1,19 @@
-#about h3 {
-    width: 90%;
+#gridFAQ {
+    display: grid;
+    grid-template-columns: 5% auto;
+}
+
+.item {
+    align-self: start;
+    overflow: auto;
+    height: 100%;
+}
+
+#gridFAQ h3{
     text-align: left;
-    font-size: 150%;
-    float: right;
 }
 
-#about p{
-    width: 90%;
-    float:right;
-    margin: 1%;
-}
-
-#about img:first-of-type{
+#FAQIcon{
     margin: 0px 47.5%;
-}
-
-#about img {
     width: 5%;
-    margin: 1%;
 }

@@ -12,52 +12,56 @@ export default class About extends React.Component {
   render(){
     return(
       <div id="about">
-        <img src={aboutIcon}/>
+        <img src={aboutIcon} id="FAQIcon"/>
         <h2>
           FAQ
         </h2>
-            <img src={qIcon}/>
-            <h3>
+        <div id="newLine"></div>
+        <div id="gridFAQ">
+        
+            <img src={qIcon} class="item"/>
+            <h3 class="item">
               Who are you?
               </h3>
-            <img src={aIcon}/>
-            <p>
+            <img src={aIcon} class="item"/>
+            <p class="item">
             We are a group of highly energetic software developers, college 
             students, and engineers passionate about fostering the next 
             generation of problem solvers to be the super heroes of tomorrow.
             </p>
-          <img src={qIcon}/>
-          <h3>
+          <img src={qIcon} class="item"/>
+          <h3 class="item">
             What do you do?
             </h3>
-          <img src={aIcon}/>
-            <p>
+          <img src={aIcon} class="item"/>
+            <p class="item">
             We do for coding what little league does for baseball. 
             We run epic coding, video game, and website design classes through partnerships 
             with community education programs in Minnesota with all of 
             the excitement of a sport. 
           </p>
-          <img src={qIcon}/>
-            <h3>
+          <img src={qIcon} class="item"/>
+            <h3 class="item">
             I love working with kids and STEM! Can I help you?
             </h3>
-          <img src={aIcon}/>
-            <p>
+          <img src={aIcon} class="item"/>
+            <p class="item">
             Probably! Even when we don't have openings, we're always 
             looking to get in touch with potential future instructors for
             our coding classes! Tell us about yourself <Link to="./application/">here</Link>!
             </p>
-          <img src={qIcon}/>
-            <h3>
+          <img src={qIcon} class="item"/>
+            <h3 class="item">
             Why aren't you in my town yet?
             </h3>
-          <img src={aIcon}/>
-            <p>
+          <img src={aIcon} class="item"/>
+            <p class="item">
             We had to start somewhere. We're from the southwest metro, 
             so we started there. We're currently expanding like crazy 
             in Minnesota. If you want us in your town, get in touch and
             let us know!
               </p>
+          </div>
       </div>
     )
   }

@@ -80,3 +80,9 @@ img:last-child {
     width: 5%;
     margin: 0px 47.5%;
 }
+
+@media only screen and (max-width: 600px) {
+    .mobile-hide {
+        display: none;
+    }
+}

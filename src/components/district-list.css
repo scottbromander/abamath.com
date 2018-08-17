@@ -5,12 +5,8 @@
 
 #districtList h3{
     font-family: Jura;
-    margin: 1.5% 1.666667%;
-    margin-bottom: 0%;
-    vertical-align: top;
-    width: 30%;
-    height: 100%;
-    float: left;
+    color: #53bbf4;
+    font-size: 120%;
 }
 
 #splitLine hr{
@@ -22,4 +18,10 @@
 
 #newLine {
     clear: both;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 5px;
 }

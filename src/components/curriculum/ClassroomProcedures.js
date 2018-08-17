@@ -134,7 +134,7 @@ export default class ClassroomProcedures extends React.Component {
                             don’t line up at the door right now, I will turn off your computer and you 
                             will lose two minutes at the start of break time.” </li>
                         <li>If the student doesn’t comply after the warning, follow through with your 
-                            consequence. With consistently, your students will learn to listen the 
+                            consequence. With consistency, your students will learn to listen the 
                             first time you ask. </li>
                         <li>Another way to handle defiance is offering choices: “We can go outside 
                             today or play board game inside for break.” They have to choose one or the 

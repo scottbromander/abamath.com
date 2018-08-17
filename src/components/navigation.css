@@ -27,6 +27,11 @@
     font-family: Jura;
 }
 
+#navigation h1 {
+    font-family: "Century New Schoolbook";
+    font-size: 200%;
+}
+
 #navigation li a {
     display: block;
     color: black;

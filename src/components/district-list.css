@@ -1,12 +1,6 @@
-#districtList h1 {
-    font-family: Jura;
-    text-align: center;
-}
-
 #districtList h3{
-    font-family: Jura;
     color: #53bbf4;
-    font-size: 120%;
+    text-align: left;
 }
 
 #splitLine hr{
@@ -14,11 +8,6 @@
     overflow: visible;
     text-align: center;
     height: 5px;
-}
-
-#newLine {
-    clear: both;
-    margin-bottom: 10%;
 }
 
 #grid {

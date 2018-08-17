@@ -108,6 +108,85 @@ export default class ClassroomProcedures extends React.Component {
                     <li>Ask them a different way to express their thought</li>
                     <li>“Language please!”</li>
                     </ul>
+            <h4>Behavioral Examples and Solutions</h4>
+            <ul>
+                <li>Lying</li>
+                    <ul>
+                        <li>There are 3 main reasons why children lie: to get attention, to avoid 
+                            getting in trouble, and to feel better about themselves. Distinguishing 
+                            the reason for the lie can help you determine the best course of action. </li>
+                        <li>When you catch a student in a lie, ask, “Is that really what happened or 
+                            what you wish would have happened?” Give the student an extra consequence 
+                            for lying. Emphasize the importance of honesty and if they respond honestly, 
+                            say, “I’m so proud of you for being honest about being on another website 
+                            when I told you no. I’m still going to take 2 minutes away from your break 
+                            today, but because you told the truth, I won’t take away any from tomorrow.”</li>
+                        <li>Let them know that unless they tell the truth, people won’t believe what 
+                            they say. </li>
+                    </ul>
+                <li>Defiance </li>
+                    <ul>
+                        <li>Whether your student ignores you when you say you they need to get off the 
+                            computers or doesn’t line up when break is over, defiance is a difficult 
+                            behavior to address. It’s normal for kids to test limits at one time or 
+                            another. </li>
+                        <li>When a student is being defiant, offer a single if… then warning. “If you 
+                            don’t line up at the door right now, I will turn off your computer and you 
+                            will lose two minutes at the start of break time.” </li>
+                        <li>If the student doesn’t comply after the warning, follow through with your 
+                            consequence. With consistently, your students will learn to listen the 
+                            first time you ask. </li>
+                        <li>Another way to handle defiance is offering choices: “We can go outside 
+                            today or play board game inside for break.” They have to choose one or the 
+                            other. </li>
+                    </ul>
+                <li>Disrespectful Behavior</li>
+                    <ul>
+                        <li>Examples include name calling, throwing things, or mocking you</li>
+                        <li>If the student’s intention is to get attention, ignoring can be the best 
+                            course of action. Make it clear that sticking his or her tongue out at 
+                            you from across the classroom isn’t going to get the reaction they are 
+                            looking for. </li>
+                        <li>It’s important to give immediate consequences for most disrespectful 
+                            behavior, however. If a student calls you or another student a name, 
+                            take away a privilege or send him or her to the take-a-break chair. </li>
+                    </ul>
+                <li>Whining</li>
+                    <ul>
+                        <li>A good first course of action is ignoring. Show the student that whining 
+                            won’t get you to change your mind. Give him or her positive attention 
+                            when they stop whining. </li>
+                    </ul>
+                <li>Blurting out excessively </li>
+                    <ul>
+                        <li>Give the student an alternative to blurting out. Have him or her raise 
+                            their hand, and in return, make sure you call on them right away to 
+                            reinforce the positive behavior. </li>
+                        <li>Give the student a writing pad or a piece of paper to write their comments 
+                            down. Take time to discuss it later with them. </li>
+                    </ul>
+                <li>Interrupting </li>
+                    <ul>
+                        <li>Even if students are excited to talk, interrupting teaches them that they 
+                            are entitled to immediate attention. </li>
+                        <li>Show your students that you’ll pay full attention to them after you’ve 
+                            finished talking with another student. </li>
+                        <li>If needed, gently turn to the student and briefly say, “I am talking 
+                            with __ at the moment and will talk to you after. Until then, you need 
+                            to be patient.”</li>
+                    </ul>
+                <li>Disruptive </li>
+                    <ul>
+                        <li>The best way to combat disruptive behavior is to have structure and 
+                            guidelines. Children need boundaries and consequences for poor choices. 
+                            By consistently having a goal in mind for the students, they will hopefully 
+                            be less disruptive and more focused. Change class time up frequently. Are 
+                            your students bored? Have them stand up and stretch for a few minutes. Have
+                             they been working for an hour? Take a break and play a game with them. </li>
+                    </ul>
+
+                
+                </ul>
             </ul>
             <h4>How do we handle a child's misuse of the internet? </h4>
                 <p>*** Use as a guideline! Situations may vary, especially with kids who have ADHD 

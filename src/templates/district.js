@@ -11,7 +11,6 @@ export default class OfferedClass extends React.Component {
         <div id="info">
           <h1>{specificDistrict.districtName}{""}</h1>
         </div>
-        <div id="section"></div>
         <div id="offerred-classes">
         <h2>Upcoming {specificDistrict.districtName}{""} Camps</h2>
         <ClassTable

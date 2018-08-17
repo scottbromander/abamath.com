@@ -1,52 +1,10 @@
 #description {
+    margin: 1% 20%;
     text-align: left;
-}
-
-#color {
     border-image: linear-gradient(#ff85cb, #ff1911) 30;
-    border-left: 6px solid;
-    height: 45%;
-    position: absolute;
-    left: 20%;
-    margin-left: -3px;
-    top: 15%;
+    border-left: 6px solid; 
 }
 
-#description h1 {
-    padding: 1%;
-    margin: 1% 20%;
-    margin-top: 2%;
-    font-family: Jura;
-}
-
-#description h2 {
-    padding: 1%;
-    margin: 1% 20%;
-    font-size: 150%;
-    font-family: Jura;
+#description h2{
     text-align: left;
 }
-
-#description p {
-    padding: 1%;
-    margin: 1% 20%;
-    font-family: Arial;
-}
-
-#description h3 {
-    padding: 1%;
-    margin: 1% 20%;
-    margin-top: 2%;
-    margin-bottom: 4%;
-}
-
-#description table {
-    margin-left: auto;
-    margin-right: auto;
-    width: 99%;
-}
-
-#description th, #description td {
-    text-align: center;
-}
-

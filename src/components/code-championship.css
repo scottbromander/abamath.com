@@ -12,9 +12,17 @@
 
 #codeChampionship button{
     background-color: #53bbf4;
+    border: none;
+    color: white;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 120%;
+    border-radius: 10%;
+    margin: 1% auto;
+    margin-bottom: 7%;
     font-family: Jura;
-    height: 50px;
-    margin-bottom: 10%;
 }
 
 #codeChampionship img{

@@ -1,0 +1,84 @@
+#class h2, #class h3{
+    font-family: Jura;
+    text-align: center;
+    padding: 1%;
+}
+
+#camps h1 {
+    font-family: Jura;
+    text-align: center;
+}
+
+#class p{
+    color: black;
+    padding: 2%;
+}
+
+#class a {
+    color:white;
+    margin: 1% auto;
+    display: initial;
+}
+
+#class button{
+    background-color: #53bbf4;
+    border: none;
+    color: white;
+    padding: 2%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 120%;
+    border-radius: 10%;
+    margin: 1% auto;
+    font-family: Jura;
+}
+
+#class {
+    border: 5px solid;
+    border-image: linear-gradient(to bottom right, #53bbf4, #c0ff00) 30;
+    align-self: center;
+    justify-self: center;
+    overflow: auto;
+    height: 100%;
+}
+
+#classList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin: -5% 1.5%;
+}
+
+#icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: -1.5% 1.5%;
+}
+
+#icons img {
+    width: 15%;
+}
+
+#coding {
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+#website {
+    grid-column: 2;
+    align-self: center;
+    justify-self: center;
+}
+
+#videoGame {
+    grid-column: 3;
+    align-self: center;
+    justify-self: center;
+}
+
+#newLine {
+    clear:both;
+}

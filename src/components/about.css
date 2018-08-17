@@ -1,32 +1,19 @@
-#about {
+#gridFAQ {
+    display: grid;
+    grid-template-columns: 5% auto;
+}
+
+.item {
+    align-self: start;
+    overflow: auto;
+    height: 100%;
+}
+
+#gridFAQ h3{
     text-align: left;
 }
 
-#about h2 {
-    font-family: Jura;
-    width: 90%;
-    text-align: left;
-    font-size: 150%;
-    float: right;
-}
-
-#about h1{
-    font-family: Jura;
-    text-align: center;
-}
-
-#about p{
-    font-family: Arial;
-    width: 90%;
-    float:right;
-    margin: 1%;
-}
-
-#about img:first-of-type{
+#FAQIcon{
     margin: 0px 47.5%;
-}
-
-#about img {
     width: 5%;
-    margin: 1%;
 }

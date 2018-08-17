@@ -5,7 +5,7 @@
       "type": "node",
       "request": "launch",
       "protocol": "inspector",
-      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
+      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
       "args": ["develop", "-p", "7777"],
       "stopOnEntry": false,
       "cwd": "${workspaceRoot}",

@@ -124,7 +124,8 @@ export const query = graphql`
             slug,
             classgrades,
             classdescription,
-            className
+            className,
+            classshortdescription
           }
         }
       }

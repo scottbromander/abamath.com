@@ -2,18 +2,7 @@
     text-align: center;
 }
 
-#codeChampionship h1 {
-    font-family: Jura;
-}
-
-#codeChampionship p{
-    font-family: Arial;
-}
-
 #codeChampionship button{
-    background-color: #53bbf4;
-    font-family: Jura;
-    height: 50px;
     margin-bottom: 10%;
 }
 

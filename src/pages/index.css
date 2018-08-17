@@ -16,6 +16,42 @@ h2 {
     font: normal normal 190% Jura, sans-serif;
     text-align: center;
     text-transform: capitalize;
+    font-weight: bold;
+    padding: 1%;
+}
+
+h3 {
+    margin: 1.5%;
+    font: normal normal 120% Jura, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 1%;
+}
+
+h1 {
+    margin: 1.5%;
+    font-family: Jura;
+}
+
+p {
+    font-family: Arial;
+    font-size: 100%;
+    color: black;
+    padding: 2%;
+}
+
+button {
+    background-color: #53bbf4;
+    border: none;
+    color: white;
+    padding: 2%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 120%;
+    border-radius: 10%;
+    margin: 1% auto;
+    font-family: Jura;
 }
 
 input {
@@ -76,7 +112,12 @@ img:last-child {
     text-decoration-line: underline;
 }
 
-#contact img, #classes img{
+#classes img{
+    width: 5%;
+    margin: 0px 47.5%;
+}
+
+#contact img {
     width: 5%;
     margin: 0px 47.5%;
 }
@@ -85,4 +126,8 @@ img:last-child {
     .mobile-hide {
         display: none;
     }
+}
+
+#newLine {
+    clear:both;
 }

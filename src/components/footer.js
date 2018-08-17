@@ -27,8 +27,8 @@ export default class Footer extends React.Component {
                     </div>
                     <div id="camps">
                     <h4>Camps</h4>
-                    <Link to={`/computer-coders/`}>
-                        Computer Coders
+                    <Link to={`/computer-coding/`}>
+                        Computer Coding
                     </Link>
                     <Link to={`/computer-coding-for-kids/`}>
                         Computer Coding for Kids
@@ -39,8 +39,8 @@ export default class Footer extends React.Component {
                     <Link to={`/video-game-creation-for-kids/`}>
                         Video Game Creation for Kids
                     </Link>
-                    <Link to={`/website-design/`}>
-                       Website Design
+                    <Link to={`/website-creation/`}>
+                       Website Creation
                     </Link>
                     <Link to={`/website-creation-for-kids/`}>
                         Website Creation for Kids

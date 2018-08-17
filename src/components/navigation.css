@@ -30,6 +30,7 @@
 #navigation h1 {
     font-family: "Century New Schoolbook";
     font-size: 200%;
+    margin: 0px;
 }
 
 #navigation li a {

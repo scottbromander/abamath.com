@@ -9,7 +9,7 @@ export default class ClassDescriptions extends React.Component {
     render(){
       return(
           <div id="camps">
-          <h1>Camps</h1>
+          <h2>Camps</h2>
           <div id="icons">
             <img src={codingIcon} id="coding"/>
             <img src={websiteIcon} id="website"/>
@@ -28,7 +28,7 @@ export default class ClassDescriptions extends React.Component {
                         <p>
                             {node.fields.classshortdescription}
                             </p>
-                           <button type="button"> <Link to = {node.fields.slug}>Find A Camp!</Link></button>
+                            <Link to = {node.fields.slug}><button type="button">Find A Camp!</button></Link>
                     </div>
                     )}
                 </div>

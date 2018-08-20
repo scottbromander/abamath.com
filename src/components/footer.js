@@ -59,7 +59,7 @@ export default class Footer extends React.Component {
                     </div>
                     </div>
                     <hr></hr>
-                    <p>&copy; 2013 abamath</p>
+                    <p id="copyright">&copy; 2013 abamath</p>
                 </footer>
             </div>
         )

@@ -1,6 +1,5 @@
 import React from "react";
 import g from "glamorous";
-import { css } from "glamor";
 import Helmet from 'react-helmet'
 import { rhythm } from "../utils/typography";
 import logo from "../images/abamath.png";

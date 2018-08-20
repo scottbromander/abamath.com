@@ -42,11 +42,11 @@ export default class ClassTable extends React.Component {
             <tr>
               <th>Name</th>
               <th>District</th>
-              <th>Days</th>
+              <th className="mobile-hide">Days</th>
               <th>Start Date</th>
-              <th>End Date</th>
-              <th>Time</th>
-              <th>Grades</th>
+              <th className="mobile-hide">End Date</th>
+              <th className="mobile-hide">Time</th>
+              <th className="mobile-hide">Grades</th>
             </tr>
           </thead>
           <tbody>
@@ -62,7 +62,7 @@ export default class ClassTable extends React.Component {
                     {node.fields.district}
                   </Link>
                 </td>
-                <td>
+                <td className="mobile-hide">
                   <Link to={node.fields.slug} >
                     {node.fields.days}
                   </Link>
@@ -72,17 +72,17 @@ export default class ClassTable extends React.Component {
                     {node.fields.startdate}
                   </Link>
                 </td>
-                <td>
+                <td className="mobile-hide">
                   <Link to={node.fields.slug} >
                     {node.fields.enddate}
                   </Link>
                 </td>
-                <td>
+                <td className="mobile-hide">
                   <Link to={node.fields.slug} >
                     {node.fields.time}
                   </Link>
                 </td>
-                <td>
+                <td className="mobile-hide">
                   <Link to={node.fields.slug} >
                     {node.fields.grades}
                   </Link>

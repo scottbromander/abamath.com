@@ -46,3 +46,12 @@
     align-self: center;
     justify-self: center;
 }
+
+@media screen and (max-width: 600px) {
+    #classList {
+        grid-template-columns: 1fr;
+    }
+    #icons img {
+        width: 30%;
+    }
+}

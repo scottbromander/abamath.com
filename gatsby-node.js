@@ -45,8 +45,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const slugRoutePageCreator = pagePromiseGenerator(graphql, createPage);
   return Promise.all([
     slugRoutePageCreator('allMarkdownRemark', './src/templates/markdown-display.js'),
-    slugRoutePageCreator('allCommunityEducationDistrictClasses', './src/templates/district-class.js'),
-    slugRoutePageCreator('allCommunityEducationOfferedClasses', './src/templates/offered-class.js'),
-    slugRoutePageCreator('allCommunityEducationDistrict', './src/templates/district.js'),
+    slugRoutePageCreator('allCommunityEducationDistrictClasses', './src/templates/District_Classes/district-class.js'),
+    slugRoutePageCreator('allCommunityEducationOfferedClasses', './src/templates/Offered_Classes/offered-class.js'),
+    slugRoutePageCreator('allCommunityEducationDistrict', './src/templates/Districts/district.js'),
   ]);
 };

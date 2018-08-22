@@ -1,8 +1,8 @@
 import React from "react";
-import ClassTable from "../components/Upcoming Classes/ClassTable";
+import ClassTable from "../components/Upcoming_Classes/ClassTable";
 import ClassDescriptions from "../components/Class_Descriptions/class-descriptions";
 import About from "../components/About/about";
-import CodeChampionship from "../components/Code Championship/code-championship";
+import CodeChampionship from "../components/Code_Championship/code-championship";
 import DistrictsList from "../components/Districts/district-list";
 import Contact from "../components/Contact/contact";
 import GirlsImg from "../images/abamath-girls-coding.jpg"

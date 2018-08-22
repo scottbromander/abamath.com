@@ -4,26 +4,32 @@ import "./navigation.css"
 import Link from "gatsby-link";
 
 export default class Navigation extends React.Component {
-  showNav() {
-    var x = this.refs.myTopnav
-    if (x && x.className === "topnav") {
-      x.className += " responsive";
-    } 
-    else if (x) {
-      x.className = "topnav";
+  state = {
+    toggle: "topnav"
+  }
+
+  toggleNav = () => {
+    if (this.state.toggle == "topnav") {
+      this.setState({toggle: "topnav responsive"})
+    }
+    else {
+      this.setState({toggle: "topnav"})
     }
   }
   
   render(){
     return(
-      <div className="topnav" id="myTopnav" ref="myTopnav">
-        <Link to={'/'} className="nav-left"><img src={logo} /></Link>
-        <Link to={'/'} className="nav-left"><h1>abamath</h1></Link>
-        <Link to={'/#contact'} className="nav-right">Contact</Link>
-        <Link to={'/#about'} className="nav-right">About</Link>
-        <Link to={'/#classes'} className="nav-right">Camps</Link>
-        <Link to={this.showNav()} className="icon"><span></span><span></span><span></span></Link>
-
+      <div className={this.state.toggle}>
+        <div className="nav-left">
+        <Link to={'/'}><img src={logo} /></Link>
+        <Link to={'/'}><h1>abamath</h1></Link>
+        </div>
+        <div className="nav-right" onClick={this.toggleNav}>
+        <Link to={'/#contact'}>Contact</Link>
+        <Link to={'/#about'}>About</Link>
+        <Link to={'/#classes'}>Camps</Link>
+        </div>
+        <button onClick={this.toggleNav} className="icon"><span></span><span></span><span></span></button>
     </div>
     )
   }

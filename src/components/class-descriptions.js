@@ -18,7 +18,7 @@ export default class ClassDescriptions extends React.Component {
           </div>
             <div id="classList">
                 {this.props.allOfferedClasses.map(({ node }) =>
-                    <div id="class">
+                    <div id="class" key={node.id}>
                         <h2>
                             {node.fields.className}
                             </h2>

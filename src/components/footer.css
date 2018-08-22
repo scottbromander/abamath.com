@@ -12,7 +12,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto 25% 25% 25%;
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 3%;
     padding: 0 10%;
     height: 12rem;
@@ -52,15 +52,15 @@
     padding: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 760px) {
     .grid-container {
         grid-auto-rows: 50%;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: repeat(2, 1fr);
         padding-left: 5%;
         padding-right: 5%;
         height: 13rem;
     }
     #footer img {
-        width: 30%;
+        width: 25%;
     }
 }

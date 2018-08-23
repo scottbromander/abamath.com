@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/abamath.png"
+import logo from "../../images/abamath.png"
 import "./navigation.css"
 import Link from "gatsby-link";
 

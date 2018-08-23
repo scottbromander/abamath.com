@@ -1,8 +1,8 @@
 import React from "react";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import FB from "../images/facebook.png";
-import Twitter from "../images/twitter.png";
-import Email from "../images/email.png";
+import FB from "../../images/facebook.png";
+import Twitter from "../../images/twitter.png";
+import Email from "../../images/email.png";
 import Link from "gatsby-link";
 import "./footer.css";
 

@@ -12,18 +12,18 @@ export default class About extends React.Component {
   render(){
     return(
       <div id="about">
-        <img src={aboutIcon} id="FAQIcon"/>
+        <img src={aboutIcon} alt="FAQ" id="FAQIcon"/>
         <h2>
           FAQ
         </h2>
         <div id="newLine"></div>
         <div id="gridFAQ">
         
-            <img src={qIcon} className="item"/>
+            <img src={qIcon} alt="Question" className="item"/>
             <h3 className="item">
               Who are you?
               </h3>
-            <img src={aIcon} className="item"/>
+            <img src={aIcon} alt="Answer" className="item"/>
             <p className="item">
             We are a group of highly energetic software developers, college 
             students, and engineers passionate about fostering the next 

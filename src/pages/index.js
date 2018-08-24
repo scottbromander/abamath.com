@@ -46,7 +46,7 @@ export default class Index extends React.Component {
         <div id="background"></div>
         <div id="body">
           <div id="classes">
-          <img src={upcomingCampsIcon}/>
+          <img src={upcomingCampsIcon} alt="Upcoming Camps"/>
           <h2>Upcoming Camps</h2>
           <InputHints
               onChange={this.updateSearchText} 
@@ -63,18 +63,18 @@ export default class Index extends React.Component {
           />
           </div>
           </div>
-          <img src={GirlsImg} />
+          <img src={GirlsImg} alt="Girls Coding"/>
           <ClassDescriptions 
             allOfferedClasses = {this.props.data.allOfferedClasses.edges}
           />
           <CodeChampionship/>
           <About/>
-          <img src={KidsImg} />
+          <img src={KidsImg} alt="Kids Coding"/>
           <DistrictsList 
             allDistricts = {this.props.data.allCommunityEducationDistrict.edges}
           />
           <Contact />
-          <img src={CollageImg} />
+          <img src={CollageImg} alt="abamath Collage"/>
         </div>
       </div>
     )

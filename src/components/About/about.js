@@ -2,9 +2,9 @@ import React from "react";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import Link from "gatsby-link";
 import './about.css'; 
-import aboutIcon from "../images/about-icon.png";
-import qIcon from "../images/q-icon.png";
-import aIcon from "../images/a-icon.png";
+import aboutIcon from "../../images/about-icon.png";
+import qIcon from "../../images/q-icon.png";
+import aIcon from "../../images/a-icon.png";
 
 <meta>About page describing who Abamath is as a company, what we do, and how to get involved.</meta>
 

@@ -1,7 +1,4 @@
 import React from "react";
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import Link from "gatsby-link"; 
-import ClassroomProcedures from '../components/curriculum/ClassroomProcedures';
 import ClassroomChecklist from '../components/curriculum/ClassroomChecklist';
 import ClassroomAndHallwayProcedures from '../components/curriculum/ClassroomAndHallwayProcedures';
 

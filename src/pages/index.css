@@ -124,7 +124,7 @@ img:last-child {
     clear:both;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 760px) {
     .mobile-hide {
         display: none;
     }

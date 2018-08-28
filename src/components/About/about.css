@@ -6,14 +6,25 @@
 .item {
     align-self: start;
     overflow: auto;
-    height: 100%;
+    height: auto;
 }
 
 #gridFAQ h3{
     text-align: left;
 }
 
-#FAQIcon{
+#FAQIcon {
     margin: 0px 47.5%;
     width: 5%;
+}
+
+@media screen and (max-width: 600px) {
+    #FAQIcon {
+        width: 10%;
+    }
+
+    #about .item {
+        height: auto;
+        max-width: 130%;
+    }
 }

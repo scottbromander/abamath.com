@@ -10,7 +10,7 @@ export default class DistrictsList extends React.Component {
             <div id="splitLine"><hr></hr></div>
             <div id="grid">
             {this.props.allDistricts.map(({ node }) =>
-                <div>
+                <div key={node.id}>
                     <Link to = {node.fields.slug}>
                     <h3>
                         {node.fields.districtName}

@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "gatsby-link";
-import codingIcon from "../images/coding-icon.png";
-import videoGameIcon from "../images/video-game-icon.png";
-import websiteIcon from "../images/website-icon.png";
+import codingIcon from "../../images/coding-icon.png";
+import videoGameIcon from "../../images/video-game-icon.png";
+import websiteIcon from "../../images/website-icon.png";
 import "./class-descriptions.css";
 
 export default class ClassDescriptions extends React.Component {
@@ -18,7 +18,7 @@ export default class ClassDescriptions extends React.Component {
           </div>
             <div id="classList">
                 {this.props.allOfferedClasses.map(({ node }) =>
-                    <div id="class">
+                    <div id="class" key={node.id}>
                         <h2>
                             {node.fields.className}
                             </h2>

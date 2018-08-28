@@ -14,7 +14,7 @@ import videogame33 from '../components/curriculum/curriculum-images/videogame33.
 import videogame34 from '../components/curriculum/curriculum-images/videogame34.png';
 import videogame41 from '../components/curriculum/curriculum-images/videogame41.png';
 import videogame42 from '../components/curriculum/curriculum-images/videogame42.png';
-<meta></meta>
+<meta>Video Game Creation for Kids Camp curriculum</meta>
 
 export default class ComputerCodersCurriculum extends React.Component {
   render(){

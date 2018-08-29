@@ -29,32 +29,32 @@ export default class About extends React.Component {
             students, and engineers passionate about fostering the next 
             generation of problem solvers to be the super heroes of tomorrow.
             </p>
-          <img src={qIcon} className="item"/>
+          <img src={qIcon} alt="Question" className="item"/>
           <h3 className="item">
             What do you do?
             </h3>
-          <img src={aIcon} className="item"/>
+          <img src={aIcon} alt="Answer" className="item"/>
             <p className="item">
             We do for coding what little league does for baseball. 
             We run epic coding, video game, and website design classes through partnerships 
             with community education programs in Minnesota with all of 
             the excitement of a sport. 
           </p>
-          <img src={qIcon} className="item"/>
+          <img src={qIcon} alt="Question" className="item"/>
             <h3 className="item">
             I love working with kids and STEM! Can I help you?
             </h3>
-          <img src={aIcon} className="item"/>
+          <img src={aIcon} alt="Answer" className="item"/>
             <p className="item">
             Probably! Even when we don't have openings, we're always 
             looking to get in touch with potential future instructors for
             our coding classes! Tell us about yourself <Link to="./application/">here</Link>!
             </p>
-          <img src={qIcon} className="item"/>
+          <img src={qIcon} alt="Question" className="item"/>
             <h3 className="item">
             Why aren't you in my town yet?
             </h3>
-          <img src={aIcon} className="item"/>
+          <img src={aIcon} alt="Answer" className="item"/>
             <p className="item">
             We had to start somewhere. We're from the southwest metro, 
             so we started there. We're currently expanding like crazy 

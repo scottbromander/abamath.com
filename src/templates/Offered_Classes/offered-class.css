@@ -1,0 +1,27 @@
+#description {
+    margin: 1% 20%;
+    text-align: left;
+    border-image: linear-gradient(#ff85cb, #ff1911) 30;
+    border-left: 6px solid; 
+}
+
+#description h1 {
+    margin-left: 2%;
+}
+
+#description h2{
+    text-align: left;
+}
+
+#offered-classes {
+    margin: 3%;
+}
+
+@media screen and (max-width: 600px) {
+    #description {
+        margin: 1% 3%;
+    }
+    #description h2, #offered-classes h2 {
+        font-size: 130%;
+    }
+}

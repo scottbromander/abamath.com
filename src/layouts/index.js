@@ -3,8 +3,8 @@ import g from "glamorous";
 import Helmet from 'react-helmet'
 import { rhythm } from "../utils/typography";
 import logo from "../images/abamath.png";
-import Footer from "../components/footer"
-import Navigation from "../components/navigation"
+import Footer from "../components/Footer/footer"
+import Navigation from "../components/Navigation/navigation"
 
 export default ({ children, data }) => (
   <g.Div

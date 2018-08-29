@@ -1,6 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `abamath`,
+        title: `abamath | coding, video game, and website design classes`,
+        siteUrl: `https://www.abamath.com`,
     },
     plugins: [
         {
@@ -70,7 +71,9 @@ module.exports = {
                 verbose: true,
             }
         },
-
+        {
+          resolve: `gatsby-plugin-sitemap`
+        },
         {
             resolve: 'gatsby-source-apiserver',
             options: {

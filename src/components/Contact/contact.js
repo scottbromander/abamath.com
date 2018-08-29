@@ -1,6 +1,7 @@
 import React from "react";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import email from "../images/email.png";
+import email from "../../images/email.png";
+import "./contact.css"
 
 export default class Contact extends React.Component {
   render(){

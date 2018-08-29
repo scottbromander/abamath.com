@@ -1,23 +1,21 @@
 import React from "react";
-import ClassTable from "../components/ClassTable";
-import "./offered-class.css";
+import ClassTable from "../../components/Upcoming_Classes/ClassTable";
+import "./district.css";
 
 export default class OfferedClass extends React.Component {
 
   render() {
-    const specificClass = this.props.data.specificClass.edges[0].node.fields;
+    const specificDistrict = this.props.data.allCommunityEducationDistrict.edges[0].node.fields;
     return (
       <div>
-        <div id="description">
-          <h1>{specificClass.className}{""}</h1>
-          <h2>Grades: {specificClass.classgrades}{""}</h2>
-          <p>{specificClass.classdescription}{""}</p>
+        <div id="info">
+          <h1>{specificDistrict.districtName}{""}</h1>
         </div>
-        <div id="offered-classes">
-        <h2>Upcoming {specificClass.className}{""} Camps</h2>
+        <div id="offerred-classes">
+        <h2>Upcoming {specificDistrict.districtName}{""} Camps</h2>
         <ClassTable
           districtClasses={this.props.data.allDistrictClasses.edges}
-          searchText={specificClass.className}
+          searchText={specificDistrict.districtName}
         />
         </div>
       </div>
@@ -26,17 +24,15 @@ export default class OfferedClass extends React.Component {
 };
 
 export const query = graphql`
-query OfferedClassQuery($slug: String!) {
-  specificClass: allCommunityEducationOfferedClasses(filter: {fields: { slug: { eq: $slug } }}) {
+query DistrictsQuery($slug: String!) {
+  allCommunityEducationDistrict(filter: {fields: { slug: { eq: $slug } }}) {
     totalCount
     edges {
       node {
         id
         fields {
           slug,
-          classgrades,
-          classdescription,
-          className
+          districtName
         }
       }
     }

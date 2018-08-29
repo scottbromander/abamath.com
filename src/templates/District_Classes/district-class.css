@@ -1,0 +1,27 @@
+#classInfo {
+    border-left: 6px solid;
+    border-image: linear-gradient( #53bbf4,  #c0ff00) 30;
+    margin: 1% 5%;
+}
+
+#classInfo h1 {
+    margin-left: 2%;
+}
+
+#classInfo h2 {
+    text-align: left;
+}
+
+#district-classes {
+    text-align: left;
+    margin: 3%;
+}
+
+@media screen and (max-width: 600px) {
+    #classInfo {
+        margin: 1% 3%;
+    }
+    #district-classes h2 {
+        font-size: 130%;
+    }
+}

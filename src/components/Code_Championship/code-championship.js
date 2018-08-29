@@ -1,7 +1,7 @@
 import React from "react";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import "./code-championship.css";
-import codeChampionshipIcon from "../images/code-championship-icon.gif";
+import codeChampionshipIcon from "../../images/code-championship-icon.gif";
 
 <meta>Section describing Code Championship and linking to full page.</meta>
 

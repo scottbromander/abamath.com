@@ -45,7 +45,7 @@ export default class Index extends React.Component {
       <div>
         <div id="background"></div>
         <div id="body">
-          <div id="classes">
+          <div id="upcoming">
             <img src={upcomingCampsIcon} alt="Upcoming Camps" />
             <h2>Upcoming Camps</h2>
             <InputHints

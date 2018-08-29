@@ -26,8 +26,11 @@ export default class Navigation extends React.Component {
         </div>
         <div className="nav-right" onClick={this.toggleNav}>
         <Link to={'/#contact'}>Contact</Link>
+        <Link to={'/#districtList'}>Where</Link>
         <Link to={'/#about'}>About</Link>
-        <Link to={'/#classes'}>Camps</Link>
+        <Link to={'/#codeChampionship'}>Code Championship</Link>
+        <Link to={'/#camps'}>Camps</Link>
+        <Link to={'/#upcoming'}>Upcoming</Link>
         </div>
         <button onClick={this.toggleNav} className="icon"><span></span><span></span><span></span></button>
     </div>

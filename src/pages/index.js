@@ -11,6 +11,7 @@ import CollageImg from "../images/abamath-collage.png"
 import upcomingCampsIcon from "../images/upcoming-camps-icon.png"
 import InputHints from "react-input-hints"
 import "./index.css";
+import Img from "gatsby-image";
 
 <meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
@@ -64,6 +65,7 @@ export default class Index extends React.Component {
           </div>
           </div>
           <img src={GirlsImg} />
+          <Img resolutions={this.props.data.girlsImage.childImageSharp.resolutions} />
           <ClassDescriptions 
             allOfferedClasses = {this.props.data.allOfferedClasses.edges}
           />
@@ -83,6 +85,13 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
+    girlsImage: file(relativePath: { eq: "images/abamath-girls-coding.jpg" }) {
+      childImageSharp {
+        resolutions(width: 123, height: 123) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    },
     allCommunityEducationDistrict  {
       totalCount
       edges {

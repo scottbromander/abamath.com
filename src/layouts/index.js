@@ -2,6 +2,7 @@ import React from "react";
 import g from "glamorous";
 import Helmet from 'react-helmet'
 import { rhythm } from "../utils/typography";
+import Img from "gatsby-image";
 import logo from "../images/abamath.png";
 import Footer from "../components/Footer/footer"
 import Navigation from "../components/Navigation/navigation"
@@ -26,6 +27,7 @@ export default ({ children, data }) => (
       />
     </Helmet>
     <Navigation />
+    <Img resolutions={data.logoImage.childImageSharp.resolutions} />
     {children()}
     <Footer 
       allOfferedClasses = {data.allOfferedClasses.edges}
@@ -35,12 +37,18 @@ export default ({ children, data }) => (
 
 export const query = graphql`
   query LayoutQuery {
+    logoImage: file(relativePath: { eq: "images/abamath.png" }) {
+      childImageSharp {
+        resolutions(width: 123, height: 123) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    },
     site {
       siteMetadata {
         title
       }
     },
-
     allOfferedClasses: allCommunityEducationOfferedClasses {
       totalCount
       edges {

@@ -9,7 +9,7 @@ export default class CodeChampionship extends React.Component {
   render(){
         return(
             <div id="codeChampionship">
-                <img src={codeChampionshipIcon}/>
+                <img src={codeChampionshipIcon} alt="Code Championship"/>
                 <h2>Code Championship</h2>
                 <p>
                 Attention girls and boys, the March Madness of coding has arrived; all the excitement of a 

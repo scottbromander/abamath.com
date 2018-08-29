@@ -47,13 +47,13 @@ export default class Footer extends React.Component {
                     <h4>Connect With Us</h4>
                     <p>
                     <OutboundLink href="mailto:info@abamath.com">
-                        <img src={Email} />
+                        <img src={Email} alt="Email"/>
                     </OutboundLink>
                     <OutboundLink href="https://www.facebook.com/Abamath/">
-                        <img src={FB} />
+                        <img src={FB} alt="Facebook"/>
                     </OutboundLink>
                     <OutboundLink href="https://twitter.com/abamathCoding">
-                        <img src={Twitter} />
+                        <img src={Twitter} alt="Twitter"/>
                     </OutboundLink>
                     </p>
                     </div>

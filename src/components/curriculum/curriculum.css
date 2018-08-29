@@ -1,7 +1,7 @@
 ul { 
     list-style-type: disc; 
     list-style-position: inside; 
-    padding: 0 0 0 40px; 
+    padding: 0 0 0 30px; 
  }
  ol { 
     list-style-type: decimal; 
@@ -24,4 +24,12 @@ ul {
 
  h1 {
      font-family: Jura; 
+ }
+
+ p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
  }

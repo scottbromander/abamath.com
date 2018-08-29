@@ -30,10 +30,10 @@ export default class Index extends React.Component {
 
   setHumanize = () => {
     setTimeout(() => {
-      this.setState({humanize: Math.round(Math.random() * (200 - 30)) + 30})
+      this.setState({ humanize: Math.round(Math.random() * (200 - 30)) + 30 })
     }, this.state.humanize * 2 + 1200)
   }
-  
+
   updateSearchText = (event) => {
     this.setState({
       searchText: event.target.value,
@@ -46,35 +46,35 @@ export default class Index extends React.Component {
         <div id="background"></div>
         <div id="body">
           <div id="upcoming">
-          <img src={upcomingCampsIcon}/>
-          <h2>Upcoming Camps</h2>
-          <InputHints
-              onChange={this.updateSearchText} 
+            <img src={upcomingCampsIcon} alt="Upcoming Camps" />
+            <h2>Upcoming Camps</h2>
+            <InputHints
+              onChange={this.updateSearchText}
               value={this.state.searchText}
               waitBeforeDeleteMs={1200}
               writeSpeedMs={this.state.humanize}
               deleteSpeedMs={this.state.humanize}
               placeholders={["Search Here", "Hopkins", "Search Here", "Coding", "Search Here", "Minnetonka", "Search Here", "Edina"]}
-           />
-          <div id="table">
-          <ClassTable
-            districtClasses={this.props.data.allCommunityEducationDistrictClasses.edges}
-            searchText={this.state.searchText}
-          />
+            />
+            <div id="table">
+              <ClassTable
+                districtClasses={this.props.data.allCommunityEducationDistrictClasses.edges}
+                searchText={this.state.searchText}
+              />
+            </div>
           </div>
-          </div>
-          <img src={GirlsImg} />
-          <ClassDescriptions 
-            allOfferedClasses = {this.props.data.allOfferedClasses.edges}
+          <img src={GirlsImg} alt="Girls Coding" />
+          <ClassDescriptions
+            allOfferedClasses={this.props.data.allOfferedClasses.edges}
           />
-          <CodeChampionship/>
-          <About/>
-          <img src={KidsImg} />
-          <DistrictsList 
-            allDistricts = {this.props.data.allCommunityEducationDistrict.edges}
+          <CodeChampionship />
+          <About />
+          <img src={KidsImg} alt="Kids Coding" />
+          <DistrictsList
+            allDistricts={this.props.data.allCommunityEducationDistrict.edges}
           />
           <Contact />
-          <img src={CollageImg} />
+          <img src={CollageImg} alt="abamath Collage" />
         </div>
       </div>
     )

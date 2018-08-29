@@ -11,9 +11,9 @@ export default class ClassDescriptions extends React.Component {
           <div id="camps">
           <h2>Camps</h2>
           <div id="icons">
-            <img src={codingIcon} id="coding"/>
-            <img src={websiteIcon} id="website"/>
-            <img src={videoGameIcon} id="videoGame"/>
+            <img src={codingIcon} alt="Coding" id="coding"/>
+            <img src={websiteIcon} alt="Website" id="website"/>
+            <img src={videoGameIcon} alt="Videogame" id="videoGame"/>
             <div id="newLine"></div>
           </div>
             <div id="classList">

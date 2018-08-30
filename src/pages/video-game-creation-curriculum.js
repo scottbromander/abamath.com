@@ -4,6 +4,7 @@ import Link from "gatsby-link";
 import ClassroomProcedures from '../components/curriculum/ClassroomProcedures';
 import ClassroomChecklist from '../components/curriculum/ClassroomChecklist';
 import ClassroomAndHallwayProcedures from '../components/curriculum/ClassroomAndHallwayProcedures';
+import DesignYourOwnSprite from '../components/curriculum/DesignYourOwnSprite'; 
 import videogame11 from '../components/curriculum/curriculum-images/videogame11.png';
 import videogame12 from '../components/curriculum/curriculum-images/videogame12.png';
 import videogame21 from '../components/curriculum/curriculum-images/videogame21.png';
@@ -374,7 +375,7 @@ export default class VideoGameCreationCurriculum extends React.Component {
                     <li>If you don't have a set of cards, you can find them <a href="https://docs.google.com/document/d/1jJ7s9x-4-wk4s-2Y1IWm6FoPk-zIlJ30K6yjtNJwSEw/edit">
                     here</a></li></ul>
                 <li>Lesson 6 - Design Your Own Sprite </li>
-                
+                <DesignYourOwnSprite />
                 <li>Final Game Work Time</li>
             </ul>
             <h2>Day 4</h2>

@@ -4,6 +4,7 @@ import Link from "gatsby-link";
 import ClassroomProcedures from '../components/curriculum/ClassroomProcedures';
 import ClassroomChecklist from '../components/curriculum/ClassroomChecklist';
 import ClassroomAndHallwayProcedures from '../components/curriculum/ClassroomAndHallwayProcedures';
+import DesignYourOwnSprite from '../components/curriculum/DesignYourOwnSprite'; 
 import videogame11 from '../components/curriculum/curriculum-images/videogame11.png';
 import videogame12 from '../components/curriculum/curriculum-images/videogame12.png';
 import videogame21 from '../components/curriculum/curriculum-images/videogame21.png';
@@ -334,11 +335,11 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
                     here</a></li></ul>
                 <li>Lesson 5 - Design a Sprite</li>
                     <ul>
-                        <li>Instructions here</li>
                         <li>Design Sprite</li>
                         <li>Create Costumes</li>
                         <li>Import Character</li>
                     </ul>
+                    <DesignYourOwnSprite />
                 <li>Final Game Work Time</li>
             </ul>
         <h2>Day 4</h2>

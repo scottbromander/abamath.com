@@ -21,13 +21,16 @@ export default class Navigation extends React.Component {
     return(
       <div className={this.state.toggle}>
         <div className="nav-left">
-        <Link to={'/'}><img src={logo} /></Link>
+        <Link to={'/'}><img src={logo} alt="abamath"/></Link>
         <Link to={'/'}><h1>abamath</h1></Link>
         </div>
         <div className="nav-right" onClick={this.toggleNav}>
         <Link to={'/#contact'}>Contact</Link>
+        <Link to={'/#districtList'}>Where</Link>
         <Link to={'/#about'}>About</Link>
-        <Link to={'/#classes'}>Camps</Link>
+        <Link to={'/#codeChampionship'}>Code Championship</Link>
+        <Link to={'/#camps'}>Camps</Link>
+        <Link to={'/#upcoming'}>Upcoming</Link>
         </div>
         <button onClick={this.toggleNav} className="icon"><span></span><span></span><span></span></button>
     </div>

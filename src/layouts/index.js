@@ -27,7 +27,6 @@ export default ({ children, data }) => (
       />
     </Helmet>
     <Navigation />
-    <Img resolutions={data.logoImage.childImageSharp.resolutions} />
     {children()}
     <Footer 
       allOfferedClasses = {data.allOfferedClasses.edges}
@@ -37,13 +36,6 @@ export default ({ children, data }) => (
 
 export const query = graphql`
   query LayoutQuery {
-    logoImage: file(relativePath: { eq: "images/abamath.png" }) {
-      childImageSharp {
-        resolutions(width: 123, height: 123) {
-          ...GatsbyImageSharpResolutions
-        }
-      }
-    },
     site {
       siteMetadata {
         title

@@ -75,7 +75,8 @@ thead {
 
 a {
     text-decoration-line: none;
-    color: #1c8aa0;
+    /* Would like to add link color back, but it must pass google lighthouse accessibility */
+    /* color: #1c8aa0; */
 }
 
 #expand {

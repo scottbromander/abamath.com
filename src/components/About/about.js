@@ -35,8 +35,7 @@ export default class About extends React.Component {
         <p className="item">
           Probably! Even when we don't have openings, we're always
           looking to get in touch with potential future instructors for
-          our coding classes! Tell us about yourself on our 
-          <Link to="./application/">application</Link>!
+          our coding classes! Tell us about yourself on our <Link to="./application/">application</Link>!
         </p>
         <h3 className="item">
           Why aren't you in my town yet?

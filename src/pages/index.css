@@ -78,15 +78,6 @@ a {
     color: #219ab3;
 }
 
-#background {
-    background-image: url("../images/website-creation-for-kids.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 360px;
-}
-
 #expand {
     text-align: center;
 }

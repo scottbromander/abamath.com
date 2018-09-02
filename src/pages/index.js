@@ -42,7 +42,11 @@ export default class Index extends React.Component {
   render() {
     return (
       <div>
-        <div id="background"></div>
+        <Img
+          alt="Abamath Code Hero Background"
+          resolutions={this.props.data.codeHeroBackgroundImage.childImageSharp.resolutions}
+          style={{...this.state.imageStyles, 'margin':'0px'}}
+        />
         <div id="body">
           <div id="upcoming">
             <img src={upcomingCampsIcon} alt="Upcoming Camps" />
@@ -94,6 +98,13 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
+    codeHeroBackgroundImage: file(relativePath: { eq: "images/website-creation-for-kids.jpg" }) {
+      childImageSharp {
+        resolutions(width: 1800, height: 360) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    },
     girlsImage: file(relativePath: { eq: "images/abamath-girls-coding.jpg" }) {
       childImageSharp {
         resolutions(width: 999, height: 240) {

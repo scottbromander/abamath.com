@@ -65,18 +65,20 @@ export default class Index extends React.Component {
             </div>
           </div>
           <img src={GirlsImg} alt="Girls Coding" />
-          <Img resolutions={this.props.data.girlsImage.childImageSharp.resolutions} />
+          <Img resolutions={this.props.data.girlsImage.childImageSharp.resolutions} alt="Girls Coding" />
           <ClassDescriptions
             allOfferedClasses={this.props.data.allOfferedClasses.edges}
           />
           <CodeChampionship />
           <About />
           <img src={KidsImg} alt="Kids Coding" />
+          <Img resolutions={this.props.data.kidsImage.childImageSharp.resolutions} alt="kids coding" />
           <DistrictsList
             allDistricts={this.props.data.allCommunityEducationDistrict.edges}
           />
           <Contact />
           <img src={CollageImg} alt="abamath Collage" />
+          <Img resolutions={this.props.data.collageImage.childImageSharp.resolutions} alt="abamath collage" />
         </div>
       </div>
     )
@@ -87,7 +89,21 @@ export const query = graphql`
   query IndexQuery {
     girlsImage: file(relativePath: { eq: "images/abamath-girls-coding.jpg" }) {
       childImageSharp {
-        resolutions(width: 123, height: 123) {
+        resolutions(width: 999, height: 347) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    },
+    kidsImage: file(relativePath: { eq: "images/abamath-robotics-team.png" }) {
+      childImageSharp {
+        resolutions(width: 999, height: 240) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    },
+    collageImage: file(relativePath: { eq: "images/abamath-collage.png" }) {
+      childImageSharp {
+        resolutions(width: 999, height: 769) {
           ...GatsbyImageSharpResolutions
         }
       }

@@ -1,8 +1,8 @@
-#offeredClass a {
+.offeredClass a {
     display: initial;
 }
 
-#offeredClass {
+.offeredClass {
     border: 5px solid;
     border-image: linear-gradient(to bottom right, #53bbf4, #c0ff00) 30;
     align-self: center;

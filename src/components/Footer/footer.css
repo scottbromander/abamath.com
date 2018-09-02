@@ -35,9 +35,6 @@
 #footer a {
     color: black;
     font-size: 40%;
-}
-
-#pages a, #camps a, #surveys a, #connect a {
     display: block;
     height: 15%;
     width: 200%;

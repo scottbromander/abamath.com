@@ -40,7 +40,8 @@ p {
 }
 
 button {
-    background-color: #53bbf4;
+    /* would like to lighten this blue, but it cannot hurt lighthouse accessibility */
+    background-color: #1d4a62;
     border: none;
     color: white;
     padding: 2%;
@@ -65,7 +66,7 @@ table {
 }
 
 thead {
-    color: #888888;
+    color: #555;
     font: normal normal 100% Arial, sans-serif;
 }
 

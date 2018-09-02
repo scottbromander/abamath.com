@@ -32,7 +32,7 @@ export default class Navigation extends React.Component {
         <Link to={'/#camps'}>Camps</Link>
         <Link to={'/#upcoming'}>Upcoming</Link>
         </div>
-        <button onClick={this.toggleNav} name="navigation toggle" className="navigation-toggle">
+        <button onClick={this.toggleNav} aria-label="navigation toggle" className="navigation-toggle">
           {/* Each of these spans represents a bar in the hamburger menu toggle button */}
           <span></span>
           <span></span>

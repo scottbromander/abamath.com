@@ -50,7 +50,7 @@ export default class Index extends React.Component {
           <div id="upcoming">
             <h2>Upcoming Camps</h2>
             <InputHints
-              name='search'
+              aria-label="search"
               onChange={this.updateSearchText}
               value={this.state.searchText}
               waitBeforeDeleteMs={1200}

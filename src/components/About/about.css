@@ -1,0 +1,30 @@
+#gridFAQ {
+    display: grid;
+    grid-template-columns: 5% auto;
+}
+
+.item {
+    align-self: start;
+    overflow: auto;
+    height: auto;
+}
+
+#gridFAQ h3{
+    text-align: left;
+}
+
+#FAQIcon {
+    margin: 0px 47.5%;
+    width: 5%;
+}
+
+@media screen and (max-width: 600px) {
+    #FAQIcon {
+        width: 10%;
+    }
+
+    #about .item {
+        height: auto;
+        max-width: 130%;
+    }
+}

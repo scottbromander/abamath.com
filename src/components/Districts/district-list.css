@@ -1,0 +1,29 @@
+#districtList h3{
+    color: #53bbf4;
+    text-align: left;
+}
+
+#districtList{
+    margin-bottom: 10%;
+}
+
+
+#splitLine hr{
+    background: linear-gradient(to right, #ff85cb, #ff1911);
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    #grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+}

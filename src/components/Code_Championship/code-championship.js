@@ -15,7 +15,7 @@ export default class CodeChampionship extends React.Component {
                     bot to play head-to-head against your peers! No previous experience necessary! Want some more prep?
                     Stay tuned for Abamath's 2019 Code Championship Boot Camps and Sprints to gear up for State!
                 </p>
-                <OutboundLink href="https://www.codechampionship.com/" target="_blank"><button type="button">Learn More</button></OutboundLink>
+                <OutboundLink href="https://www.codechampionship.com/" target="_blank"><button type="button">Code Championship Website</button></OutboundLink>
             </div>
         )
     }

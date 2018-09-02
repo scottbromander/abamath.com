@@ -1,8 +1,5 @@
 import React from "react";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import FB from "../../images/facebook.png";
-import Twitter from "../../images/twitter.png";
-import Email from "../../images/email.png";
 import Link from "gatsby-link";
 import "./footer.css";
 
@@ -45,21 +42,19 @@ export default class Footer extends React.Component {
                     </div>
                     <div id="connect">
                     <h4>Connect With Us</h4>
-                    <p>
                     <OutboundLink href="mailto:info@abamath.com">
-                        <img src={Email} alt="Email"/>
+                        Email
                     </OutboundLink>
                     <OutboundLink href="https://www.facebook.com/Abamath/">
-                        <img src={FB} alt="Facebook"/>
+                        Facebook
                     </OutboundLink>
                     <OutboundLink href="https://twitter.com/abamathCoding">
-                        <img src={Twitter} alt="Twitter"/>
+                        Twitter
                     </OutboundLink>
-                    </p>
                     </div>
                     </div>
                     <hr></hr>
-                    <p id="copyright">&copy; 2013 abamath</p>
+                    <p id="copyright">&copy; 2018 abamath</p>
                 </footer>
             </div>
         )

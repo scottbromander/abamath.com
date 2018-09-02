@@ -5,7 +5,6 @@ import About from "../components/About/about";
 import CodeChampionship from "../components/Code_Championship/code-championship";
 import DistrictsList from "../components/Districts/district-list";
 import Contact from "../components/Contact/contact";
-import upcomingCampsIcon from "../images/upcoming-camps-icon.png"
 import InputHints from "react-input-hints"
 import "./index.css";
 import Img from "gatsby-image";
@@ -49,7 +48,6 @@ export default class Index extends React.Component {
         />
         <div id="body">
           <div id="upcoming">
-            <img src={upcomingCampsIcon} alt="Upcoming Camps" />
             <h2>Upcoming Camps</h2>
             <InputHints
               onChange={this.updateSearchText}

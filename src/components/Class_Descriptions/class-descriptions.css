@@ -19,16 +19,6 @@
   margin: 1% 1.5%;
 }
 
-#icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: -2% 1.5%;
-}
-
-#icons img {
-    width: 15%;
-}
-
 #coding {
     grid-column: 1;
     align-self: center;
@@ -50,8 +40,5 @@
 @media screen and (max-width: 600px) {
     #classList {
         grid-template-columns: 1fr;
-    }
-    #icons img {
-        width: 30%;
     }
 }

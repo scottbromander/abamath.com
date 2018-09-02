@@ -37,11 +37,7 @@
     font-size: 40%;
 }
 
-#connect p {
-    height: auto;
-}
-
-#pages a, #camps a, #surveys a {
+#pages a, #camps a, #surveys a, #connect a {
     display: block;
     height: 15%;
     width: 200%;

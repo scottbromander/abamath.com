@@ -32,7 +32,12 @@ export default class Navigation extends React.Component {
         <Link to={'/#camps'}>Camps</Link>
         <Link to={'/#upcoming'}>Upcoming</Link>
         </div>
-        <button onClick={this.toggleNav} className="icon"><span></span><span></span><span></span></button>
+        <button onClick={this.toggleNav} className="icon">
+          {/* Each of these spans represents a bar in the hamburger menu toggle button */}
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
     </div>
     )
   }

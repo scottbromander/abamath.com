@@ -25,6 +25,7 @@ export default ({ children, data }) => (
         rel="icon"
         href={logo}
       />
+      <html lang="en" />
     </Helmet>
     <Navigation />
     {children()}

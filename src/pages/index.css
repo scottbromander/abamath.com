@@ -1,5 +1,6 @@
 body > div > div {
     padding: 0px !important;
+    overflow: hidden;
 }
 
 #body {

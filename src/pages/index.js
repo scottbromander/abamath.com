@@ -15,7 +15,11 @@ export default class Index extends React.Component {
   state = {
     searchText: '',
     humanize: Math.round(Math.random() * (200 - 30)) + 30,
-    imageStyles: { 'max-width': '100%', 'margin-top': '7%', 'margin-bottom': '10%'},
+    imageStyles: {
+      'width': '100%',
+      'margin-top': '7%',
+      'margin-bottom': '10%',
+    },
   }
 
   componentDidMount() {

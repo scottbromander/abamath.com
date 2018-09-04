@@ -22,7 +22,7 @@ export default class Navigation extends React.Component {
       <div className={this.state.toggle}>
         <div className="nav-left">
         <Link to={'/'}><img src={logo} alt="abamath"/></Link>
-        <Link to={'/'}><h1>abamath</h1></Link>
+        <Link to={'/'}><span className="nav-company-name">abamath</span></Link>
         </div>
         <div className="nav-right" onClick={this.toggleNav}>
         <Link to={'/#contact'}>Contact</Link>

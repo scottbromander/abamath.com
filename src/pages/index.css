@@ -8,8 +8,10 @@ body > div > div {
     margin-bottom: 0;
 }
 
-h1 {
+.nav-company-name {
     color: black;
+    font-size: 30px;
+    line-height: 2.2;
 }
 
 h2 {

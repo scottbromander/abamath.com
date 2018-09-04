@@ -22,7 +22,7 @@ export default class Navigation extends React.Component {
       <div className={this.state.toggle}>
         <div className="nav-left">
         <Link to={'/'}><img src={logo} alt="abamath"/></Link>
-        <Link to={'/'}><h1>abamath</h1></Link>
+        <Link to={'/'}><span className="nav-company-name">abamath</span></Link>
         </div>
         <div className="nav-right" onClick={this.toggleNav}>
         <Link to={'/#contact'}>Contact</Link>
@@ -32,7 +32,12 @@ export default class Navigation extends React.Component {
         <Link to={'/#camps'}>Camps</Link>
         <Link to={'/#upcoming'}>Upcoming</Link>
         </div>
-        <button onClick={this.toggleNav} className="icon"><span></span><span></span><span></span></button>
+        <button onClick={this.toggleNav} aria-label="navigation toggle" className="navigation-toggle">
+          {/* Each of these spans represents a bar in the hamburger menu toggle button */}
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
     </div>
     )
   }

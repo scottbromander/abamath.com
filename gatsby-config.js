@@ -14,8 +14,6 @@ module.exports = {
               anonymize: true,
               // Setting this parameter is also optional
               respectDNT: true,
-              // Avoids sending pageview hits from custom paths
-              exclude: ["/preview/**", "/do-not-track/me/too/"],
             },
         },
         {
@@ -46,11 +44,11 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-fonts`,
             options: {
-              fonts: [
-                'Jura'
-              ]
+                fonts: [
+                    'Jura',
+                ]
             }
-          },
+        },
         {
             resolve: 'gatsby-source-apiserver',
             options: {
@@ -95,6 +93,19 @@ module.exports = {
                 path: `${__dirname}/api/`,
                 verbose: true,
             }
-        }
+        },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+            name: "Abamath",
+            short_name: "Abamath",
+            start_url: "/",
+            background_color: "#1db1ed",
+            theme_color: "#fc0d1b",
+            display: "minimal-ui",
+            icon: "src/images/abamath.png",
+            },
+        },
+        `gatsby-plugin-offline`,
     ],
 };

@@ -1,16 +1,24 @@
-.css-glamorous-div-e3d7qp, [data-css-glamorous-div-e3d7qp] {
-    padding: 0%;
-}
-
-.css-4iraie, [data-css-4iraie] {
-    padding: 0rem;
-    padding-top: 0rem;
+body > div > div {
+    padding: 0px !important;
+    overflow: hidden;
 }
 
 #body {
     margin: 5%;
     margin-bottom: 0;
 }
+
+.nav-company-name {
+    color: black;
+    font-size: 30px;
+    line-height: 2.2;
+}
+
+.homepage-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 h2 {
     margin: 1.5%;
     font: normal normal 190% Jura, sans-serif;
@@ -40,7 +48,8 @@ p {
 }
 
 button {
-    background-color: #53bbf4;
+    /* would like to lighten this blue, but it cannot hurt lighthouse accessibility */
+    background-color: #075E8D;
     border: none;
     color: white;
     padding: 2%;
@@ -65,7 +74,7 @@ table {
 }
 
 thead {
-    color: #888888;
+    color: #555;
     font: normal normal 100% Arial, sans-serif;
 }
 
@@ -75,26 +84,8 @@ thead {
 
 a {
     text-decoration-line: none;
-    color: #219ab3;
-}
-
-#background {
-    background-image: url("../images/website-creation-for-kids.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 360px;
-}
-
-img {
-    margin-top: 7%;
-    margin-bottom: 10%;
-}
-
-img:last-child {
-    margin-bottom: 0;
-    padding-left: 6%;
+    /* Would like to add link color back, but it must pass google lighthouse accessibility */
+    /* color: #1c8aa0; */
 }
 
 #expand {
@@ -108,11 +99,6 @@ img:last-child {
 #expand a:hover {
     color: #fac638;
     text-decoration-line: underline;
-}
-
-#upcoming img{
-    width: 5%;
-    margin: 0px 47.5%;
 }
 
 #contact img {

@@ -44,6 +44,14 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+              fonts: [
+                'Jura'
+              ]
+            }
+          },
+        {
             resolve: 'gatsby-source-apiserver',
             options: {
                 typePrefix: 'community_education__',

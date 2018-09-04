@@ -35,13 +35,6 @@
 #footer a {
     color: black;
     font-size: 40%;
-}
-
-#connect p {
-    height: auto;
-}
-
-#pages a, #camps a, #surveys a {
     display: block;
     height: 15%;
     width: 200%;

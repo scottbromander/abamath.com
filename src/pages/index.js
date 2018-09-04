@@ -5,12 +5,9 @@ import About from "../components/About/about";
 import CodeChampionship from "../components/Code_Championship/code-championship";
 import DistrictsList from "../components/Districts/district-list";
 import Contact from "../components/Contact/contact";
-import GirlsImg from "../images/abamath-girls-coding.jpg"
-import KidsImg from "../images/abamath-robotics-team.png"
-import CollageImg from "../images/abamath-collage.png"
-import upcomingCampsIcon from "../images/upcoming-camps-icon.png"
 import InputHints from "react-input-hints"
 import "./index.css";
+import Img from "gatsby-image";
 
 <meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
@@ -18,6 +15,11 @@ export default class Index extends React.Component {
   state = {
     searchText: '',
     humanize: Math.round(Math.random() * (200 - 30)) + 30,
+    imageStyles: {
+      'width': '100%',
+      'margin-top': '7%',
+      'margin-bottom': '10%',
+    },
   }
 
   componentDidMount() {
@@ -43,12 +45,16 @@ export default class Index extends React.Component {
   render() {
     return (
       <div>
-        <div id="background"></div>
+        <Img
+          alt="Abamath Code Hero Background"
+          resolutions={this.props.data.codeHeroBackgroundImage.childImageSharp.resolutions}
+          style={{...this.state.imageStyles, 'margin':'0px'}}
+        />
         <div id="body">
           <div id="upcoming">
-            <img src={upcomingCampsIcon} alt="Upcoming Camps" />
             <h2>Upcoming Camps</h2>
             <InputHints
+              aria-label="search"
               onChange={this.updateSearchText}
               value={this.state.searchText}
               waitBeforeDeleteMs={1200}
@@ -63,18 +69,30 @@ export default class Index extends React.Component {
               />
             </div>
           </div>
-          <img src={GirlsImg} alt="Girls Coding" />
+          <Img
+            alt="Girls Coding"
+            resolutions={this.props.data.girlsImage.childImageSharp.resolutions}
+            style={this.state.imageStyles}
+          />
           <ClassDescriptions
             allOfferedClasses={this.props.data.allOfferedClasses.edges}
           />
           <CodeChampionship />
           <About />
-          <img src={KidsImg} alt="Kids Coding" />
+          <Img
+            alt="kids coding"
+            resolutions={this.props.data.kidsImage.childImageSharp.resolutions}
+            style={this.state.imageStyles}
+          />
           <DistrictsList
             allDistricts={this.props.data.allCommunityEducationDistrict.edges}
           />
           <Contact />
-          <img src={CollageImg} alt="abamath Collage" />
+          <Img
+            alt="abamath collage"
+            resolutions={this.props.data.collageImage.childImageSharp.resolutions}
+            style={this.state.imageStyles}
+          />
         </div>
       </div>
     )
@@ -83,6 +101,34 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query IndexQuery {
+    codeHeroBackgroundImage: file(relativePath: { eq: "images/website-creation-for-kids.jpg" }) {
+      childImageSharp {
+        resolutions(width: 1800, height: 360) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    },
+    girlsImage: file(relativePath: { eq: "images/abamath-girls-coding.jpg" }) {
+      childImageSharp {
+        resolutions(width: 999, height: 240) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    },
+    kidsImage: file(relativePath: { eq: "images/abamath-robotics-team.png" }) {
+      childImageSharp {
+        resolutions(width: 999, height: 240) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    },
+    collageImage: file(relativePath: { eq: "images/abamath-collage.png" }) {
+      childImageSharp {
+        resolutions(width: 999, height: 769) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    },
     allCommunityEducationDistrict  {
       totalCount
       edges {

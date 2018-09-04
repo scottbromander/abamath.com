@@ -87,6 +87,19 @@ module.exports = {
                 path: `${__dirname}/api/`,
                 verbose: true,
             }
-        }
+        },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+            name: "Abamath",
+            short_name: "Abamath",
+            start_url: "/",
+            background_color: "#1db1ed",
+            theme_color: "#fc0d1b",
+            display: "minimal-ui",
+            icon: "src/images/abamath.png",
+            },
+        },
+        `gatsby-plugin-offline`,
     ],
 };

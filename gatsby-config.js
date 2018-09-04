@@ -11,7 +11,7 @@ module.exports = {
               // Puts tracking script in the head instead of the body
               head: false,
               // Setting this parameter is optional
-              // anonymize: true,
+              anonymize: true,
               // Setting this parameter is also optional
               respectDNT: true,
             },

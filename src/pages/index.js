@@ -16,9 +16,9 @@ export default class Index extends React.Component {
     searchText: '',
     humanize: Math.round(Math.random() * (200 - 30)) + 30,
     imageStyles: {
-      'width': '100%',
-      'margin-top': '7%',
-      'margin-bottom': '10%',
+      width: '100%',
+      marginTop: '7%',
+      marginBottom: '10%',
     },
   }
 
@@ -50,6 +50,7 @@ export default class Index extends React.Component {
           resolutions={this.props.data.codeHeroBackgroundImage.childImageSharp.resolutions}
           style={{...this.state.imageStyles, 'margin':'0px'}}
         />
+        <center><h1>coding, video game, and website design classes</h1></center>
         <div id="body">
           <div id="upcoming">
             <h2>Upcoming Camps</h2>

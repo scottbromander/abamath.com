@@ -7,7 +7,7 @@ import "./code-championship.css";
 export default class CodeChampionship extends React.Component {
     render() {
         return (
-            <div id="codeChampionship">
+            <section className="homepage-section" id="codeChampionship">
                 <h2>Code Championship</h2>
                 <p>
                     Attention girls and boys, the March Madness of coding has arrived; all the excitement of a
@@ -22,7 +22,7 @@ export default class CodeChampionship extends React.Component {
                 >
                     <button type="button">Code Championship Website</button>
                 </OutboundLink>
-            </div>
+            </section>
         )
     }
 }

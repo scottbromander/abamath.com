@@ -8,8 +8,15 @@ body > div > div {
     margin-bottom: 0;
 }
 
-h1 {
+.nav-company-name {
     color: black;
+    font-size: 30px;
+    line-height: 2.2;
+}
+
+.homepage-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 h2 {
@@ -92,11 +99,6 @@ a {
 #expand a:hover {
     color: #fac638;
     text-decoration-line: underline;
-}
-
-#upcoming img{
-    width: 5%;
-    margin: 0px 47.5%;
 }
 
 #contact img {

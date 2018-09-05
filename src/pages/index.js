@@ -1,11 +1,10 @@
 import React from "react";
-import ClassTable from "../components/Upcoming_Classes/ClassTable";
+import UpcomingClasses from "../components/Upcoming_Classes/UpcomingClasses";
 import ClassDescriptions from "../components/Class_Descriptions/class-descriptions";
 import About from "../components/About/about";
 import CodeChampionship from "../components/Code_Championship/code-championship";
 import DistrictsList from "../components/Districts/district-list";
 import Contact from "../components/Contact/contact";
-import InputHints from "react-input-hints"
 import "./index.css";
 import Img from "gatsby-image";
 
@@ -13,33 +12,9 @@ import Img from "gatsby-image";
 
 export default class Index extends React.Component {
   state = {
-    searchText: '',
-    humanize: Math.round(Math.random() * (200 - 30)) + 30,
     imageStyles: {
-      'width': '100%',
-      'margin-top': '7%',
-      'margin-bottom': '10%',
+      width: '100%',
     },
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(this.setHumanize, 1000)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval)
-  }
-
-  setHumanize = () => {
-    setTimeout(() => {
-      this.setState({ humanize: Math.round(Math.random() * (200 - 30)) + 30 })
-    }, this.state.humanize * 2 + 1200)
-  }
-
-  updateSearchText = (event) => {
-    this.setState({
-      searchText: event.target.value,
-    });
   }
 
   render() {
@@ -48,27 +23,13 @@ export default class Index extends React.Component {
         <Img
           alt="Abamath Code Hero Background"
           resolutions={this.props.data.codeHeroBackgroundImage.childImageSharp.resolutions}
-          style={{...this.state.imageStyles, 'margin':'0px'}}
+          style={{...this.state.imageStyles}}
         />
+        <center><h1>coding, video game, and website design classes</h1></center>
         <div id="body">
-          <div id="upcoming">
-            <h2>Upcoming Camps</h2>
-            <InputHints
-              aria-label="search"
-              onChange={this.updateSearchText}
-              value={this.state.searchText}
-              waitBeforeDeleteMs={1200}
-              writeSpeedMs={this.state.humanize}
-              deleteSpeedMs={this.state.humanize}
-              placeholders={["Search Here", "Hopkins", "Search Here", "Coding", "Search Here", "Minnetonka", "Search Here", "Edina"]}
-            />
-            <div id="table">
-              <ClassTable
-                districtClasses={this.props.data.allCommunityEducationDistrictClasses.edges}
-                searchText={this.state.searchText}
-              />
-            </div>
-          </div>
+          <UpcomingClasses
+            allCommunityEducationDistrictClasses={this.props.data.allCommunityEducationDistrictClasses}
+          />
           <Img
             alt="Girls Coding"
             resolutions={this.props.data.girlsImage.childImageSharp.resolutions}

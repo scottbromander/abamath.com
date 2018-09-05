@@ -22,10 +22,6 @@ ul {
     display: list-item; 
  }
 
- h1 {
-     font-family: Jura; 
- }
-
  p {
     display: block;
     margin-top: 1em;

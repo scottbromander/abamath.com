@@ -14,8 +14,6 @@ module.exports = {
               anonymize: true,
               // Setting this parameter is also optional
               respectDNT: true,
-              // Avoids sending pageview hits from custom paths
-              exclude: ["/preview/**", "/do-not-track/me/too/"],
             },
         },
         {
@@ -42,6 +40,14 @@ module.exports = {
             options: {
                 pathToConfigModule: `src/utils/typography`,
             },
+        },
+        {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+                fonts: [
+                    'Jura',
+                ]
+            }
         },
         {
             resolve: 'gatsby-source-apiserver',

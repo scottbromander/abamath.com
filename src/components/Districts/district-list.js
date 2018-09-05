@@ -5,7 +5,7 @@ import "./district-list.css";
 export default class DistrictsList extends React.Component {
     render() {
         return (
-            <div id="districtList">
+            <section className="homepage-section" id="districtList">
                 <h2>Where We Are</h2>
                 <div id="splitLine"><hr></hr></div>
                 <div id="grid">
@@ -18,7 +18,7 @@ export default class DistrictsList extends React.Component {
                     )}
                 </div>
                 <div id="newLine"></div>
-            </div>
+            </section>
         )
     }
 }

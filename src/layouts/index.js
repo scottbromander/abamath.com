@@ -2,7 +2,6 @@ import React from "react";
 import g from "glamorous";
 import Helmet from 'react-helmet'
 import { rhythm } from "../utils/typography";
-import Img from "gatsby-image";
 import logo from "../images/abamath.png";
 import Footer from "../components/Footer/footer"
 import Navigation from "../components/Navigation/navigation"
@@ -31,7 +30,7 @@ export default ({ children, data }) => (
     {children()}
     <Footer 
       allOfferedClasses = {data.allOfferedClasses.edges}
-      />
+    />
   </g.Div>
 );
 

@@ -1,5 +1,5 @@
 import React from "react";
-import ClassTable from "../../components/Upcoming_Classes/ClassTable";
+import ClassTable from "../../components/Class_Table/ClassTable";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import "./district-class.css"
 

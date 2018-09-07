@@ -1,8 +1,3 @@
-#districtList h3{
-    color: #53bbf4;
-    text-align: left;
-}
-
 #splitLine hr{
     background: linear-gradient(to right, #ff85cb, #ff1911);
     overflow: visible;

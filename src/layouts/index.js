@@ -24,12 +24,13 @@ export default ({ children, data }) => (
         rel="icon"
         href={logo}
       />
+      <html lang="en" />
     </Helmet>
     <Navigation />
     {children()}
     <Footer 
       allOfferedClasses = {data.allOfferedClasses.edges}
-      />
+    />
   </g.Div>
 );
 
@@ -40,7 +41,6 @@ export const query = graphql`
         title
       }
     },
-
     allOfferedClasses: allCommunityEducationOfferedClasses {
       totalCount
       edges {

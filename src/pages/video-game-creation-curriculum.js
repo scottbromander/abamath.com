@@ -15,15 +15,19 @@ import videogame33 from '../components/curriculum/curriculum-images/videogame33.
 import videogame34 from '../components/curriculum/curriculum-images/videogame34.png';
 import videogame41 from '../components/curriculum/curriculum-images/videogame41.png';
 import videogame42 from '../components/curriculum/curriculum-images/videogame42.png';
+import dartCode from '../components/curriculum/curriculum-images/dart-code.png';
+import playerCode from '../components/curriculum/curriculum-images/player-code.png';
+import bossCode from '../components/curriculum/curriculum-images/boss-code.png';
 
-<meta>Video Game Creation for Kids Camp curriculum</meta>
 
-export default class VideoGameCreationForKidsCurriculum extends React.Component {
+<meta>Video Game Creation Camp curriculum</meta>
+
+export default class VideoGameCreationCurriculum extends React.Component {
   render(){
     return(
       <div>
         <h1>
-        2018 Video Game Creation for Kids Camp Lesson Plan 
+        2018 Video Game Creation Camp Lesson Plan 
         </h1>
         <p>
         Make your own video game! From Pong to Maze games, you'll learn to code then put those skills 
@@ -33,7 +37,7 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
             </p>
         
         <h5>Timeline</h5>
-        <p>Four 3-hour days for a total of 12 hours of curriculum for 3rd - 6th graders</p>
+        <p>Four 3-hour days for a total of 12 hours of curriculum for 6th - 9th graders</p>
 
         <h5>Objectives</h5>
         <p>To be able to create a video game using Scratch</p>
@@ -52,6 +56,10 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
 
         <h5>Primary Website</h5>
           <p><a href="https://scratch.mit.edu/">Scratch.mit.edu </a></p>
+
+        <h5>Secondary Website</h5>
+            <p><a href="https://snap.berkeley.edu/snapsource/snap.html">https://snap.berkeley.edu/snapsource/snap.html</a></p>
+
 
         <h5>Instructor’s Email:</h5>
           <p>Email: abamathinstructors@gmail.com</p>
@@ -75,7 +83,7 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
         <p>Use Pomodoro Technique in class. A good online timer is found
              <a href="https://www.marinaratimer.com/"> here.</a></p>
 
-        <p>Lessons <a href="https://docs.google.com/document/d/19YHoFghCECKPhzRyj6st0liT15j9Ipdy3gWy1a25Klg/edit">
+        <p>Lessons <a href="https://docs.google.com/document/d/1ipDMwBAEmSjZoC6eoJuu-v96SPO5h07YiiYeD6eSlWs/edit">
             Here</a></p> 
         <p><a href="https://scratch.mit.edu/projects/238743123/">Final Scratch Project</a></p> 
 
@@ -88,17 +96,25 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
                         <li>Favorite video game</li>
                         </ul>
                 <li>Welcome Presentation</li>
+                    <ul><li>Explain to the students that Scratch is a platform built for all ages to use; 
+                        however, we are going to "level it up" for them because they are older and can handle 
+                        the more complex (aka fun) parts of Scratch</li>
+                    <li>Vocab </li>
+                        <ul><li>If-statements - allows the computer to check a condition and decide whether to do 
+                            something, run code if something is true or false </li>
+                            <ul>
+                                <li>They can be read “if this is true, then do this” </li>
+                                <li>Every “if-block” needs a condition, which we will be using in just a few minutes </li>
+                                <li>Example: If pacman touches an enemy, then he loses his life</li>
+                            </ul>
+                        </ul>
+                    </ul>
+
                 <li>Brainstorm - 30 min </li>
                 <li>Make Scratch Accounts</li>
                 <li>Have Students create a new project - This is their in class project</li>
                 <li>Show them the final in-class project <a href="https://scratch.mit.edu/projects/237424436/">
                     here</a></li>
-                <li>Break</li>
-                <li>Stretches</li>
-                <li>Computer science fun fact of the day: </li>
-                    <ul><li>How come modern games look so rad, with all of their cool 3-D effects, and 
-                        how can it all be rendered in real-time as you are playing and constantly 
-                        changing the in-game environment? (computer graphics)</li></ul>
                 <li>Lesson 1 - Intro to Scratch</li>
                     <ul>
                         <li>Create new project, and name it! </li>
@@ -126,21 +142,15 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
                             <ul><li>Challenge #1: Use the arrow keys to make your sprite move. 
                                 Hint: Use change x and y blocks.</li>
                             <li>Challenge #2: Create another sprite, and make it start in random places.</li></ul>
-
-
-
                         </ul>
-                    <li>Final Game Work Time</li>
-                    
-                </ul>
 
-        <h2>Day 2</h2>
-            <ul>
-                <li>Intro</li>
-                <li>Explanation of flow: A video game is not fun if it is too easy. A video game is not 
-                    fun if it is too hard. Video game “Flow” is all about making the game fun by 
-                    making it just hard enough to keep it challenging.</li>
-                <li>Conditionals Activity - Pick 1 (or more?) </li>
+                <li>Break</li>
+                <li>Stretches</li>
+                <li>Computer science fun fact of the day: </li>
+                    <ul><li>How come modern games look so rad, with all of their cool 3-D effects, and 
+                        how can it all be rendered in real-time as you are playing and constantly 
+                        changing the in-game environment? (computer graphics)</li></ul>
+                <li>Conditionals Activity - OPTIONAL (pick one) </li>
                     <ul>
                         <li>Conditionals Competition - Split students into 2 teams. The person at the 
                             front of the line will pick up a card and show it to the instructor. They 
@@ -195,7 +205,7 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
                                     foot.  This gets pretty funny, pretty fast.</li>
                             </ul>
                     </ul>
-                <li>Lesson 2 - Conditionals and Touching</li>
+                    <li>Lesson 2 - Conditionals and Touching</li>
                     <ul>
                         <li>Conditionals</li>
                             <ul>
@@ -237,11 +247,16 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
                             <ul><li>Challenge #1: Make it so you can shoot and pop the balloon.</li>
                             <li>Challenge #2: Make it so the balloon sprite moves around.</li></ul>
                         </ul>
-                <li>Break</li>
-                <li>Stretches</li>
-                <li>Computer science fun fact of the day:</li>
-                    <ul><li>How come the in-game enemies seem to be 'smart' and able to learn from your 
-                        actions? (artificial intelligence)</li></ul>
+                    <li>Final Game work time </li>
+                    
+                </ul>
+
+        <h2>Day 2</h2>
+            <ul>
+                <li>Intro</li>
+                <li>Explanation of flow: A video game is not fun if it is too easy. A video game is not 
+                    fun if it is too hard. Video game “Flow” is all about making the game fun by 
+                    making it just hard enough to keep it challenging.</li>
                 <li>Lesson 3 - Variables and Operators</li>
                     <ul>
                         <li>Score, Timer, Lives</li>
@@ -279,8 +294,40 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
                     <ul><li>Challenge #1: Add a level variable and an balloons popped variable</li>
                     <li>Challenge #2: Make a “Win background” and make it able to switch if you survive 
                         long enough (timer)</li></ul>
-                <li>Final Game Work Time</li>
+                <li>Final Game Work Time </li>
+                <li>Break</li>
+                <li>Stretches</li>
+                <li>Computer science fun fact of the day:</li>
+                    <ul><li>How come the in-game enemies seem to be 'smart' and able to learn from your 
+                        actions? (artificial intelligence)</li></ul>
+                        <li>Lesson 4 - AI Enemy </li>
+                    <ul>
+                <li>Create AI Enemy</li>
+                    <ul>
+                        <li>Take time to discuss slowly and make sure all the kids are on the 
+                            same page.</li>
+                        <li>Delete the touching balloon from player script (the code in the 
+                            circle), because you will add that on the balloon page (so multiple
+                             balloons will do more damaging when touching). </li>
+                        <li>Start with the hide block, then the wait 1 or 2 secs to create the 
+                            AI balloon.</li>
+                        <li>Then, discuss how the AI balloon is like making clones of the dart,
+                             but now they come at random times.</li>
+                        <li>Next, describe that the balloon may come from the left (x=-200) or 
+                            right (x=200) at random height (y). Then, they appear and move 
+                            towards the player. </li>
+                        <li>Also, if your balloon ever gets hit by the dart then you delete him.</li>
+                    <li>Now, add the balloons popped variable by setting and changing it.</li>
+                        <img src={videogame41} alt="If you balloon gets hit by a dart, it should disappear" height="450" />
+                        <li>Improvement Time</li>
+                            <ul><li>Challenge #1: Make different types of balloons!</li>
+                            <li>Challenge #2: Make different guns. Hint: Duplicate the dart 
+                                code and change it!</li></ul>
+                            <img src={videogame42} alt="finished project" height="450" />
+                    </ul>
             </ul>
+            <li>Final Game Work Time</li>
+        </ul>
 
         <h2>Day 3</h2>
             <ul>
@@ -288,33 +335,27 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
                 <li>Explanation of game balancing: Game balancing is all about making a game fair for 
                     all of the players. If a game is fair, then it is called, “balanced.” Ask the coders 
                     if they know why this is important? </li>
-                <li>Lesson 4 - AI Enemy </li>
+                <li>Lesson 5 - Upgrades</li>
                     <ul>
-                        <li>Create AI Enemy</li>
+                        <li>Make a new sprite named boss. Boss Code: </li>
+                        <img src={bossCode} height="400" alt="boss code" />
+                        <li>Make variables level and Boss HP </li>
+                        <li>Describe in detail how when you pop the boss balloon, your level increases. </li>
+                        <li>When your level increases, the time the boss regenerates increases by 5 times and the next
+                             boss’s health increases by 2 times its old HP, so it gets harder! </li>
+                        <li>You must go to the Dart code, and change it for when you are touching the boss. Dart code: </li>
+                        <img src={dartCode} height="350" alt="dart code" />
+                        
+                        <li>Add Admin tools on the player sprite! Player code:</li>
+                        <img src={playerCode} height="400" alt="player code" />
+                        <li>Improvement Time </li>
                             <ul>
-                                <li>Take time to discuss slowly and make sure all the kids are on the 
-                                    same page.</li>
-                                <li>Delete the touching balloon from player script (the code in the 
-                                    circle), because you will add that on the balloon page (so multiple
-                                     balloons will do more damaging when touching). </li>
-                                <li>Start with the hide block, then the wait 1 or 2 secs to create the 
-                                    AI balloon.</li>
-                                <li>Then, discuss how the AI balloon is like making clones of the dart,
-                                     but now they come at random times.</li>
-                                <li>Next, describe that the balloon may come from the left (x=-200) or 
-                                    right (x=200) at random height (y). Then, they appear and move 
-                                    towards the player. </li>
-                                <li>Also, if your balloon ever gets hit by the dart then you delete him.</li>
-                                <li>Now, add the balloons popped variable by setting and changing it.</li>
-                                <img src={videogame41} alt="If you balloon gets hit by a dart, it should disappear" height="450" />
-                                <li>Improvement Time</li>
-                                    <ul><li>Challenge #1: Make different types of balloons!</li>
-                                    <li>Challenge #2: Make different guns. Hint: Duplicate the dart 
-                                        code and change it!</li></ul>
-                                <img src={videogame42} alt="finished project" height="450" />
+                                <li>Challenge #1: Try changing out the boss’s stats</li>
+                                <li>Challenge #2: Make the background switch when the level switches</li>
+                                <li>Challenge #3: Continue to add admin specialties (better gun?) and add your 
+                                    friends as admins!</li>
                             </ul>
-                    </ul>
-                <li>Final Game Work Time</li>
+                        </ul>
                 <li>Break</li>
                 <li>Stretches</li>
                 <li>Computer science fun fact of the day: </li>
@@ -333,19 +374,14 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
                         get through because of "collisions"</li>
                     <li>If you don't have a set of cards, you can find them <a href="https://docs.google.com/document/d/1jJ7s9x-4-wk4s-2Y1IWm6FoPk-zIlJ30K6yjtNJwSEw/edit">
                     here</a></li></ul>
-                <li>Lesson 5 - Design a Sprite</li>
-                    <ul>
-                        <li>Design Sprite</li>
-                        <li>Create Costumes</li>
-                        <li>Import Character</li>
-                    </ul>
-                    <DesignYourOwnSprite />
+                <li>Lesson 6 - Design Your Own Sprite </li>
+                <DesignYourOwnSprite />
                 <li>Final Game Work Time</li>
             </ul>
-        <h2>Day 4</h2>
+            <h2>Day 4</h2>
             <ul>
                 <li>Intro</li>
-                <li>Lesson 6 - Improving Knowledge</li>
+                <li>Lesson 7 - Improving Knowledge</li>
                     <ul>
                         <li>Introduce to scratch wiki</li>
                             <ul>
@@ -391,7 +427,10 @@ export default class VideoGameCreationForKidsCurriculum extends React.Component 
                 <li><a href="https://www.khanacademy.org/partner-content/pixar">Pixarinabox.org</a> </li>
                 <li><a href="https://csfirst.withgoogle.com/c/cs-first/en/curriculum.html">CS First</a> </li>
             </ul>
-              </div>
+
+
+
+        </div>
     )
   }
 }

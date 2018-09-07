@@ -9,11 +9,6 @@
     margin: 0;
     margin-top: 1%;
 }
-
-.topnav h1 {
-    padding-top: 13px;
-    margin-bottom: 0;
-}
   
 .nav-right a {
     float: right;
@@ -36,11 +31,11 @@
     margin-left: 1%;
 }
   
-.topnav .icon {
+.topnav .navigation-toggle {
     display: none;
 }
 
-button.icon {
+button.navigation-toggle {
     background-color: #ddd;
     padding: 9px 10px;
     margin-top: 15px;
@@ -51,7 +46,7 @@ button.icon {
     border-radius: 4px;
 }
 
-.icon span {
+.navigation-toggle span {
     display: block;
     width: 22px;
     height: 2px;
@@ -59,13 +54,13 @@ button.icon {
     background-color: #888;
 }
 
-.icon span:last-child, .icon span:nth-child(2) {
+.navigation-toggle span:last-child, .navigation-toggle span:nth-child(2) {
     margin-top: 4px;
 }
   
 @media screen and (max-width: 600px) {
     .topnav .nav-right a {display: none;}
-    .topnav button.icon {
+    .topnav button.navigation-toggle {
       float: right;
       display: block;
     }
@@ -73,7 +68,7 @@ button.icon {
   
 @media screen and (max-width: 600px) {
     .responsive {position: relative;}
-    .responsive .icon {
+    .responsive .navigation-toggle {
       position: absolute;
       right: 0;
       top: 0;

@@ -7,7 +7,7 @@ import ClassroomAndHallwayProcedures from '../components/curriculum/ClassroomAnd
 
 <meta>Curriculum for the 3-hour code championship event </meta>
 
-export default class GirlScoutCurriculum extends React.Component {
+export default class ThreeHourCodeChampionship extends React.Component {
   render(){
     return(
       <div>

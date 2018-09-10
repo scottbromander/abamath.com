@@ -1,0 +1,56 @@
+#footer {
+    background-color: rgb(245, 245, 245);
+    padding-bottom: 2%;
+}
+
+#footer img {
+    height: auto;
+    width: 30%;
+    padding-right: 2%;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3%;
+    padding: 0 10%;
+    height: 12rem;
+}
+
+.grid-container > div {
+    font-size: 30px;
+    height: 80%;
+}
+
+#footer h4 {
+    font-size: 70%;
+    font-family: Jura;
+}
+
+#footer h4, #footer p {
+    margin: 0;
+}
+
+#footer a {
+    color: black;
+    font-size: 40%;
+    display: block;
+    height: 15%;
+    width: 200%;
+}
+
+#copyright {
+    text-align: center;
+    padding: 0;
+}
+
+@media screen and (max-width: 760px) {
+    .grid-container {
+        grid-auto-rows: 50%;
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 13rem;
+    }
+}

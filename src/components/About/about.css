@@ -1,0 +1,21 @@
+#gridFAQ {
+    display: grid;
+    grid-template-columns: 5% auto;
+}
+
+.item {
+    align-self: start;
+    overflow: auto;
+    height: auto;
+}
+
+#gridFAQ h3{
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    #about .item {
+        height: auto;
+        max-width: 130%;
+    }
+}

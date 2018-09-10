@@ -1,0 +1,121 @@
+body > div > div {
+    padding: 0px !important;
+    overflow: hidden;
+}
+
+#body {
+    margin: 5%;
+    margin-bottom: 0;
+}
+
+.nav-company-name {
+    color: black;
+    font-size: 30px;
+    line-height: 2.2;
+}
+
+.homepage-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    margin: 1.5%;
+    font: normal normal 190% Jura, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    padding: 1%;
+}
+
+h3 {
+    margin: 1.5%;
+    font: normal normal 120% Jura, sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 1%;
+}
+
+h1 {
+    font-family: Jura;
+}
+
+p {
+    font-family: Arial;
+    font-size: 100%;
+    color: black;
+    padding: 2%;
+}
+
+button {
+    /* would like to lighten this blue, but it cannot hurt lighthouse accessibility */
+    background-color: #075E8D;
+    border: none;
+    color: white;
+    padding: 2%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 120%;
+    border-radius: 10%;
+    margin: 1% auto;
+    font-family: Jura;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    padding-left: 1%;
+}
+
+table {
+    margin-bottom: 0.5rem;
+}
+
+thead {
+    color: #555;
+    font: normal normal 100% Arial, sans-serif;
+}
+
+#contact p {
+    text-align: center;
+}
+
+a {
+    text-decoration-line: none;
+    /* Would like to add link color back, but it must pass google lighthouse accessibility */
+    /* color: #1c8aa0; */
+}
+
+#expand {
+    text-align: center;
+}
+
+#expand a {
+    color: #337ab7;
+}
+
+#expand a:hover {
+    color: #fac638;
+    text-decoration-line: underline;
+}
+
+#contact img {
+    width: 5%;
+    margin: 0px 47.5%;
+}
+
+#newLine {
+    clear:both;
+}
+
+@media only screen and (max-width: 760px) {
+    .mobile-hide {
+        display: none;
+    }
+
+    #classes img {
+        width: 10%;
+    }
+}

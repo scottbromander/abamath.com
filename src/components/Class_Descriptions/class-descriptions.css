@@ -1,0 +1,44 @@
+.offeredClass a {
+    display: initial;
+}
+
+.offeredClass {
+    border: 5px solid;
+    border-image: linear-gradient(to bottom right, #53bbf4, #c0ff00) 30;
+    align-self: center;
+    justify-self: center;
+    overflow: auto;
+    height: 100%;
+}
+
+#classList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin: 1% 1.5%;
+}
+
+#coding {
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+#website {
+    grid-column: 2;
+    align-self: center;
+    justify-self: center;
+}
+
+#videoGame {
+    grid-column: 3;
+    align-self: center;
+    justify-self: center;
+}
+
+@media screen and (max-width: 600px) {
+    #classList {
+        grid-template-columns: 1fr;
+    }
+}

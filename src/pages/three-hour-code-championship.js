@@ -1,16 +1,15 @@
 import React from "react";
+import Layout from "../components/layout"
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import Link from "gatsby-link"; 
-import ClassroomProcedures from '../components/curriculum/ClassroomProcedures';
 import ClassroomChecklist from '../components/curriculum/ClassroomChecklist';
 import ClassroomAndHallwayProcedures from '../components/curriculum/ClassroomAndHallwayProcedures';
 
-<meta>Curriculum for the 3-hour code championship event </meta>
+// // <meta>Curriculum for the 3-hour code championship event </meta>
 
 export default class ThreeHourCodeChampionship extends React.Component {
   render(){
     return(
-      <div>
+        <Layout>
         <h1>
           3-Hour Code Championship 
         </h1>
@@ -48,9 +47,9 @@ export default class ThreeHourCodeChampionship extends React.Component {
             time to complete their “Final Project”.</p>
 
         <h4>Primary Websites</h4>
-        <p><a href="https://scratch.mit.edu/">scratch.mit.edu</a></p>
-        <p><a href="https://www.codechampionship.com/">www.codechampionship.com</a></p>
-        <p><a href="https://app.codechampionship.com/">app.codechampionship.com</a></p>
+        <p><OutboundLink href="https://scratch.mit.edu/">scratch.mit.edu</OutboundLink></p>
+        <p><OutboundLink href="https://www.codechampionship.com/">www.codechampionship.com</OutboundLink></p>
+        <p><OutboundLink href="https://app.codechampionship.com/">app.codechampionship.com</OutboundLink></p>
 
         <ClassroomChecklist />
         <ClassroomAndHallwayProcedures />
@@ -62,9 +61,9 @@ export default class ThreeHourCodeChampionship extends React.Component {
                 <li>Name game</li></ul>
             <li>Rules and coder expectations</li>
             <li>Links for instructor (example bots) </li>
-                <ul><li><a href="https://scratch.mit.edu/projects/236400359/#editor">Challenge URL</a>  </li>
-                <li>Sample Player 1 URL: <a href="https://scratch.mit.edu/projects/235144179/">https://scratch.mit.edu/projects/235144179/ </a></li>
-                <li>Sample Player 2 URL: <a href="https://scratch.mit.edu/projects/234836062/">https://scratch.mit.edu/projects/234836062/ </a></li> </ul>
+                <ul><li><OutboundLink href="https://scratch.mit.edu/projects/236400359/#editor">Challenge URL</OutboundLink>  </li>
+                <li>Sample Player 1 URL: <OutboundLink href="https://scratch.mit.edu/projects/235144179/">https://scratch.mit.edu/projects/235144179/ </OutboundLink></li>
+                <li>Sample Player 2 URL: <OutboundLink href="https://scratch.mit.edu/projects/234836062/">https://scratch.mit.edu/projects/234836062/ </OutboundLink></li> </ul>
             <li>Create Scratch Accounts - 5 minutes </li>
             <li>Guided Instruction - Remix base project and create a bot that moves left and down - 5 minutes </li>
             <ul>
@@ -105,8 +104,7 @@ export default class ThreeHourCodeChampionship extends React.Component {
             <li>Wind down/Sportsmanship time - 15 minutes </li>
 
          </ul>
-
-    </div>
+  </Layout>
     )
   }
 }

@@ -26,7 +26,7 @@ const googleSheetNodeFilter = (node, createNodeField, deleteNode) => (titleName,
         });
       });
     } else {
-      deleteNode(node.id, node);
+      deleteNode({ node });
     }
   };
 

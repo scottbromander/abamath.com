@@ -1,6 +1,5 @@
 import React from "react";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import Link from "gatsby-link"; 
 import "./curriculum.css"; 
 import PacManExample from '../../components/curriculum/curriculum-images/pacman_example.png';
 import SizesOfSquares from '../../components/curriculum/curriculum-images/sizes_of_squares.png';
@@ -14,7 +13,7 @@ import FlipSprite from '../../components/curriculum/curriculum-images/flip_sprit
 import ScaleSprite from '../../components/curriculum/curriculum-images/download_sprite.gif';
 import UploadCostume from '../../components/curriculum/curriculum-images/upload_costume.gif';
 
-<meta></meta>
+// // <meta></meta>
 
 export default class DesignYourOwnSprite extends React.Component {
   render(){
@@ -22,7 +21,7 @@ export default class DesignYourOwnSprite extends React.Component {
       <div>
         <h3>Design Your Own Sprite</h3>
         
-        <p>The primary website used for this is <a href="https://www.piskelapp.com/">piskelapp.com.</a></p>
+        <p>The primary website used for this is <OutboundLink href="https://www.piskelapp.com/">piskelapp.com.</OutboundLink></p>
         <p>Note that scratch also has a sprite editor; however, the following are the advantages 
             of piskel: </p>
         <ol>
@@ -36,8 +35,8 @@ export default class DesignYourOwnSprite extends React.Component {
 
         <h4>Tutorial:</h4>
         <p>The first task should be to copy a character, if they have one mind, they can do that, 
-            if not, they can do one of the ghosts from pacman <a href="https://seeklogo.com/images/P/pacman-ghost-logo-4E0E79293D-seeklogo.com.png">
-            here</a>. The pink ghost is a good example because some students may be colorblind, and this 
+            if not, they can do one of the ghosts from pacman <OutboundLink href="https://seeklogo.com/images/P/pacman-ghost-logo-4E0E79293D-seeklogo.com.png">
+            here</OutboundLink>. The pink ghost is a good example because some students may be colorblind, and this 
             seems to have a good difference in contrast. </p>
         <img src={PacManExample} height="300" alt="pacman example" />
         <p>Show them tools on the left. You wont need to demonstrate every single tool since most of them would 

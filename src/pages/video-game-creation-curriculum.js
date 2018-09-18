@@ -1,7 +1,6 @@
 import React from "react";
+import Layout from "../components/layout"
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import Link from "gatsby-link"; 
-import ClassroomProcedures from '../components/curriculum/ClassroomProcedures';
 import ClassroomChecklist from '../components/curriculum/ClassroomChecklist';
 import ClassroomAndHallwayProcedures from '../components/curriculum/ClassroomAndHallwayProcedures';
 import DesignYourOwnSprite from '../components/curriculum/DesignYourOwnSprite'; 
@@ -20,12 +19,12 @@ import playerCode from '../components/curriculum/curriculum-images/player-code.p
 import bossCode from '../components/curriculum/curriculum-images/boss-code.png';
 
 
-<meta>Video Game Creation Camp curriculum</meta>
+// // <meta>Video Game Creation Camp curriculum</meta>
 
 export default class VideoGameCreationCurriculum extends React.Component {
   render(){
     return(
-      <div>
+        <Layout>
         <h1>
         2018 Video Game Creation Camp Lesson Plan 
         </h1>
@@ -55,10 +54,10 @@ export default class VideoGameCreationCurriculum extends React.Component {
             their “Final Project”. </p>
 
         <h5>Primary Website</h5>
-          <p><a href="https://scratch.mit.edu/">Scratch.mit.edu </a></p>
+          <p><OutboundLink href="https://scratch.mit.edu/">Scratch.mit.edu </OutboundLink></p>
 
         <h5>Secondary Website</h5>
-            <p><a href="https://snap.berkeley.edu/snapsource/snap.html">https://snap.berkeley.edu/snapsource/snap.html</a></p>
+            <p><OutboundLink href="https://snap.berkeley.edu/snapsource/snap.html">https://snap.berkeley.edu/snapsource/snap.html</OutboundLink></p>
 
 
         <h5>Instructor’s Email:</h5>
@@ -81,11 +80,11 @@ export default class VideoGameCreationCurriculum extends React.Component {
 
         <h5>Note:</h5>
         <p>Use Pomodoro Technique in class. A good online timer is found
-             <a href="https://www.marinaratimer.com/"> here.</a></p>
+             <OutboundLink href="https://www.marinaratimer.com/"> here.</OutboundLink></p>
 
-        <p>Lessons <a href="https://docs.google.com/document/d/1ipDMwBAEmSjZoC6eoJuu-v96SPO5h07YiiYeD6eSlWs/edit">
-            Here</a></p> 
-        <p><a href="https://scratch.mit.edu/projects/238743123/">Final Scratch Project</a></p> 
+        <p>Lessons <OutboundLink href="https://docs.google.com/document/d/1ipDMwBAEmSjZoC6eoJuu-v96SPO5h07YiiYeD6eSlWs/edit">
+            Here</OutboundLink></p> 
+        <p><OutboundLink href="https://scratch.mit.edu/projects/238743123/">Final Scratch Project</OutboundLink></p> 
 
         <h2>Day 1</h2>
             <ul>
@@ -113,8 +112,8 @@ export default class VideoGameCreationCurriculum extends React.Component {
                 <li>Brainstorm - 30 min </li>
                 <li>Make Scratch Accounts</li>
                 <li>Have Students create a new project - This is their in class project</li>
-                <li>Show them the final in-class project <a href="https://scratch.mit.edu/projects/237424436/">
-                    here</a></li>
+                <li>Show them the final in-class project <OutboundLink href="https://scratch.mit.edu/projects/237424436/">
+                    here</OutboundLink></li>
                 <li>Lesson 1 - Intro to Scratch</li>
                     <ul>
                         <li>Create new project, and name it! </li>
@@ -159,8 +158,8 @@ export default class VideoGameCreationCurriculum extends React.Component {
                             Continue until all cards are complete. </li>
                                 <ul>
                                     <li>If you don't have a set of cards, the prompts
-                                    can be found <a href="https://docs.google.com/document/d/1cNNHvOfewih6RbbjT5D3-neOkCyi9zRn7BSpZND5zi0/edit"
-                                    >here.</a></li>
+                                    can be found <OutboundLink href="https://docs.google.com/document/d/1cNNHvOfewih6RbbjT5D3-neOkCyi9zRn7BSpZND5zi0/edit"
+                                    >here.</OutboundLink></li>
                                     <li>Alternative Way to Play: Say the cards and play a “Simon says” 
                                         game of sorts. No one needs to get eliminated, but you can 
                                         still call them out if they get it wrong. </li>
@@ -186,8 +185,8 @@ export default class VideoGameCreationCurriculum extends React.Component {
                                     the circle until the story seems to be dying down or when excitement 
                                     diminishes. You can start a new statement when that occurs. </li>
                             </ul>
-                        <li><a href="https://leftbraincraftbrain.com/if-then-backyard-coding-game-for-kids/">
-                        Active Conditionals Game </a></li>
+                        <li><OutboundLink href="https://leftbraincraftbrain.com/if-then-backyard-coding-game-for-kids/">
+                        Active Conditionals Game </OutboundLink></li>
                             <ul>
                                 <li>First, this might be a better game to play outside or in an open 
                                     space. </li>
@@ -372,8 +371,8 @@ export default class VideoGameCreationCurriculum extends React.Component {
                         have to send out so much data to different computers at the same time 
                         and it sometimes overlaps. This is like how our "banned words" can't 
                         get through because of "collisions"</li>
-                    <li>If you don't have a set of cards, you can find them <a href="https://docs.google.com/document/d/1jJ7s9x-4-wk4s-2Y1IWm6FoPk-zIlJ30K6yjtNJwSEw/edit">
-                    here</a></li></ul>
+                    <li>If you don't have a set of cards, you can find them <OutboundLink href="https://docs.google.com/document/d/1jJ7s9x-4-wk4s-2Y1IWm6FoPk-zIlJ30K6yjtNJwSEw/edit">
+                    here</OutboundLink></li></ul>
                 <li>Lesson 6 - Design Your Own Sprite </li>
                 <DesignYourOwnSprite />
                 <li>Final Game Work Time</li>
@@ -385,11 +384,11 @@ export default class VideoGameCreationCurriculum extends React.Component {
                     <ul>
                         <li>Introduce to scratch wiki</li>
                             <ul>
-                                <li><a href="https://en.scratch-wiki.info/wiki">https://en.scratch-wiki.info/wiki</a></li>
-                                <li><a href="https://en.scratch-wiki.info/wiki/Scratch_Wiki:Table_of_Contents/Scripting_Tutorials">
-                                https://en.scratch-wiki.info/wiki/Scratch_Wiki:Table_of_Contents/Scripting_Tutorials</a></li>
-                                <li><a href="https://en.scratch-wiki.info/wiki/How_to_Make_a_Basic_Platformer">
-                                This one is a good example</a></li>
+                                <li><OutboundLink href="https://en.scratch-wiki.info/wiki">https://en.scratch-wiki.info/wiki</OutboundLink></li>
+                                <li><OutboundLink href="https://en.scratch-wiki.info/wiki/Scratch_Wiki:Table_of_Contents/Scripting_Tutorials">
+                                https://en.scratch-wiki.info/wiki/Scratch_Wiki:Table_of_Contents/Scripting_Tutorials</OutboundLink></li>
+                                <li><OutboundLink href="https://en.scratch-wiki.info/wiki/How_to_Make_a_Basic_Platformer">
+                                This one is a good example</OutboundLink></li>
                             </ul>
                         <li>Tell the students they are able to remix code from other games on Scratch and make 
                             it their own! Show them.</li>
@@ -421,16 +420,13 @@ export default class VideoGameCreationCurriculum extends React.Component {
 
             <h4>Optional Other Websites:</h4>
             <ul>
-                <li><a href="https://code.org/">Code.org</a> </li>
-                <li><a href="https://www.codecademy.com/">Codeacademy.com</a> </li>
-                <li><a href="https://www.touchdevelop.com/g">Touch develop</a> </li>
-                <li><a href="https://www.khanacademy.org/partner-content/pixar">Pixarinabox.org</a> </li>
-                <li><a href="https://csfirst.withgoogle.com/c/cs-first/en/curriculum.html">CS First</a> </li>
+                <li><OutboundLink href="https://code.org/">Code.org</OutboundLink> </li>
+                <li><OutboundLink href="https://www.codecademy.com/">Codeacademy.com</OutboundLink> </li>
+                <li><OutboundLink href="https://www.touchdevelop.com/g">Touch develop</OutboundLink> </li>
+                <li><OutboundLink href="https://www.khanacademy.org/partner-content/pixar">Pixarinabox.org</OutboundLink> </li>
+                <li><OutboundLink href="https://csfirst.withgoogle.com/c/cs-first/en/curriculum.html">CS First</OutboundLink> </li>
             </ul>
-
-
-
-        </div>
+  </Layout>
     )
   }
 }

@@ -1,9 +1,7 @@
 import React from "react";
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import Link from "gatsby-link"; 
 import "./curriculum.css"; 
 
-<meta></meta>
+// // <meta></meta>
 
 export default class ClassroomChecklist extends React.Component {
   render(){

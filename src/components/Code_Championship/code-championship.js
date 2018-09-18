@@ -2,7 +2,7 @@ import React from "react";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import "./code-championship.css";
 
-<meta>Section describing Code Championship and linking to full page.</meta>
+// // <meta>Section describing Code Championship and linking to full page.</meta>
 
 export default class CodeChampionship extends React.Component {
     render() {

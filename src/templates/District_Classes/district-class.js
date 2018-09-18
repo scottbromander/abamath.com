@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import ClassTable from "../../components/Class_Table/ClassTable";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import "./district-class.css"

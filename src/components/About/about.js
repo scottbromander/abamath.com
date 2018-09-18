@@ -1,9 +1,8 @@
 import React from "react";
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import './about.css';
 
-<meta>About page describing who Abamath is as a company, what we do, and how to get involved.</meta>
+// <meta>About page describing who Abamath is as a company, what we do, and how to get involved.</meta>
 
 export default class About extends React.Component {
   render() {

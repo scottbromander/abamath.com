@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import "./class-descriptions.css";
 
 export default class ClassDescriptions extends React.Component {

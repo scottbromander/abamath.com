@@ -1,8 +1,8 @@
 const { pagePromiseGenerator } = require('./utils/page-promise-generator');
 const { googleSheetNodeFilter } = require('./utils/google-sheet-node-filter');
 
-exports.onCreateNode = ({ node, boundActionCreators }) => {
-  const { createNodeField, deleteNode } = boundActionCreators
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField, deleteNode } = actions
   const googleSheetNodeFieldCreator = googleSheetNodeFilter(node, createNodeField, deleteNode);
   const isDistrictClass = node.internal.type === 'community_education__district_classes';
   const isProposedClass = node.internal.type === 'community_education__proposed_classes';
@@ -42,8 +42,8 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
   }
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
   const slugRoutePageCreator = pagePromiseGenerator(graphql, createPage);
   return Promise.all([
     slugRoutePageCreator('allCommunityEducationDistrictClasses', './src/templates/District_Classes/district-class.js'),

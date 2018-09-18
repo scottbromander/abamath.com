@@ -1,12 +1,9 @@
 import React, { Component } from "react";
+import Layout from "../components/layout"
 
 import styles from "./hours.module.css";
 
 class Hours extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     state = {
         totalHours: 0,
         totalMiles: 0,
@@ -158,7 +155,7 @@ class Hours extends Component {
 
     addTask = (newTask, dayIndex) => {
         const days = this.state.days.map((day, index) => {
-            if (index == dayIndex) {
+            if (index === dayIndex) {
                 return {
                     ...day,
                     tasks: [...day.tasks, newTask],
@@ -181,7 +178,7 @@ class Hours extends Component {
 
     updateNewTask = (property, dayIndexToUpdate) => (event) => {
         const days = this.state.days.map((day, dayIndex) => {
-            if (dayIndexToUpdate == dayIndex) {
+            if (dayIndexToUpdate === dayIndex) {
                 return {
                     ...day,
                     newTask: {
@@ -202,11 +199,11 @@ class Hours extends Component {
 
     updateTask = (property, taskIndexToUpdate, dayIndexToUpdate) => (event) => {
         const days = this.state.days.map((day, dayIndex) => {
-            if (dayIndexToUpdate == dayIndex) {
+            if (dayIndexToUpdate === dayIndex) {
                 return {
                     ...day,
                     tasks: day.tasks.map((task, taskIndex) => {
-                        if (taskIndexToUpdate == taskIndex) {
+                        if (taskIndexToUpdate === taskIndex) {
                             return {
                                 ...task,
                                 [property]: event.target.value
@@ -229,7 +226,7 @@ class Hours extends Component {
 
     updateTravel = (property, dayIndexToUpdate) => (event) => {
         const days = this.state.days.map((day, dayIndex) => {
-            if (dayIndexToUpdate == dayIndex) {
+            if (dayIndexToUpdate === dayIndex) {
                 return {
                     ...day,
                     travel: {
@@ -254,10 +251,10 @@ class Hours extends Component {
 
     removeTask = (taskIndexToRemove, dayIndexToRemove) => {
         const days = this.state.days.map((day, dayIndex) => {
-            if (dayIndexToRemove == dayIndex) {
+            if (dayIndexToRemove === dayIndex) {
                 return {
                     ...day,
-                    tasks: day.tasks.filter((task, taskIndex) => taskIndexToRemove != taskIndex),
+                    tasks: day.tasks.filter((task, taskIndex) => Number(taskIndexToRemove) !== Number(taskIndex)),
                 }
             } else {
                 return day;
@@ -280,7 +277,7 @@ class Hours extends Component {
 
     render() {
         return (
-            <div>
+            <Layout>
                 <h1>Hours and Miles</h1>
                 <p>
                     Track Weekly Miles and Hours
@@ -321,19 +318,9 @@ class Hours extends Component {
                 </div>
                 <hr/>
                 <pre>{JSON.stringify(this.state,null,2)}</pre>
-            </div>
+  </Layout>
         );
     }
 }
 
 export default Hours;
-
-// export const query = graphql`
-//   query AboutQuery {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `

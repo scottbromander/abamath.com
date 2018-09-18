@@ -1,4 +1,6 @@
 import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout"
 import UpcomingClasses from "../components/Upcoming_Classes/UpcomingClasses";
 import ClassDescriptions from "../components/Class_Descriptions/class-descriptions";
 import About from "../components/About/about";
@@ -8,7 +10,7 @@ import Contact from "../components/Contact/contact";
 import "./index.css";
 import Img from "gatsby-image";
 
-<meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
+// // <meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
 export default class Index extends React.Component {
   state = {
@@ -19,7 +21,7 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <div>
+      <Layout>
         <Img
           alt="Abamath Code Hero Background"
           resolutions={this.props.data.codeHeroBackgroundImage.childImageSharp.resolutions}
@@ -55,7 +57,7 @@ export default class Index extends React.Component {
             style={this.state.imageStyles}
           />
         </div>
-      </div>
+      </Layout>
     )
   }
 }

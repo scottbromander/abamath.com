@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from "../components/layout"
 const NotFoundPage = () => (
-  <div>
+  <Layout>
     <h1>NOT FOUND :(</h1>
     <p>You just hit a page that doesn't exist.</p>
-  </div>
+  </Layout>
 )
 export default NotFoundPage

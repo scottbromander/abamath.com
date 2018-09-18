@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../images/abamath.png"
 import "./navigation.css"
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 
 export default class Navigation extends React.Component {
   state = {
@@ -9,7 +9,7 @@ export default class Navigation extends React.Component {
   }
 
   toggleNav = () => {
-    if (this.state.toggle == "topnav") {
+    if (this.state.toggle === "topnav") {
       this.setState({toggle: "topnav responsive"})
     }
     else {

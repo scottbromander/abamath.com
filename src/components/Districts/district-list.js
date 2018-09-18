@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import "./district-list.css";
 
 export default class DistrictsList extends React.Component {

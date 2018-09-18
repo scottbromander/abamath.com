@@ -2,7 +2,7 @@ import React from "react";
 import ClassTable from "../Class_Table/ClassTable";
 import InputHints from "react-input-hints";
 
-<meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
+// // <meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
 export default class UpcomingClasses extends React.Component {
   state = {

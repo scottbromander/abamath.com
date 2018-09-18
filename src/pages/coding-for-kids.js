@@ -1,13 +1,15 @@
 import React from "react";
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import Layout from "../components/layout"
 import ClassroomChecklist from '../components/curriculum/ClassroomChecklist';
 import ClassroomAndHallwayProcedures from '../components/curriculum/ClassroomAndHallwayProcedures';
 
-<meta></meta>
+// // <meta></meta>
 
 export default class CodingForKids extends React.Component {
   render(){
     return(
-      <div>
+      <Layout>
         <h1>
           Coding For Kids 
         </h1>
@@ -42,7 +44,7 @@ export default class CodingForKids extends React.Component {
           with the coach work through the “Accelerated Course” on code.org. </p>
 
         <h5>Primary Website</h5>
-          <p><a href="https://studio.code.org/s/20-hour">code.org</a></p>
+          <p><OutboundLink href="https://studio.code.org/s/20-hour">code.org</OutboundLink></p>
 
         <h5>Instructor’s Email:</h5>
           <p>Email: abamathinstructors@gmail.com</p>
@@ -77,19 +79,19 @@ export default class CodingForKids extends React.Component {
             <li>Tell the students that there will be break time and what time it will be</li>
             <li>Students make code.org accounts</li>
               <ul>
-                <li>Students navigate to <a href="https://studio.code.org/s/20-hour">https://studio.code.org/s/20-hour</a> 20-hour</li>
+                <li>Students navigate to <OutboundLink href="https://studio.code.org/s/20-hour">https://studio.code.org/s/20-hour</OutboundLink> 20-hour</li>
                 <li>Recommended with small classes to write down login information as students usually 
                   have trouble logging in the second day</li>
                 <li>Do not log any emails or passwords if the student already uses them personally.</li>
               </ul>
-            <li>Instruction - Go through the <a href="https://docs.google.com/presentation/d/1NkKWN9IPGGBjeOnghJ0hfmbtEgtLb1zymhPPe8dy9uY/edit#slide=id.p">
-            Conditionals presentation</a> with kids</li>
+            <li>Instruction - Go through the <OutboundLink href="https://docs.google.com/presentation/d/1NkKWN9IPGGBjeOnghJ0hfmbtEgtLb1zymhPPe8dy9uY/edit#slide=id.p">
+            Conditionals presentation</OutboundLink> with kids</li>
             <li>Conditionals Competition - Split students into 2 teams. The person at the front of 
               the line will pick up a card and show it to the instructor. They will then perform the 
               appropriate action based on the card's conditions. If they are correct, the team gets a 
               point. If not, the card goes back in the stack. Continue until all cards are complete.</li>
-            <ul><li>If you don't have a set of cards, the prompts can be found <a href="https://docs.google.com/document/d/1cNNHvOfewih6RbbjT5D3-neOkCyi9zRn7BSpZND5zi0/edit">
-            here.</a></li></ul>
+            <ul><li>If you don't have a set of cards, the prompts can be found <OutboundLink href="https://docs.google.com/document/d/1cNNHvOfewih6RbbjT5D3-neOkCyi9zRn7BSpZND5zi0/edit">
+            here.</OutboundLink></li></ul>
             <li>Break Time - 15 minutes</li>
               <ul>
                 <li>For morning class: 10:30 AM</li>
@@ -99,7 +101,7 @@ export default class CodingForKids extends React.Component {
               <ul><li>Computer science is NOT just programming! Programming is an engineering tool while 
                   computer science is a broad academic field such as math or physics. </li></ul>
             <li>Instruction - Go through the Circles and Angles presentation with kids</li>
-            <li><a href="https://docs.google.com/presentation/d/1B1kf9pD8e17WMD9dY0ImU7QVVYt7yI6AZ6X7spxblcY/edit#slide=id.g3cb45ddde0_0_50">Circles and Angles Presentation</a></li>
+            <li><OutboundLink href="https://docs.google.com/presentation/d/1B1kf9pD8e17WMD9dY0ImU7QVVYt7yI6AZ6X7spxblcY/edit#slide=id.g3cb45ddde0_0_50">Circles and Angles Presentation</OutboundLink></li>
             <li>Harold the Robot Activity  - Randomly layout a collection of plastic or paper 
               cups onto a table.  They can be upright, upside down, side ways, etc. The students must 
               use verbal commands to instruct what the ‘robot’ (either the instructor or another student)
@@ -114,8 +116,8 @@ export default class CodingForKids extends React.Component {
 
       <h2>Day 2</h2>
       <ul>
-        <li>Instruction - Go through the <a href="https://docs.google.com/presentation/d/1zplh5ugFvlCdqU_UeB4oVgpJxxrDF1hFfFWqC04StLc/edit#slide=id.p">
-        Loops presentation with kids</a></li>
+        <li>Instruction - Go through the <OutboundLink href="https://docs.google.com/presentation/d/1zplh5ugFvlCdqU_UeB4oVgpJxxrDF1hFfFWqC04StLc/edit#slide=id.p">
+        Loops presentation with kids</OutboundLink></li>
         <li>Just Dance loops activity - Begin the activity by reminding students that we see loops 
           in real life all the time. Have students break into group of 2/3. One at a time, have the 
           students complete one of the Just Dance videos on Youtube. After the song is over, ask each 
@@ -124,14 +126,14 @@ export default class CodingForKids extends React.Component {
           counting how many times we did a certain action. Instead, we did it UNTIL a condition (ie a 
           change in rhythm) was satisfied.</li>
           <ul>
-            <li><a href="https://www.youtube.com/watch?v=ueqK3xLh46Y" >Ghostbusters</a> </li>
-            <li><a href="https://www.youtube.com/watch?v=qt4zIG7kUBc">Animals</a></li>
-            <li><a href="https://www.youtube.com/watch?v=_RDbGaQ-1qM">Dynamite</a> </li>
-            <li><a href="https://www.youtube.com/watch?v=xHLes2dUuEQ">Rasputin</a></li>
-            <li><a href="https://www.youtube.com/watch?v=71TbpLlB5wU">24K Magic</a></li>
-            <li><a href="https://www.youtube.com/watch?v=9hW5sXowU9Q">Despacito</a></li>
-            <li><a href="https://www.youtube.com/watch?v=Eye-D7U89J4">I Gotta Feeling</a></li>
-            <li><a href="https://www.youtube.com/watch?v=tNUtAzh-C2U">Rockabye</a></li>
+            <li><OutboundLink href="https://www.youtube.com/watch?v=ueqK3xLh46Y" >Ghostbusters</OutboundLink> </li>
+            <li><OutboundLink href="https://www.youtube.com/watch?v=qt4zIG7kUBc">Animals</OutboundLink></li>
+            <li><OutboundLink href="https://www.youtube.com/watch?v=_RDbGaQ-1qM">Dynamite</OutboundLink> </li>
+            <li><OutboundLink href="https://www.youtube.com/watch?v=xHLes2dUuEQ">Rasputin</OutboundLink></li>
+            <li><OutboundLink href="https://www.youtube.com/watch?v=71TbpLlB5wU">24K Magic</OutboundLink></li>
+            <li><OutboundLink href="https://www.youtube.com/watch?v=9hW5sXowU9Q">Despacito</OutboundLink></li>
+            <li><OutboundLink href="https://www.youtube.com/watch?v=Eye-D7U89J4">I Gotta Feeling</OutboundLink></li>
+            <li><OutboundLink href="https://www.youtube.com/watch?v=tNUtAzh-C2U">Rockabye</OutboundLink></li>
           </ul>
         <li>Break Time - 15 minutes</li>
           <ul><li>Morning: 10:30 AM</li>
@@ -149,7 +151,7 @@ export default class CodingForKids extends React.Component {
         take turns asking about two cards. They can ask, “Which card is larger?” or “Are these cards 
         in order?” and then the next coder can ask. Here are two methods for comparison: </li>
         <ul>
-          <li><a href="https://www.youtube.com/watch?v=cVMKXKoGu_Y">https://www.youtube.com/watch?v=cVMKXKoGu_Y</a></li>
+          <li><OutboundLink href="https://www.youtube.com/watch?v=cVMKXKoGu_Y">https://www.youtube.com/watch?v=cVMKXKoGu_Y</OutboundLink></li>
           <li>Kids typically figure out the first one (called selection sort). But there are faster ways! 
           Quick sort is the other one in the video, and that is a faster way to sort a list. Keep track
            of who solves it in the shortest number of questions.</li>
@@ -176,8 +178,8 @@ export default class CodingForKids extends React.Component {
             <li>Function: type of procedure that a computer recognizes</li>
             <li>Debugging: finding errors in your own code</li>
           </ul>
-          <li>Instruction: Go through the <a href="https://docs.google.com/presentation/d/1qzPx6On5yalVOBJpsmvSd3ukTSeqbMw7ohCmeEKpfS8/edit#slide=id.g3cb47cac93_0_146">
-          binary presentation</a> with the kids. Tell them there will be a competition 
+          <li>Instruction: Go through the <OutboundLink href="https://docs.google.com/presentation/d/1qzPx6On5yalVOBJpsmvSd3ukTSeqbMw7ohCmeEKpfS8/edit#slide=id.g3cb47cac93_0_146">
+          binary presentation</OutboundLink> with the kids. Tell them there will be a competition 
             after break to help them stay focused.</li>
           <li>Binary Numbers - Each student gets 5 cards (Ace, 2, 4, 8, King - the king is a 16). 
             Explain to the students that if a card is face up, it is on, it is a one. If it is face down, 
@@ -211,8 +213,8 @@ export default class CodingForKids extends React.Component {
                 for the other.</li>
               <li>Pro tip: have all the binary conversions written down for a quick way to check </li>
             </ul>
-          <li><a href="https://docs.google.com/document/d/1j2EvJ-TsbQ4-yGS_NJgEU3NMa1fXYsuLOElTGhjAcBs/edit">
-          Binary Go-Fish (optional)</a></li>
+          <li><OutboundLink href="https://docs.google.com/document/d/1j2EvJ-TsbQ4-yGS_NJgEU3NMa1fXYsuLOElTGhjAcBs/edit">
+          Binary Go-Fish (optional)</OutboundLink></li>
         </ul>
 
         <h2>Day 4</h2>
@@ -223,7 +225,7 @@ export default class CodingForKids extends React.Component {
           <li>Word Compression - Coders split into teams of two. One person from each team is given a 
             word and told that they must remove 2 letters and write that on a piece of paper. If they are
              successful, give the students a new word and tell them they must remove 3 letters. See how
-              many letters they can remove from these words. The following words are pulled from <a href="http://www.yougowords.com/10-letters">here</a> </li>
+              many letters they can remove from these words. The following words are pulled from <OutboundLink href="http://www.yougowords.com/10-letters">here</OutboundLink> </li>
             <ul><li>In computer science, we compress things in order to save more information in a 
             smaller space</li></ul>
           <li>Break Time - 15 minutes</li>
@@ -246,10 +248,10 @@ export default class CodingForKids extends React.Component {
               <ul>
                 <li>Make sure you have a completed model to compare the attempts to</li>
                 <li>Algorithm designs in order: plane, jumping frog, star box</li>
-                <li><a href="https://docs.google.com/document/d/1PiJCo6AX51vgaKuSR9Yg3H49KlnVu0OXC0tI0VbfIEc/edit#">Worksheet</a></li>
+                <li><OutboundLink href="https://docs.google.com/document/d/1PiJCo6AX51vgaKuSR9Yg3H49KlnVu0OXC0tI0VbfIEc/edit#">Worksheet</OutboundLink></li>
               </ul>
-          <li><a href="https://docs.google.com/document/d/1ZDsL5_Y0kjTp_5Mu_ilYou1X7nMiJm-YHEdnZ7CYq3s/edit">
-          ASCII Cryptography Game</a> </li>
+          <li><OutboundLink href="https://docs.google.com/document/d/1ZDsL5_Y0kjTp_5Mu_ilYou1X7nMiJm-YHEdnZ7CYq3s/edit">
+          ASCII Cryptography Game</OutboundLink> </li>
           <li>Have students fill out the survey: abamath.com/survey </li>
         </ul>
 
@@ -259,32 +261,32 @@ export default class CodingForKids extends React.Component {
         Introduce them to other sites in this order:</p>
 
         <ul>
-          <li><a href="https://www.playcodemonkey.com/challenges/0">Code monkey</a></li>
-          <li><a href="https://lightbot.com/hocflash.html">Lightbot</a></li>
-          <li><a href="https://codecombat.com/play">Code combat</a></li>
-          <li><a href="https://blockly-games.appspot.com/">Blockly Games</a></li>
-          <li><a href="https://studio.code.org/s/playlab/stage/1/puzzle/10">For students who want something a little more freefrom, code playlab</a></li>
-          <li><a href="https://www.codecademy.com/">Codecademy</a></li>
-          <li><a href="https://www.freecodecamp.com">Free Code Camp </a></li>
-          <li><a href="https://www.codeavengers.com">Codeavengers</a></li>
-          <li><a href="https://www.khanacademy.org/computing/computer-programming ">Khan Academy</a></li>
-          <li><a href="https://www.techrocket.com/">Tech Rocket </a></li>
-          <li><a href="https://www.tynker.com/home/dashboard">Tynker</a></li>
+          <li><OutboundLink href="https://www.playcodemonkey.com/challenges/0">Code monkey</OutboundLink></li>
+          <li><OutboundLink href="https://lightbot.com/hocflash.html">Lightbot</OutboundLink></li>
+          <li><OutboundLink href="https://codecombat.com/play">Code combat</OutboundLink></li>
+          <li><OutboundLink href="https://blockly-games.appspot.com/">Blockly Games</OutboundLink></li>
+          <li><OutboundLink href="https://studio.code.org/s/playlab/stage/1/puzzle/10">For students who want something a little more freefrom, code playlab</OutboundLink></li>
+          <li><OutboundLink href="https://www.codecademy.com/">Codecademy</OutboundLink></li>
+          <li><OutboundLink href="https://www.freecodecamp.com">Free Code Camp </OutboundLink></li>
+          <li><OutboundLink href="https://www.codeavengers.com">Codeavengers</OutboundLink></li>
+          <li><OutboundLink href="https://www.khanacademy.org/computing/computer-programming ">Khan Academy</OutboundLink></li>
+          <li><OutboundLink href="https://www.techrocket.com/">Tech Rocket </OutboundLink></li>
+          <li><OutboundLink href="https://www.tynker.com/home/dashboard">Tynker</OutboundLink></li>
         </ul>
       <p>Answers:</p>
       <ul>
-        <li><a href="https://lightbot.com/LightbotSolns.pdf">Lightbot</a></li>
-        <li><a href="https://gist.github.com/a1ip/2ea627a4bf6067a63634">Code Combat</a></li>
+        <li><OutboundLink href="https://lightbot.com/LightbotSolns.pdf">Lightbot</OutboundLink></li>
+        <li><OutboundLink href="https://gist.github.com/a1ip/2ea627a4bf6067a63634">Code Combat</OutboundLink></li>
           <ul>
             <li>Don’t click the blue circles.</li>    
             <li>Click the red dots to keep going.</li>
           </ul>
         <li>Blockly Games is very challenging, so introduce it as “A very challenging site for high 
           schoolers, but if you’re up for it, go for it!” I have put the blockly games answers 
-          <a href="https://drive.google.com/drive/folders/0B-pA773bPjoLODAzUFkxaDYyNnc"> here</a></li>
-        <li><a href="https://github.com/ummahusla/Codecademy-Exercise-Answers">Code Academy</a></li>
+          <OutboundLink href="https://drive.google.com/drive/folders/0B-pA773bPjoLODAzUFkxaDYyNnc"> here</OutboundLink></li>
+        <li><OutboundLink href="https://github.com/ummahusla/Codecademy-Exercise-Answers">Code Academy</OutboundLink></li>
       </ul>
-      </div>
+  </Layout>
     )
   }
 }

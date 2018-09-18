@@ -1,9 +1,8 @@
 import React from "react";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import Link from "gatsby-link"; 
 import "./curriculum.css"; 
 
-<meta></meta>
+// // <meta></meta>
 
 export default class ClassroomProcedures extends React.Component {
   render(){
@@ -207,7 +206,7 @@ export default class ClassroomProcedures extends React.Component {
                 </ul>
             <h4>What do we do if it does seem like one kid is being bullied? </h4>
                 <ul>
-                <li><a href="https://www.smartclassroommanagement.com/2011/06/25/bullying-in-the-classroom/">Resource on Bullying</a> </li>
+                <li><OutboundLink href="https://www.smartclassroommanagement.com/2011/06/25/bullying-in-the-classroom/">Resource on Bullying</OutboundLink> </li>
                 <li>Know what bullying is: “Bullying is the strong preying upon the weak. It can be 
                     a physical advantage or a social advantage. It can be one student or many. It 
                     often takes the form of threats, intimidation, repeated cruelty, and/or forcing 
@@ -257,7 +256,7 @@ export default class ClassroomProcedures extends React.Component {
                 
         <h3>Checkout Policies</h3>
             <ul>
-                <li>Site for check ins: <a href = "https://abamath-check-in.herokuapp.com/#!/" >here</a> </li>
+                <li>Site for check ins: <OutboundLink href = "https://abamath-check-in.herokuapp.com/#!/" >here</OutboundLink> </li>
                 <li>At the beginning of class, you should know/ask a district official how the 
                     check-in/checkout system of the district works. Some districts have a camp system 
                     that will determine where you pick up and drop off the kids.</li>

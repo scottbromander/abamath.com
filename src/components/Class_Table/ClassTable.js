@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 
 export default class ClassTable extends React.Component {
   state = {
@@ -92,7 +92,7 @@ export default class ClassTable extends React.Component {
           </tbody>
         </table>
         {this.state.numberOfClassesToShow < this.props.districtClasses.filter(this.searchFilter).length &&
-          <p id="expand"><a onClick={this.updateClasses}>Click Here To Show More</a></p>
+          <p id="expand"><button onClick={this.updateClasses}>Click Here To Show More</button></p>
         }
       </div>
     )

@@ -1,16 +1,13 @@
 import React from "react";
+import Layout from "../components/layout"
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import Link from "gatsby-link"; 
-import ClassroomProcedures from '../components/curriculum/ClassroomProcedures';
-import ClassroomChecklist from '../components/curriculum/ClassroomChecklist';
-import ClassroomAndHallwayProcedures from '../components/curriculum/ClassroomAndHallwayProcedures';
 
-<meta></meta>
+// // <meta></meta>
 
 export default class GirlScoutCurriculum extends React.Component {
   render(){
     return(
-      <div>
+        <Layout>
         <h1>
           1-Day Girl Scout Event 
         </h1>
@@ -64,7 +61,7 @@ export default class GirlScoutCurriculum extends React.Component {
                 </ul>
             <li>Scouts make code.org accounts (30 minutes) </li>
                 <ul>
-                    <li>Scouts navigate to <a href="https://studio.code.org/s/20-hour"> 20-hour </a></li>
+                    <li>Scouts navigate to <OutboundLink href="https://studio.code.org/s/20-hour"> 20-hour </OutboundLink></li>
                     <li>Recommended with small classes to write down login information as scouts 
                         usually have trouble logging on the second day</li>
                     <li>Do not log any emails or passwords if the student already uses them personally.</li>
@@ -90,8 +87,8 @@ export default class GirlScoutCurriculum extends React.Component {
                 the team gets a point. If not, the card goes back in the stack. Continue until all 
                 cards are complete.</li>
                 <ul>
-                    <li>If you don't have a set of cards, the prompts can be found <a href="https://docs.google.com/document/d/1cNNHvOfewih6RbbjT5D3-neOkCyi9zRn7BSpZND5zi0/edit">
-                    here.</a></li>
+                    <li>If you don't have a set of cards, the prompts can be found <OutboundLink href="https://docs.google.com/document/d/1cNNHvOfewih6RbbjT5D3-neOkCyi9zRn7BSpZND5zi0/edit">
+                    here.</OutboundLink></li>
                     <li>Talking points: When are there patterns like the ones we saw today? 
                         (eg raising a hand to get called on by the teacher) </li>
                 </ul>
@@ -116,14 +113,14 @@ export default class GirlScoutCurriculum extends React.Component {
                 loops. For example, in the songs, we weren't counting how many times we did a certain 
                 action. Instead, we did it UNTIL a condition (ie a change in rhythm) was satisfied. </li>
                 <ul>
-                    <li><a href="https://www.youtube.com/watch?v=ueqK3xLh46Y" >Ghostbusters</a> </li>
-                    <li><a href="https://www.youtube.com/watch?v=qt4zIG7kUBc">Animals</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=_RDbGaQ-1qM">Dynamite</a> </li>
-                    <li><a href="https://www.youtube.com/watch?v=xHLes2dUuEQ">Rasputin</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=71TbpLlB5wU">24K Magic</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=9hW5sXowU9Q">Despacito</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=Eye-D7U89J4">I Gotta Feeling</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=tNUtAzh-C2U">Rockabye</a></li>
+                    <li><OutboundLink href="https://www.youtube.com/watch?v=ueqK3xLh46Y" >Ghostbusters</OutboundLink> </li>
+                    <li><OutboundLink href="https://www.youtube.com/watch?v=qt4zIG7kUBc">Animals</OutboundLink></li>
+                    <li><OutboundLink href="https://www.youtube.com/watch?v=_RDbGaQ-1qM">Dynamite</OutboundLink> </li>
+                    <li><OutboundLink href="https://www.youtube.com/watch?v=xHLes2dUuEQ">Rasputin</OutboundLink></li>
+                    <li><OutboundLink href="https://www.youtube.com/watch?v=71TbpLlB5wU">24K Magic</OutboundLink></li>
+                    <li><OutboundLink href="https://www.youtube.com/watch?v=9hW5sXowU9Q">Despacito</OutboundLink></li>
+                    <li><OutboundLink href="https://www.youtube.com/watch?v=Eye-D7U89J4">I Gotta Feeling</OutboundLink></li>
+                    <li><OutboundLink href="https://www.youtube.com/watch?v=tNUtAzh-C2U">Rockabye</OutboundLink></li>
                     <li>Talking points: What patterns did we see in the dances?</li>
                 </ul>       
             <li>Code Time (30 minutes)</li>
@@ -141,14 +138,14 @@ export default class GirlScoutCurriculum extends React.Component {
                         the instructor may award her/them the point</li>
                     <li>At the end, note that with the code block examples, we found patterns in some 
                         of them. This means we can use loops to make our code more precise</li>
-                    <li><a href="https://docs.google.com/presentation/d/1LCZvleQRCUyYozBXjsoHkwhy8hvrbEVMeFRM2gU1TPY/edit#slide=id.g3d5578457c_0_13">
-                    Pattern Tracking Game Presentation</a></li>
+                    <li><OutboundLink href="https://docs.google.com/presentation/d/1LCZvleQRCUyYozBXjsoHkwhy8hvrbEVMeFRM2gU1TPY/edit#slide=id.g3d5578457c_0_13">
+                    Pattern Tracking Game Presentation</OutboundLink></li>
                 </ul>
             <li>Code Time (30 minutes)</li>
             <li>Famous Women in Coding Activity (30 minutes)</li>
                 <ul><li>After each question, explain what the tech does and the woman who invented it</li>
-                <li><a href="https://create.kahoot.it/details/women-in-technology/76f099d4-2f6c-45fa-b64a-0ae4b480776d">
-                Famous Women in Computing Kahoot</a></li></ul>
+                <li><OutboundLink href="https://create.kahoot.it/details/women-in-technology/76f099d4-2f6c-45fa-b64a-0ae4b480776d">
+                Famous Women in Computing Kahoot</OutboundLink></li></ul>
             <li>Code Time (30 minutes)</li>
             <li>Sorting (30 minutes)Give the coders eight cards (Ace through 8, out of order). The 
                 coders take turns asking about two cards. They can ask, “Which card is larger?” or 
@@ -157,8 +154,8 @@ export default class GirlScoutCurriculum extends React.Component {
                 <ul>
                 <li>Best if done in group of 4/5 in a circle fashion. Give students an incentive 
                    (ie break) if they get it in less than 15 turns </li>
-                  <li><a href="https://www.youtube.com/watch?v=cVMKXKoGu_Y">https://www.youtube.com/watch?v=cVMKXKoGu_Y</a></li>
-                  <li><a href="https://en.wikipedia.org/wiki/Merge_sort">Merge sort: </a>First divide the 
+                  <li><OutboundLink href="https://www.youtube.com/watch?v=cVMKXKoGu_Y">https://www.youtube.com/watch?v=cVMKXKoGu_Y</OutboundLink></li>
+                  <li><OutboundLink href="https://en.wikipedia.org/wiki/Merge_sort">Merge sort: </OutboundLink>First divide the 
                     list into the smallest unit (1 element), then compare 
                     each element with the adjacent list to sort and merge the two adjacent lists. 
                     Finally all the elements are sorted and merged. </li>
@@ -185,11 +182,10 @@ export default class GirlScoutCurriculum extends React.Component {
                         discuss unclear program terms.</li>
                     <li>If they would like, students may try with another set of instructions</li>
                 </ul>
-            <li>Have students fill out the survey: <a href="https://www.abamath.com/survey">abamath.com/survey</a></li>
+            <li>Have students fill out the survey: <OutboundLink href="https://www.abamath.com/survey">abamath.com/survey</OutboundLink></li>
 
         </ul>
-    
-    </div>
+  </Layout>
     )
   }
 }

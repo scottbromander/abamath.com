@@ -1,8 +1,7 @@
 const { pagePromiseGenerator } = require('./utils/page-promise-generator');
 const { googleSheetNodeFilter } = require('./utils/google-sheet-node-filter');
-const { createFilePath } = require('gatsby-source-filesystem');
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+exports.onCreateNode = ({ node, boundActionCreators }) => {
   const { createNodeField, deleteNode } = boundActionCreators
   const googleSheetNodeFieldCreator = googleSheetNodeFilter(node, createNodeField, deleteNode);
   const isDistrictClass = node.internal.type === 'community_education__district_classes';

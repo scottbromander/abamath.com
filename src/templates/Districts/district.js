@@ -2,13 +2,14 @@ import React from "react";
 import { graphql } from "gatsby";
 import ClassTable from "../../components/Class_Table/ClassTable";
 import "./district.css";
+import Layout from "../../components/layout";
 
 export default class OfferedClass extends React.Component {
 
   render() {
     const specificDistrict = this.props.data.allCommunityEducationDistrict.edges[0].node.fields;
     return (
-      <div>
+      <Layout>
         <div id="info">
           <h1>{specificDistrict.districtName}{""}</h1>
         </div>
@@ -19,7 +20,7 @@ export default class OfferedClass extends React.Component {
           searchText={specificDistrict.districtName}
         />
         </div>
-      </div>
+      </Layout>
     );
   }
 };

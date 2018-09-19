@@ -2,13 +2,14 @@ import React from "react";
 import { graphql } from "gatsby";
 import ClassTable from "../../components/Class_Table/ClassTable";
 import "./offered-class.css";
+import Layout from "../../components/layout";
 
 export default class OfferedClass extends React.Component {
 
   render() {
     const specificClass = this.props.data.specificClass.edges[0].node.fields;
     return (
-      <div>
+      <Layout>
         <div id="description">
           <h1>{specificClass.className}{""}</h1>
           <h2>Grades: {specificClass.classgrades}{""}</h2>
@@ -21,7 +22,7 @@ export default class OfferedClass extends React.Component {
           searchText={specificClass.className}
         />
         </div>
-      </div>
+      </Layout>
     );
   }
 };

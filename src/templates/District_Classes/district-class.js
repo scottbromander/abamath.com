@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import ClassTable from "../../components/Class_Table/ClassTable";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import "./district-class.css"
+import Layout from "../../components/layout";
 
 export default class DistrictClass extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class DistrictClass extends React.Component {
   render() {
     const specificClass = this.props.data.specificClass.edges[0].node.fields;
     return (
-      <div id="district-classes">
+      <Layout id="district-classes">
           <div id="classInfo" >
           <h1>{specificClass.district} {specificClass.className}</h1>
           <h2>Time: {specificClass.time}</h2>
@@ -43,7 +44,7 @@ export default class DistrictClass extends React.Component {
           districtClasses={this.props.data.allDistrictClasses.edges}
           searchText={specificClass.className}
         />
-      </div>
+      </Layout>
     );
   }
 };

@@ -5,7 +5,6 @@ exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField, deleteNode } = actions
   const googleSheetNodeFieldCreator = googleSheetNodeFilter(node, createNodeField, deleteNode);
   const isDistrictClass = node.internal.type === 'community_education__district_classes';
-  const isProposedClass = node.internal.type === 'community_education__proposed_classes';
   const isOfferedClass = node.internal.type === 'community_education__offered_classes';
   const isDistrict = node.internal.type === 'community_education__district';
 
@@ -17,16 +16,6 @@ exports.onCreateNode = ({ node, actions }) => {
       'enddate',
       'grades',
       'link',
-      'startdate',
-      'time'
-    ]);
-  } else if (isProposedClass) {
-    googleSheetNodeFieldCreator('className', [
-      'days',
-      'description',
-      'district',
-      'enddate',
-      'grades',
       'startdate',
       'time'
     ]);

@@ -2,7 +2,7 @@ const { pagePromiseGenerator } = require('./utils/page-promise-generator');
 const { googleSheetNodeFilter } = require('./utils/google-sheet-node-filter');
 
 exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField, deleteNode } = actions
+  const { createNodeField, deleteNode } = actions;
   const googleSheetNodeFieldCreator = googleSheetNodeFilter(node, createNodeField, deleteNode);
   const isDistrictClass = node.internal.type === 'community_education__district_classes';
   const isOfferedClass = node.internal.type === 'community_education__offered_classes';
@@ -17,16 +17,16 @@ exports.onCreateNode = ({ node, actions }) => {
       'grades',
       'link',
       'startdate',
-      'time'
+      'time',
     ]);
   } else if (isOfferedClass) {
     googleSheetNodeFieldCreator('className', [
       'classgrades',
-      'classdescription'
+      'classdescription',
     ]);
   } else if (isDistrict) {
     googleSheetNodeFieldCreator('districtName', [
-      'website'
+      'website',
     ]);
   }
 };

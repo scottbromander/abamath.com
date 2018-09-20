@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Layout from "../components/layout"
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import ClassroomChecklist from '../components/curriculum/ClassroomChecklist';
@@ -46,7 +46,7 @@ export default class WebsiteCreation extends React.Component {
         <h2>Day 1 - Website Intro and HTML </h2>
         <ul>
             <li>Introduction</li>
-                <ul><li>Names/Nametags</li>
+                <ul><li>Names/Name Tags</li>
                 <li>Coding Experience</li>
                 <li>Favorite thing to do on the computer</li></ul>
             <li>Rules and coder expectations</li>

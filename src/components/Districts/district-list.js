@@ -1,24 +1,38 @@
-import React from "react";
-import { Link } from "gatsby";
-import "./district-list.css";
+import React from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import './district-list.css';
 
-export default class DistrictsList extends React.Component {
-    render() {
-        return (
-            <section className="homepage-section" id="districtList">
-                <h2>Where We Are</h2>
-                <div id="splitLine"><hr></hr></div>
-                <div id="grid">
-                    {this.props.allDistricts.map(({ node }) =>
-                        <div key={node.id}>
-                            <Link to={node.fields.slug}>
-                                {node.fields.districtName}
-                            </Link>
-                        </div>
-                    )}
-                </div>
-                <div id="newLine"></div>
-            </section>
-        )
-    }
-}
+const districtList = ({ allDistricts }) => (
+  <section className="homepage-section" id="districtList">
+    <h2>Where We Are</h2>
+    <div id="splitLine"><hr /></div>
+    <div id="grid">
+      {allDistricts.map(({ node }) => (
+        <div key={node.fields.slug}>
+          <Link to={node.fields.slug}>
+            {node.fields.districtName}
+          </Link>
+        </div>
+      ))}
+    </div>
+    <div id="newLine" />
+  </section>
+);
+
+districtList.propTypes = {
+  allDistricts: PropTypes.arrayOf(PropTypes.shape({
+    node: PropTypes.shape({
+      fields: PropTypes.shape({
+        districtName: PropTypes.string,
+        slug: PropTypes.string,
+      }),
+    }),
+  })),
+};
+
+districtList.defaultProps = {
+  allDistricts: [],
+};
+
+export default districtList;

@@ -1,10 +1,11 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Layout from '../layout';
 
-export default ({ title, iframeSourceUrl }) => (
-    < StaticQuery
-        query={graphql`
+const googleForm = ({ title, iframeSourceUrl }) => (
+  <StaticQuery
+    query={graphql`
             query ApplicationQuery {
                 site {
                         siteMetadata {
@@ -13,24 +14,29 @@ export default ({ title, iframeSourceUrl }) => (
                 }
             }
         `}
-        render={
-            data => (
-                <Layout>
-                    <h1>{title}</h1>
-                    <iframe
-                        src={iframeSourceUrl}
-                        width="100%"
-                        height="2800"
-                        frameborder="0"
-                        marginheight="0"
-                        marginwidth="0"
-                        title={title}
-                    >
-                        Loading...
-                    </iframe>
-                    <link rel="stylesheet" href="public/css/reset.css" />
-                </Layout>
-            )
-        }
-    />
+    render={() => (
+      <Layout>
+        <h1>{title}</h1>
+        <iframe
+          src={iframeSourceUrl}
+          width="100%"
+          height="2800"
+          frameBorder="0"
+          marginHeight="0"
+          marginWidth="0"
+          title={title}
+        >
+         Loading...
+        </iframe>
+        <link rel="stylesheet" href="public/css/reset.css" />
+      </Layout>
+    )}
+  />
 );
+
+googleForm.propTypes = {
+  title: PropTypes.string.isRequired,
+  iframeSourceUrl: PropTypes.string.isRequired,
+};
+
+export default googleForm;

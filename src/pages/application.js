@@ -1,7 +1,7 @@
-import React from "react";
-import GoogleForm from "../components/GoogleForm/GoogleForm";
+import React from 'react';
+import GoogleForm from '../components/GoogleForm/GoogleForm';
 
-// // <meta>Application to join the Abamath team</meta>
+// <meta>Application to join the Abamath team</meta>
 
 export default () => (
   <GoogleForm

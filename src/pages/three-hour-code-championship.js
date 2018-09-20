@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Layout from "../components/layout"
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import ClassroomChecklist from '../components/curriculum/ClassroomChecklist';
@@ -57,7 +57,7 @@ export default class ThreeHourCodeChampionship extends React.Component {
         <h2>Day 1 - 3 Hours </h2>
         <ul>
             <li>Names and coding experience</li>
-                <ul><li>Nametags</li>
+                <ul><li>Name Tags</li>
                 <li>Name game</li></ul>
             <li>Rules and coder expectations</li>
             <li>Links for instructor (example bots) </li>

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import GoogleForm from "../components/GoogleForm/GoogleForm";
 
 // // <meta>A survey for parents of Abamath students to share their thoughts on the camp</meta>

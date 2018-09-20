@@ -1,13 +1,14 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby"
-import g from "glamorous";
-import Helmet from 'react-helmet'
-import { rhythm } from "../utils/typography";
-import logo from "../images/abamath.png";
-import Footer from "./Footer/footer"
-import Navigation from "./Navigation/navigation"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
+import g from 'glamorous';
+import Helmet from 'react-helmet';
+import { rhythm } from '../utils/typography';
+import logo from '../images/abamath.png';
+import Footer from './Footer/footer';
+import Navigation from './Navigation/navigation';
 
-export default ({ children, data }) => (
+const layout = ({ children }) => (
   <StaticQuery
     query={graphql`
      query LayoutQuery {
@@ -32,7 +33,7 @@ export default ({ children, data }) => (
    `}
     render={data => (
       <g.Div
-        margin={`0 auto`}
+        margin="0 auto"
         maxWidth={1700}
         padding={rhythm(2)}
         paddingTop={rhythm(1.5)}
@@ -59,3 +60,9 @@ export default ({ children, data }) => (
     )}
   />
 );
+
+layout.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default layout;

@@ -1,16 +1,17 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout"
-import UpcomingClasses from "../components/Upcoming_Classes/UpcomingClasses";
-import ClassDescriptions from "../components/Class_Descriptions/class-descriptions";
-import About from "../components/About/about";
-import CodeChampionship from "../components/Code_Championship/code-championship";
-import DistrictsList from "../components/Districts/district-list";
-import Contact from "../components/Contact/contact";
-import "./index.css";
-import Img from "gatsby-image";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Layout from '../components/layout';
+import UpcomingClasses from '../components/Upcoming_Classes/UpcomingClasses';
+import ClassDescriptions from '../components/Class_Descriptions/class-descriptions';
+import About from '../components/About/about';
+import CodeChampionship from '../components/Code_Championship/code-championship';
+import DistrictsList from '../components/Districts/district-list';
+import Contact from '../components/Contact/contact';
+import './index.css';
 
-// // <meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
+// eslint-disable-next-line max-len
+// <meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
 export default class Index extends React.Component {
   state = {
@@ -25,7 +26,7 @@ export default class Index extends React.Component {
         <Img
           alt="Abamath Code Hero Background"
           resolutions={this.props.data.codeHeroBackgroundImage.childImageSharp.resolutions}
-          style={{...this.state.imageStyles}}
+          style={{ ...this.state.imageStyles }}
         />
         <center><h1>coding, video game, and website design classes</h1></center>
         <div id="body">
@@ -58,7 +59,7 @@ export default class Index extends React.Component {
           />
         </div>
       </Layout>
-    )
+    );
   }
 }
 
@@ -140,4 +141,4 @@ export const query = graphql`
       }
     }
 }  
-`
+`;

@@ -9,26 +9,28 @@ const District = ({ data }) => {
   const specificDistrict = data.allCommunityEducationDistrict.edges[0].node.fields;
   return (
     <Layout>
-      <div id="info">
-        <h1>
-          {specificDistrict.districtName}
-          {''}
-        </h1>
-      </div>
-      <div id="offered-classes">
-        <h2>
-          Upcoming
-          {' '}
-          {specificDistrict.districtName}
-          {''}
-          {' '}
-          Camps
-        </h2>
-        <ClassTable
-          districtClasses={data.allDistrictClasses.edges}
-          searchText={specificDistrict.districtName}
-        />
-      </div>
+      <>
+        <div id="info">
+          <h1>
+            {specificDistrict.districtName}
+            {''}
+          </h1>
+        </div>
+        <div id="offered-classes">
+          <h2>
+            Upcoming
+            {' '}
+            {specificDistrict.districtName}
+            {''}
+            {' '}
+            Camps
+          </h2>
+          <ClassTable
+            districtClasses={data.allDistrictClasses.edges}
+            searchText={specificDistrict.districtName}
+          />
+        </div>
+      </>
     </Layout>
   );
 };

@@ -16,19 +16,21 @@ const googleForm = ({ title, iframeSourceUrl }) => (
         `}
     render={() => (
       <Layout>
-        <h1>{title}</h1>
-        <iframe
-          src={iframeSourceUrl}
-          width="100%"
-          height="2800"
-          frameBorder="0"
-          marginHeight="0"
-          marginWidth="0"
-          title={title}
-        >
-         Loading...
-        </iframe>
-        <link rel="stylesheet" href="public/css/reset.css" />
+        <>
+          <h1>{title}</h1>
+          <iframe
+            src={iframeSourceUrl}
+            width="100%"
+            height="2800"
+            frameBorder="0"
+            marginHeight="0"
+            marginWidth="0"
+            title={title}
+          >
+           Loading...
+          </iframe>
+          <link rel="stylesheet" href="public/css/reset.css" />
+        </>
       </Layout>
     )}
   />

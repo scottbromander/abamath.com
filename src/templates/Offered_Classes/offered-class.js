@@ -9,30 +9,32 @@ const OfferedClass = ({ data }) => {
   const specificClass = data.specificClass.edges[0].node.fields;
   return (
     <Layout>
-      <div id="description">
-        <h1>{specificClass.className}</h1>
-        <h2>
-          Grades:
-          {' '}
-          {specificClass.classgrades}
-        </h2>
-        <p>
-          {specificClass.classdescription}
-        </p>
-      </div>
-      <div id="offered-classes">
-        <h2>
-          Upcoming
-          {' '}
-          {specificClass.className}
-          {' '}
-          Camps
-        </h2>
-        <ClassTable
-          districtClasses={data.allDistrictClasses.edges}
-          searchText={specificClass.className}
-        />
-      </div>
+      <>
+        <div id="description">
+          <h1>{specificClass.className}</h1>
+          <h2>
+            Grades:
+            {' '}
+            {specificClass.classgrades}
+          </h2>
+          <p>
+            {specificClass.classdescription}
+          </p>
+        </div>
+        <div id="offered-classes">
+          <h2>
+            Upcoming
+            {' '}
+            {specificClass.className}
+            {' '}
+            Camps
+          </h2>
+          <ClassTable
+            districtClasses={data.allDistrictClasses.edges}
+            searchText={specificClass.className}
+          />
+        </div>
+      </>
     </Layout>
   );
 };

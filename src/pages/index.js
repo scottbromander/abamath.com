@@ -155,7 +155,7 @@ const ImagePropType = PropTypes.shape({
 
 const EdgeArrayOfObjectsPropType = PropTypes.shape({
   edges: PropTypes.arrayOf(PropTypes.shape({})),
-}).isRequired;
+});
 
 Index.propTypes = {
   data: PropTypes.shape({

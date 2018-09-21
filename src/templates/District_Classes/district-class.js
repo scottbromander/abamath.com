@@ -21,65 +21,67 @@ class DistrictClass extends React.Component {
     const specificClass = this.props.data.specificClass.edges[0].node.fields;
     return (
       <Layout id="district-classes">
-        <div id="classInfo">
-          <h1>
+        <>
+          <div id="classInfo">
+            <h1>
+              {specificClass.district}
+              {' '}
+              {specificClass.className}
+            </h1>
+            <h2>
+              Time:
+              {' '}
+              {specificClass.time}
+            </h2>
+            <h2>
+              Grades:
+              {' '}
+              {specificClass.grades}
+            </h2>
+            <h2>
+              Days:
+              {' '}
+              {specificClass.days}
+            </h2>
+            <h2>
+              Dates:
+              {' '}
+              {specificClass.startdate}
+              {' '}
+              -
+              {' '}
+              {specificClass.enddate}
+            </h2>
+            <p>
+              {specificClass.description}
+            </p>
+
+            <OutboundLink href={specificClass.link}>
+              <button type="button">Sign up!</button>
+            </OutboundLink>
+          </div>
+          <h2>
+            Other Camps in
+            {' '}
             {specificClass.district}
+            {''}
+          </h2>
+          <ClassTable
+            districtClasses={this.props.data.allDistrictClasses.edges}
+            searchText={this.state.searchText}
+          />
+          <h2>
+            Other
             {' '}
             {specificClass.className}
-          </h1>
-          <h2>
-            Time:
             {' '}
-            {specificClass.time}
+            Camps
           </h2>
-          <h2>
-            Grades:
-            {' '}
-            {specificClass.grades}
-          </h2>
-          <h2>
-            Days:
-            {' '}
-            {specificClass.days}
-          </h2>
-          <h2>
-            Dates:
-            {' '}
-            {specificClass.startdate}
-            {' '}
-            -
-            {' '}
-            {specificClass.enddate}
-          </h2>
-          <p>
-            {specificClass.description}
-          </p>
-
-          <OutboundLink href={specificClass.link}>
-            <button type="button">Sign up!</button>
-          </OutboundLink>
-        </div>
-        <h2>
-          Other Camps in
-          {' '}
-          {specificClass.district}
-          {''}
-        </h2>
-        <ClassTable
-          districtClasses={this.props.data.allDistrictClasses.edges}
-          searchText={this.state.searchText}
-        />
-        <h2>
-          Other
-          {' '}
-          {specificClass.className}
-          {' '}
-          Camps
-        </h2>
-        <ClassTable
-          districtClasses={this.props.data.allDistrictClasses.edges}
-          searchText={specificClass.className}
-        />
+          <ClassTable
+            districtClasses={this.props.data.allDistrictClasses.edges}
+            searchText={specificClass.className}
+          />
+        </>
       </Layout>
     );
   }

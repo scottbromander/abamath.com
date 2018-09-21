@@ -25,41 +25,43 @@ class Index extends React.Component {
     const { data } = this.props;
     return (
       <Layout>
-        <Img
-          alt="Abamath Code Hero Background"
-          resolutions={data.codeHeroBackgroundImage.childImageSharp.resolutions}
-          style={this.state.imageStyles}
-        />
-        <center><h1>coding, video game, and website design classes</h1></center>
-        <div id="body">
-          <UpcomingClasses
-            allCommunityEducationDistrictClasses={data.allCommunityEducationDistrictClasses.edges}
-          />
+        <>
           <Img
-            alt="Girls Coding"
-            resolutions={data.girlsImage.childImageSharp.resolutions}
+            alt="Abamath Code Hero Background"
+            resolutions={data.codeHeroBackgroundImage.childImageSharp.resolutions}
             style={this.state.imageStyles}
           />
-          <ClassDescriptions
-            allOfferedClasses={data.allOfferedClasses.edges}
-          />
-          <CodeChampionship />
-          <About />
-          <Img
-            alt="kids coding"
-            resolutions={data.kidsImage.childImageSharp.resolutions}
-            style={this.state.imageStyles}
-          />
-          <DistrictsList
-            allDistricts={data.allCommunityEducationDistrict.edges}
-          />
-          <Contact />
-          <Img
-            alt="abamath collage"
-            resolutions={data.collageImage.childImageSharp.resolutions}
-            style={this.state.imageStyles}
-          />
-        </div>
+          <center><h1>coding, video game, and website design classes</h1></center>
+          <div id="body">
+            <UpcomingClasses
+              allCommunityEducationDistrictClasses={data.allCommunityEducationDistrictClasses.edges}
+            />
+            <Img
+              alt="Girls Coding"
+              resolutions={data.girlsImage.childImageSharp.resolutions}
+              style={this.state.imageStyles}
+            />
+            <ClassDescriptions
+              allOfferedClasses={data.allOfferedClasses.edges}
+            />
+            <CodeChampionship />
+            <About />
+            <Img
+              alt="kids coding"
+              resolutions={data.kidsImage.childImageSharp.resolutions}
+              style={this.state.imageStyles}
+            />
+            <DistrictsList
+              allDistricts={data.allCommunityEducationDistrict.edges}
+            />
+            <Contact />
+            <Img
+              alt="abamath collage"
+              resolutions={data.collageImage.childImageSharp.resolutions}
+              style={this.state.imageStyles}
+            />
+          </div>
+        </>
       </Layout>
     );
   }

@@ -23,7 +23,13 @@ export default class Navigation extends React.Component {
           <Link to="/"><img src={logo} alt="abamath" /></Link>
           <Link to="/"><span className="nav-company-name">abamath</span></Link>
         </div>
-        <div className="nav-right" onClick={this.toggleNav}>
+        <div
+          className="nav-right"
+          onClick={this.toggleNav}
+          onKeyDown={this.toggleNav}
+          role="button"
+          tabIndex={0}
+        >
           <Link to="/#contact">Contact</Link>
           <Link to="/#districtList">Where</Link>
           <Link to="/#about">About</Link>

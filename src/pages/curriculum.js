@@ -91,13 +91,7 @@ curriculum.propTypes = {
         }),
       }),
     })),
-  }),
-};
-
-curriculum.defaultProps = {
-  data: {
-    edges: [],
-  },
+  }).isRequired,
 };
 
 export default curriculum;

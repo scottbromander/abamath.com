@@ -47,7 +47,7 @@ class UpcomingClasses extends React.Component {
         />
         <div id="table">
           <ClassTable
-            districtClasses={this.props.allCommunityEducationDistrictClasses.edges}
+            districtClasses={this.props.allCommunityEducationDistrictClasses}
             searchText={this.state.searchText}
           />
         </div>
@@ -57,27 +57,19 @@ class UpcomingClasses extends React.Component {
 }
 
 UpcomingClasses.propTypes = {
-  allCommunityEducationDistrictClasses: PropTypes.shape({
-    edges: PropTypes.arrayOf(PropTypes.shape({
-      node: PropTypes.shape({
-        fields: PropTypes.shape({
-          className: PropTypes.string,
-          district: PropTypes.string,
-          days: PropTypes.string,
-          startdate: PropTypes.string,
-          enddate: PropTypes.string,
-          time: PropTypes.string,
-          slug: PropTypes.string,
-        }),
+  allCommunityEducationDistrictClasses: PropTypes.arrayOf(PropTypes.shape({
+    node: PropTypes.shape({
+      fields: PropTypes.shape({
+        className: PropTypes.string,
+        district: PropTypes.string,
+        days: PropTypes.string,
+        startdate: PropTypes.string,
+        enddate: PropTypes.string,
+        time: PropTypes.string,
+        slug: PropTypes.string,
       }),
-    })),
-  }),
-};
-
-UpcomingClasses.defaultProps = {
-  allCommunityEducationDistrictClasses: {
-    edges: [],
-  },
+    }),
+  })).isRequired,
 };
 
 export default UpcomingClasses;

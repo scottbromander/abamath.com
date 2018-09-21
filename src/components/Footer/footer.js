@@ -68,11 +68,7 @@ footer.propTypes = {
         slug: PropTypes.string,
       }),
     }),
-  })),
-};
-
-footer.defaultProps = {
-  allOfferedClasses: [],
+  })).isRequired,
 };
 
 export default footer;

@@ -29,7 +29,7 @@ export default () => (
     </p>
     <ol>
       <li>Teaches how to import and export sprites</li>
-      <li>Makes pixel art, which became hugely popular because of games like minecraft</li>
+      <li>Makes pixel art, which became hugely popular because of games like MineCraft</li>
       <li>Easier to animate and visualize animation with tools like layers and onion skins</li>
     </ol>
     <p>
@@ -75,12 +75,12 @@ export default () => (
     </p>
     <img src={DuplicateSprite} alt="Duplicate sprite" />
     <p>Then animate the eyes, and by that I mean move the eyes to the center </p>
-    <img src={MakeEyesMove} height="300" alt="Make pacman's eyes move" />
+    <img src={MakeEyesMove} height="300" alt="Make PacMan's eyes move" />
     <p>
       After both of the eyes are ready, they can look at what they created!
       Make sure in the right top corner the click full size, so they can see it.
       Explain what FPS(frames per second) means, and make sure to
-      lower it to 2 or 3 FPS. (it’s the scrollbar under the preview)
+      lower it to 2 or 3 FPS. (it’s the scroll bar under the preview)
     </p>
     <img src={EyeAnimation} height="300" alt="Find a good speed for the eyes to move" />
 

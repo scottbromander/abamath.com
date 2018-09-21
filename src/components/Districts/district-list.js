@@ -28,11 +28,7 @@ districtList.propTypes = {
         slug: PropTypes.string,
       }),
     }),
-  })),
-};
-
-districtList.defaultProps = {
-  allDistricts: [],
+  })).isRequired,
 };
 
 export default districtList;

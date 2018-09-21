@@ -125,12 +125,11 @@ ClassTable.propTypes = {
         slug: PropTypes.string,
       }),
     }),
-  })),
+  })).isRequired,
   searchText: PropTypes.string,
 };
 
 ClassTable.defaultProps = {
-  districtClasses: [],
   searchText: '',
 };
 

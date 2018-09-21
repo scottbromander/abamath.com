@@ -250,9 +250,8 @@ export default () => (
     </ul>
     <h4>How do we handle a child&#39;s misuse of the internet? </h4>
     <p>
-*** Use as a guideline! Situations may vary, especially with kids who have ADHD
-                    or other conditions, so make sure to account for those factors ***
-
+      *** Use as a guideline! Situations may vary, especially with kids who have ADHD
+      or other conditions, so make sure to account for those factors ***
     </p>
     <ul>
       <li>Less severe </li>
@@ -407,8 +406,8 @@ export default () => (
         Ice pack - use if a child is complaining of a pain or after they get stung
         by a bee
       </li>
-      <li>Bandaids - use for minor scrapes and bumps </li>
-      <li>Hydrocortisone - use for minor pains, swelling, itching, and discomfort </li>
+      <li>BandAids - use for minor scrapes and bumps </li>
+      <li>HydroCortisone - use for minor pains, swelling, itching, and discomfort </li>
     </ul>
     <h4>Emergency situations - if there was a fire, tornado, etc. </h4>
     <ul>

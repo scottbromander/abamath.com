@@ -33,11 +33,7 @@ classDescriptions.propTypes = {
         classgrades: PropTypes.string,
       }),
     }),
-  })),
-};
-
-classDescriptions.defaultProps = {
-  allOfferedClasses: [],
+  })).isRequired,
 };
 
 export default classDescriptions;

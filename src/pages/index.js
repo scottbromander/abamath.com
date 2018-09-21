@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import UpcomingClasses from '../components/Upcoming_Classes/UpcomingClasses';
 import ClassDescriptions from '../components/Class_Descriptions/class-descriptions';
@@ -13,7 +14,7 @@ import './index.css';
 // eslint-disable-next-line max-len
 // <meta>We work with Community Education to teach coding, video game creation, and website design camps in the Greater Twin Cities area.</meta>
 
-export default class Index extends React.Component {
+class Index extends React.Component {
   state = {
     imageStyles: {
       width: '100%',
@@ -21,40 +22,41 @@ export default class Index extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
     return (
       <Layout>
         <Img
           alt="Abamath Code Hero Background"
-          resolutions={this.props.data.codeHeroBackgroundImage.childImageSharp.resolutions}
-          style={{ ...this.state.imageStyles }}
+          resolutions={data.codeHeroBackgroundImage.childImageSharp.resolutions}
+          style={this.state.imageStyles}
         />
         <center><h1>coding, video game, and website design classes</h1></center>
         <div id="body">
           <UpcomingClasses
-            allCommunityEducationDistrictClasses={this.props.data.allCommunityEducationDistrictClasses}
+            allCommunityEducationDistrictClasses={data.allCommunityEducationDistrictClasses.edges}
           />
           <Img
             alt="Girls Coding"
-            resolutions={this.props.data.girlsImage.childImageSharp.resolutions}
+            resolutions={data.girlsImage.childImageSharp.resolutions}
             style={this.state.imageStyles}
           />
           <ClassDescriptions
-            allOfferedClasses={this.props.data.allOfferedClasses.edges}
+            allOfferedClasses={data.allOfferedClasses.edges}
           />
           <CodeChampionship />
           <About />
           <Img
             alt="kids coding"
-            resolutions={this.props.data.kidsImage.childImageSharp.resolutions}
+            resolutions={data.kidsImage.childImageSharp.resolutions}
             style={this.state.imageStyles}
           />
           <DistrictsList
-            allDistricts={this.props.data.allCommunityEducationDistrict.edges}
+            allDistricts={data.allCommunityEducationDistrict.edges}
           />
           <Contact />
           <Img
             alt="abamath collage"
-            resolutions={this.props.data.collageImage.childImageSharp.resolutions}
+            resolutions={data.collageImage.childImageSharp.resolutions}
             style={this.state.imageStyles}
           />
         </div>
@@ -142,3 +144,27 @@ export const query = graphql`
     }
 }  
 `;
+
+const ImagePropType = PropTypes.shape({
+  childImageSharp: PropTypes.shape({
+    resolutions: PropTypes.shape({}).isRequired,
+  }).isRequired,
+}).isRequired;
+
+const EdgeArrayOfObjectsPropType = PropTypes.shape({
+  edges: PropTypes.arrayOf(PropTypes.shape({})),
+}).isRequired;
+
+Index.propTypes = {
+  data: PropTypes.shape({
+    codeHeroBackgroundImage: ImagePropType,
+    girlsImage: ImagePropType,
+    kidsImage: ImagePropType,
+    collageImage: ImagePropType,
+    allCommunityEducationDistrict: EdgeArrayOfObjectsPropType,
+    allCommunityEducationDistrictClasses: EdgeArrayOfObjectsPropType,
+    allOfferedClasses: EdgeArrayOfObjectsPropType,
+  }).isRequired,
+};
+
+export default Index;

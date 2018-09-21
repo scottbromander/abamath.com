@@ -123,7 +123,7 @@ const VideoGameCreationCurriculum = () => (
             <li>
               Every “if-block” needs a condition, which we will be using in just a few minutes
             </li>
-            <li>Example: If pacman touches an enemy, then he loses his life</li>
+            <li>Example: If PacMan touches an enemy, then he loses his life</li>
           </ul>
         </ul>
       </ul>
@@ -593,13 +593,13 @@ const VideoGameCreationCurriculum = () => (
         <OutboundLink href="https://code.org/">Code.org</OutboundLink>
       </li>
       <li>
-        <OutboundLink href="https://www.codecademy.com/">Codeacademy.com</OutboundLink>
+        <OutboundLink href="https://www.codecademy.com/">Codecademy.com</OutboundLink>
       </li>
       <li>
         <OutboundLink href="https://www.touchdevelop.com/g">Touch develop</OutboundLink>
       </li>
       <li>
-        <OutboundLink href="https://www.khanacademy.org/partner-content/pixar">Pixarinabox.org</OutboundLink>
+        <OutboundLink href="https://www.khanacademy.org/partner-content/pixar">PixarInABox.org</OutboundLink>
       </li>
       <li>
         <OutboundLink href="https://csfirst.withgoogle.com/c/cs-first/en/curriculum.html">CS First</OutboundLink>

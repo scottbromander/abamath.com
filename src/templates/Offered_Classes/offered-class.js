@@ -103,7 +103,7 @@ query OfferedClassQuery($slug: String!) {
 
 const EdgeArrayOfObjectsPropType = PropTypes.shape({
   edges: PropTypes.arrayOf(PropTypes.shape({})),
-}).isRequired;
+});
 
 OfferedClass.propTypes = {
   data: PropTypes.shape({

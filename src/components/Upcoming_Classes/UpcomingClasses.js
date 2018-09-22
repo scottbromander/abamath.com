@@ -9,21 +9,6 @@ import ClassTable from '../Class_Table/ClassTable';
 class UpcomingClasses extends React.Component {
   state = {
     searchText: '',
-    humanize: Math.round(Math.random() * (200 - 30)) + 30,
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(this.setHumanize, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  setHumanize = () => {
-    setTimeout(() => {
-      this.setState({ humanize: Math.round(Math.random() * (200 - 30)) + 30 });
-    }, this.state.humanize * 2 + 1200);
   }
 
   updateSearchText = (event) => {
@@ -41,8 +26,8 @@ class UpcomingClasses extends React.Component {
           onChange={this.updateSearchText}
           value={this.state.searchText}
           waitBeforeDeleteMs={1200}
-          writeSpeedMs={this.state.humanize}
-          deleteSpeedMs={this.state.humanize}
+          writeSpeedMs={[40, 200]}
+          deleteSpeedMs={[20, 100]}
           placeholders={['Search Here', 'Hopkins', 'Search Here', 'Coding', 'Search Here', 'Minnetonka', 'Search Here', 'Edina']}
         />
         <div id="table">

@@ -1,30 +1,43 @@
-import React from "react";
-import ClassTable from "../../components/Class_Table/ClassTable";
-import "./offered-class.css";
+import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import ClassTable from '../../components/Class_Table/ClassTable';
+import './offered-class.css';
+import Layout from '../../components/layout';
 
-export default class OfferedClass extends React.Component {
-
-  render() {
-    const specificClass = this.props.data.specificClass.edges[0].node.fields;
-    return (
-      <div>
+const OfferedClass = ({ data }) => {
+  const specificClass = data.specificClass.edges[0].node.fields;
+  return (
+    <Layout>
+      <>
         <div id="description">
-          <h1>{specificClass.className}{""}</h1>
-          <h2>Grades: {specificClass.classgrades}{""}</h2>
-          <p>{specificClass.classdescription}{""}</p>
+          <h1>{specificClass.className}</h1>
+          <h2>
+            Grades:
+            {' '}
+            {specificClass.classgrades}
+          </h2>
+          <p>
+            {specificClass.classdescription}
+          </p>
         </div>
         <div id="offered-classes">
-        <h2>Upcoming {specificClass.className}{""} Camps</h2>
-        <ClassTable
-          districtClasses={this.props.data.allDistrictClasses.edges}
-          searchText={specificClass.className}
-        />
+          <h2>
+            Upcoming
+            {' '}
+            {specificClass.className}
+            {' '}
+            Camps
+          </h2>
+          <ClassTable
+            districtClasses={data.allDistrictClasses.edges}
+            searchText={specificClass.className}
+          />
         </div>
-      </div>
-    );
-  }
+      </>
+    </Layout>
+  );
 };
-
 export const query = graphql`
 query OfferedClassQuery($slug: String!) {
   specificClass: allCommunityEducationOfferedClasses(filter: {fields: { slug: { eq: $slug } }}) {
@@ -86,3 +99,15 @@ query OfferedClassQuery($slug: String!) {
   }
 }
 `;
+
+const EdgeArrayOfObjectsPropType = PropTypes.shape({
+  edges: PropTypes.arrayOf(PropTypes.shape({})),
+});
+
+OfferedClass.propTypes = {
+  data: PropTypes.shape({
+    allCommunityEducationDistrict: EdgeArrayOfObjectsPropType,
+  }).isRequired,
+};
+
+export default OfferedClass;

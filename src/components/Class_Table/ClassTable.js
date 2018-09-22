@@ -1,18 +1,19 @@
-import React from "react";
-import Link from "gatsby-link";
+import React from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
-export default class ClassTable extends React.Component {
+class ClassTable extends React.Component {
   state = {
     numberOfClassesToShow: 10,
   }
 
-  updateClasses = (event) => {
-    this.setState({
-      numberOfClassesToShow: this.state.numberOfClassesToShow + 10
-    })
+  updateClasses = () => {
+    this.setState(previousState => ({
+      numberOfClassesToShow: previousState.numberOfClassesToShow + 10,
+    }));
   }
 
-  searchFilter = districtClass => {
+  searchFilter = (districtClass) => {
     const fieldsToCheck = [
       'className',
       'days',
@@ -25,10 +26,11 @@ export default class ClassTable extends React.Component {
 
     const doAnyFieldsMatch = fieldsToCheck.reduce((alreadyFound, field) => {
       if (districtClass.node && districtClass.node.fields && districtClass.node.fields[field]) {
-        return alreadyFound || districtClass.node.fields[field].toLowerCase().includes(this.props.searchText.toLowerCase());
-      } else {
-        return false;
+        const currentFieldToCheck = districtClass.node.fields[field].toLowerCase();
+        const currentSearchText = this.props.searchText.toLowerCase();
+        return alreadyFound || currentFieldToCheck.includes(currentSearchText);
       }
+      return false;
     }, false);
 
     return doAnyFieldsMatch;
@@ -50,52 +52,85 @@ export default class ClassTable extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.districtClasses.filter(this.searchFilter).splice(0, this.state.numberOfClassesToShow).map(({ node }) =>
-              <tr key={node.id}>
-                <td>
-                  <Link to={node.fields.slug} >
-                    {node.fields.className}
-                  </Link>
-                </td>
-                <td>
-                  <Link to={node.fields.slug} >
-                    {node.fields.district}
-                  </Link>
-                </td>
-                <td className="mobile-hide">
-                  <Link to={node.fields.slug} >
-                    {node.fields.days}
-                  </Link>
-                </td>
-                <td>
-                  <Link to={node.fields.slug} >
-                    {node.fields.startdate}
-                  </Link>
-                </td>
-                <td className="mobile-hide">
-                  <Link to={node.fields.slug} >
-                    {node.fields.enddate}
-                  </Link>
-                </td>
-                <td className="mobile-hide">
-                  <Link to={node.fields.slug} >
-                    {node.fields.time}
-                  </Link>
-                </td>
-                <td className="mobile-hide">
-                  <Link to={node.fields.slug} >
-                    {node.fields.grades}
-                  </Link>
-                </td>
-              </tr>
-            )}
+            {this.props.districtClasses.filter(this.searchFilter)
+              .splice(0, this.state.numberOfClassesToShow).map(({ node }) => (
+                <tr key={node.id}>
+                  <td>
+                    <Link to={node.fields.slug}>
+                      {node.fields.className}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link to={node.fields.slug}>
+                      {node.fields.district}
+                    </Link>
+                  </td>
+                  <td className="mobile-hide">
+                    <Link to={node.fields.slug}>
+                      {node.fields.days}
+                    </Link>
+                  </td>
+                  <td>
+                    <Link to={node.fields.slug}>
+                      {node.fields.startdate}
+                    </Link>
+                  </td>
+                  <td className="mobile-hide">
+                    <Link to={node.fields.slug}>
+                      {node.fields.enddate}
+                    </Link>
+                  </td>
+                  <td className="mobile-hide">
+                    <Link to={node.fields.slug}>
+                      {node.fields.time}
+                    </Link>
+                  </td>
+                  <td className="mobile-hide">
+                    <Link to={node.fields.slug}>
+                      {node.fields.grades}
+                    </Link>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
-        {this.state.numberOfClassesToShow < this.props.districtClasses.filter(this.searchFilter).length &&
-          <p id="expand"><a onClick={this.updateClasses}>Click Here To Show More</a></p>
+        {this.state.numberOfClassesToShow
+          < this.props.districtClasses.filter(this.searchFilter).length
+          && (
+          <p id="expand">
+            <button
+              onClick={this.updateClasses}
+              type="button"
+            >
+              Click Here To Show More
+            </button>
+          </p>
+          )
         }
       </div>
-    )
+    );
   }
-
 }
+
+ClassTable.propTypes = {
+  districtClasses: PropTypes.arrayOf(PropTypes.shape({
+    node: PropTypes.shape({
+      fields: PropTypes.shape({
+        className: PropTypes.string,
+        district: PropTypes.string,
+        days: PropTypes.string,
+        startdate: PropTypes.string,
+        enddate: PropTypes.string,
+        time: PropTypes.string,
+        slug: PropTypes.string,
+      }),
+    }),
+  })).isRequired,
+  searchText: PropTypes.string,
+};
+
+ClassTable.defaultProps = {
+  searchText: '',
+};
+
+export default ClassTable;

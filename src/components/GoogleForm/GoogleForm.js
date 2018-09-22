@@ -29,7 +29,6 @@ const googleForm = ({ title, iframeSourceUrl }) => (
           >
            Loading...
           </iframe>
-          <link rel="stylesheet" href="public/css/reset.css" />
         </>
       </Layout>
     )}

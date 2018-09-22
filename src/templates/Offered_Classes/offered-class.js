@@ -100,7 +100,6 @@ query OfferedClassQuery($slug: String!) {
 }
 `;
 
-
 const EdgeArrayOfObjectsPropType = PropTypes.shape({
   edges: PropTypes.arrayOf(PropTypes.shape({})),
 });

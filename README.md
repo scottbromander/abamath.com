@@ -1,6 +1,6 @@
 # abamath.com
 
-This development version is currently deployed here: https://abamath-sandbox.firebaseapp.com/
+This is the front end for [abamath.com](www.abamath.com)
 
 ## Run this project
 

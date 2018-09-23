@@ -42,6 +42,15 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'Jura',
+          'Domine',
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-source-apiserver',
       options: {
         typePrefix: 'community_education__',

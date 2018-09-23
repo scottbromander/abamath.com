@@ -46,6 +46,7 @@ module.exports = {
       options: {
         fonts: [
           'Jura',
+          'Domine',
         ],
       },
     },

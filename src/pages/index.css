@@ -12,30 +12,12 @@ body > div > div > div {
     color: black;
     font-size: 30px;
     line-height: 2.2;
+    font-family: 'Domine';
 }
 
 .homepage-section {
     margin-top: 100px;
     margin-bottom: 100px;
-}
-
-h2 {
-    margin: 1.5%;
-    font-size: 190%;
-    text-align: center;
-    padding: 1%;
-}
-
-h3 {
-    margin: 1.5%;
-    font-size: 120%;
-    text-align: center;
-    padding: 1%;
-}
-
-p {
-    color: black;
-    padding: 2%;
 }
 
 button {

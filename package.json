@@ -1,7 +1,11 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Gatsby hello world starter",
+  "name": "abamath",
+  "description": "Abamath LLC home page",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/abamath/abamath.com.git"
+  },
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",

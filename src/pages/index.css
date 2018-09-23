@@ -21,28 +21,19 @@ body > div > div > div {
 
 h2 {
     margin: 1.5%;
-    font: normal normal 190% Jura, sans-serif;
+    font-size: 190%;
     text-align: center;
-    text-transform: capitalize;
-    font-weight: bold;
     padding: 1%;
 }
 
 h3 {
     margin: 1.5%;
-    font: normal normal 120% Jura, sans-serif;
+    font-size: 120%;
     text-align: center;
-    text-transform: capitalize;
     padding: 1%;
 }
 
-h1 {
-    font-family: Jura;
-}
-
 p {
-    font-family: Arial;
-    font-size: 100%;
     color: black;
     padding: 2%;
 }

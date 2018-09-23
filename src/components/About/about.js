@@ -40,7 +40,6 @@ export default () => (
     </p>
     <h3 className="item">
       Why aren&#39;t you in my town yet?
-      &#39;
     </h3>
     <p className="item">
       We had to start somewhere. We&#39;re from the southwest metro,

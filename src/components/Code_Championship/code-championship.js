@@ -15,12 +15,14 @@ export default () => (
         Stay tuned for Abamath&#39;s 2019 Code Championship Boot Camps and
         Sprints to gear up for State!
     </p>
-    <OutboundLink
-      href="https://www.codechampionship.com/"
-      target="_blank"
-      rel="noopener"
-    >
-      <button type="button">Code Championship Website</button>
-    </OutboundLink>
+    <center>
+      <OutboundLink
+        href="https://www.codechampionship.com/"
+        target="_blank"
+        rel="noopener"
+      >
+        <button type="button">Code Championship Website</button>
+      </OutboundLink>
+    </center>
   </section>
 );

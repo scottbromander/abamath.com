@@ -18,7 +18,9 @@ const classDescriptions = ({ allOfferedClasses }) => (
           <p>
             {node.fields.classshortdescription}
           </p>
-          <Link to={node.fields.slug}><button type="button">Find A Camp!</button></Link>
+          <center>
+            <Link to={node.fields.slug}><button type="button">Find A Camp!</button></Link>
+          </center>
         </div>
       ))}
     </div>

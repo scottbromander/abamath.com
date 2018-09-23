@@ -20,7 +20,7 @@ If you go through the [Gatsby Tutorial](https://www.gatsbyjs.org/tutorial/), you
 
 We'd love your Pull Requests! Check out our [branching documentation](/documentation/branching.md) to learn more.
 
-If you aren't comfortable making pull requests to open source projects, we'd recommend going through the [Approachable IO Pull Request Tutorial](https://github.com/approachable-io/getting-started)
+If you aren't comfortable making pull requests to open source projects, we'd recommend going through the [Approachable IO Pull Request Tutorial](https://github.com/approachable-io/getting-started) and then coming back to help us!
 
 ## Deployment
 

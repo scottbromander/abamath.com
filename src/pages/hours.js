@@ -181,6 +181,7 @@ class Hours extends Component {
     }
 
     updateNewTask = (property, dayIndexToUpdate) => (event) => {
+      const { value } = event.target;
       this.setState(previousState => ({
         days: previousState.days.map((day, dayIndex) => {
           if (dayIndexToUpdate === dayIndex) {
@@ -188,7 +189,7 @@ class Hours extends Component {
               ...day,
               newTask: {
                 ...day.newTask,
-                [property]: event.target.value,
+                [property]: value,
               },
             };
           }
@@ -198,6 +199,7 @@ class Hours extends Component {
     }
 
     updateTask = (property, taskIndexToUpdate, dayIndexToUpdate) => (event) => {
+      const { value } = event.target;
       this.setState(previousState => ({
         days: previousState.days.map((day, dayIndex) => {
           if (dayIndexToUpdate === dayIndex) {
@@ -207,7 +209,7 @@ class Hours extends Component {
                 if (taskIndexToUpdate === taskIndex) {
                   return {
                     ...task,
-                    [property]: event.target.value,
+                    [property]: value,
                   };
                 }
                 return task;
@@ -221,6 +223,7 @@ class Hours extends Component {
     }
 
     updateTravel = (property, dayIndexToUpdate) => (event) => {
+      const { value } = event.target;
       this.setState(previousState => ({
         days: previousState.days.map((day, dayIndex) => {
           if (dayIndexToUpdate === dayIndex) {
@@ -228,7 +231,7 @@ class Hours extends Component {
               ...day,
               travel: {
                 ...day.travel,
-                [property]: event.target.value,
+                [property]: value,
               },
             };
           }
@@ -322,7 +325,8 @@ class Hours extends Component {
                   </div>
                   <div>
                     {day.tasks.map((task, taskIndex) => (
-                      <div key={task} className={styles.taskRow}>
+                      // eslint-disable-next-line
+                      <div key={taskIndex} className={styles.taskRow}>
                         <input onChange={this.updateTask('name', taskIndex, dayIndex)} value={task.name} type="text" placeholder="Task Name" />
                         <input onChange={this.updateTask('hours', taskIndex, dayIndex)} value={task.hours} type="number" placeholder="Hours" />
                         <input onChange={this.updateTask('trello', taskIndex, dayIndex)} value={task.trello} type="text" placeholder="Trello URL" />

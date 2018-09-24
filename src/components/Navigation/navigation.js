@@ -24,6 +24,7 @@ export default class Navigation extends React.Component {
           <Link to="/"><span className="nav-company-name">abamath</span></Link>
         </div>
         <div
+          aria-label="navigation menu toggle"
           className="nav-right"
           onClick={this.toggleNav}
           onKeyDown={this.toggleNav}
@@ -37,7 +38,7 @@ export default class Navigation extends React.Component {
           <Link to="/#camps">Camps</Link>
           <Link to="/#upcoming">Upcoming</Link>
         </div>
-        <button type="button" onClick={this.toggleNav} aria-label="navigation toggle" className="navigation-toggle">
+        <button type="button" onClick={this.toggleNav} aria-label="navigation hamburger toggle" className="navigation-toggle">
           {/* Each of these spans represents a bar in the hamburger menu toggle button */}
           <span />
           <span />
